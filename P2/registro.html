@@ -9,17 +9,29 @@
 		<!-- Logotipo -->
 		<a href="index.html"><img src="recursos/LogoRecetea2.png" alt="Preti Logo"></a>
 		<h1>Creativity & Beyond</h1>
-		<!-- Buscador -->
-		<input type="search" name="buscador" placeholder='Buscar... '>
-		<!-- Enlaces a Buscar -->
-		<a href="buscar.html">Búsqueda Avanzada</a>
-		<!-- Enlaces a Login/Registro -->
-		<a href="login.html">Login</a>
-		<a href="registro.html">Registro</a>
 		<hr>
 	</header>
 
-	<section></section>
+	<section> <!--Formulario de Registro -->
+		<h2>Registro</h2>
+		<form>
+			<p><input type="text" name="Usuario" placeholder="Usuario" autocomplete="on" required></p>
+			<p><input type="text" name="Contraseña" placeholder="Contraseña" required></p>
+			<p><input type="text" name="Repetir Contraseña" placeholder="Repetir Contraseña" required></p>
+			<p><input type="email" name="Correo" placeholder="Correo" required></p>
+			<p><input type="text" name="Sexo" placeholder="Sexo"></p>
+			<p><input type="date" name="Fecha Nacimiento" min="1918-01-01" max="2000-01-01" placeholder="Fecha de Nacimiento"></p>
+			<p><input type="text" name="Ciudad" placeholder="Ciudad"></p>
+			<p><input type="text" name="País" placeholder="País"></p>
+			<p><Strong>Foto Perfil</Strong></p>
+			<p><input type="file" name="pic" accept="image/*"></p>
+			<p><input type="button" type="submit" value="Registrarse"></p>
+		</form>
+
+		<p>¿Ya tienes cuenta? <a href="login.html">Iniciar Sesión</a> 
+
+
+	</section>
 
 	<footer>
 		<!-- Copyright -->

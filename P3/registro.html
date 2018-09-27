@@ -14,18 +14,18 @@
 
 	<section> <!--Formulario de Registro -->
 		<h2>Registro</h2>
-		<form>
+		<form action="usuarioRegistrado.html" method="post">
 			<p><input type="text" name="Usuario" placeholder="Usuario" autocomplete="on" required></p>
-			<p><input type="text" name="Contraseña" placeholder="Contraseña" required></p>
-			<p><input type="text" name="Repetir Contraseña" placeholder="Repetir Contraseña" required></p>
+			<p><input type="password" name="Contraseña" placeholder="Contraseña" required></p>
+			<p><input type="password" name="Repetir Contraseña" placeholder="Repetir Contraseña" required></p>
 			<p><input type="email" name="Correo" placeholder="Correo" required></p>
 			<p><input type="text" name="Sexo" placeholder="Sexo"></p>
-			<p><input type="date" name="Fecha Nacimiento" min="1918-01-01" max="2000-01-01" placeholder="Fecha de Nacimiento"></p>
-			<p><input type="text" name="Ciudad" placeholder="Ciudad"></p>
-			<p><input type="text" name="País" placeholder="País"></p>
+			<p><input type="date" name="Fecha Nacimiento" min="1918-01-01" max="2000-01-01" placeholder="Fecha de Nacimiento" required></p>
+			<p><input type="text" name="Ciudad" placeholder="Ciudad" required=""></p>
+			<p><input type="text" name="País" placeholder="País" required=""></p>
 			<p><Strong>Foto Perfil</Strong></p>
 			<p><input type="file" name="pic" accept="image/*"></p>
-			<p><input type="button" type="submit" value="Registrarse"></p>
+			<p><input type="submit" value="Registrarse"></p>
 		</form>
 
 		<p>¿Ya tienes cuenta? <a href="login.html">Iniciar Sesión</a> 

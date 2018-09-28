@@ -16,8 +16,8 @@
 		<h2>Solicitar Álbum</h2>
 		<p>Mediante esta opción puedes solicitar la impresión y envío de uno de tus álbumes a color y resolución deseada.</p>
 		<article>
-			<h3>Tarifas</h3>
 			<table>
+				<caption><b>Tarifas</b></caption>
 				<tr>
 					<th>Concepto</th>
 					<td>< 5 páginas</td>
@@ -54,7 +54,7 @@
 					</select>
 					<select required>
 						<option disabled selected value> - Provincia - </option>
-						<option value="Alicante">Alicante</option>
+						<option value="3">Alicante</option>
 					</select>
 					<select required>
 						<option disabled selected value> - País - </option>
@@ -64,15 +64,8 @@
 				<p>Teléfono de contacto: <input type="tel" name="telefono" placeholder="### ### ###" required> (*)</p>
 				<p>Color de portada: <input type="color" name="color" required></p>
 				<p>Número de copias: <input type="number" name="copias" value="1" min="1" required></p>
-				<p>Resolución de impresión: 
-					<select>
-						<option value="150">150 dpi</option>
-					  	<option value="300">300 dpi</option>
-					  	<option value="450">450 dpi</option>
-					  	<option value="600">600 dpi</option>
-					  	<option value="750">750 dpi</option>
-					  	<option value="900">900 dpi</option>
-					</select>
+				<p>Resolución de impresión: <input type="range" id="resslider" name="resolucion" min="150" max="900" step="150" value="150" onchange="document.getElementById('outresolucion').textContent=this.value">
+					<output id="outresolucion">150</output> dpi
 				</p>
 				<p>Álbum: 
 					<select required>

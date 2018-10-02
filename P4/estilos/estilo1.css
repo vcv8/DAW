@@ -3,500 +3,75 @@
 }
 
 body {
-  /*font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;*/
-  font-family: 'Noto Sans', sans-serif;
+  width: 100%;
   font-size: 14px;
-  line-height: 20px;
   color: #434343;
-  background-color: #fff;
-  min-width: 320px;
-  max-width: 960px;
+  background-color: #E4BA16;
+  /*min-width: 320px;
+  max-width: 960px;*/
   margin: 0 auto ; 
   border-left: solid #fff; 
   border-right: solid #fff;
   border-bottom: solid #fff; 
   padding: 0; /*.5em .5em .5em;*/
-  background-image: url("iCocinaD2.jpg");
-  background-size: 100%;
-  background-attachment: fixed;
 }
 
-/* CABECERA */
+/* HEADER */
+
   body>header{
     display: flex;
-    flex-direction: column;
-
-    overflow: hidden;
-    background-color: #F5CE4E;
+    flex-direction: row;
+    
+    background-color: #4B483F;
     padding: 1.5em;
-    color: #434343;
-    text-align: center;
+    color: #FFFFFF;
   }
-    body>header>img{
-      align-self: center;
-      margin: 0 1.8em;
-    }
 
-    body>header>div{
-      display: flex;
-      flex-direction: column;
-      align-self: center;
-      margin: .5em 1.8em .5em 1.8em;
-    } 
-      body>header>div>h1{
-        margin: .5em 0;
-        font-size: 38px;
-      }
-
-      body>header>div>p{
-        border-top: 2px solid #fff;
-        border-bottom: 2px solid #fff;
-        margin: 0;
-        padding: .5em;
-        font-size: 22px;
-      }
-
-/* NAVEGACION */
-body>nav{
-  border-top: solid #434343;
-  border-bottom: solid #434343;
-  background-color: #fff;
-}
-  body>nav>ul{
-    padding: 0;
+  body>header>a{
+    color: #E0E0E0;
+    text-decoration: none;
+    padding: .2em .5em;
     margin: 0;
-    text-align: center;
-    max-height: 1.8em;
-    overflow: hidden;
-    transition: max-height 1s ease-in-out;
-    list-style: none;
   }
-    body>nav>ul>li{
-      padding: 0;
-      margin: 0;
-    }
-      body>nav>ul>li>a {
-        display: block;
-        color: #434343;
-        text-decoration: none;
-        padding: .2em .5em;
-        margin: 0;
-      }
-      body>nav>ul>li>a:hover {
-        color: #fff;
-        background-color: #428d8f;
-      }
-        body>nav>ul>li:first-of-type>label{
-          margin-left: .2em;
-          padding: .2em 0;
-          display: inline-block;
-          font-size: 1em;
-          cursor: pointer;
-
-          transition: transform 1s;
-        }
-    .ultimo{
-      border: none;
-    }
-    #ckburger{
-      display: none;
-    }        
-    #ckburger:checked+ul{
-      max-height: 20em;
-    }
-    #ckburger:checked+ul>li:first-of-type>label{
-      transform: rotate(90deg);
-    }
-
-/* CONENIDO */
-  body>section{
-    background-color: #ccc;
-    padding: .5em;
-  }
-    body>section>h2{
-      margin: .3em .4em .3em .4em;
-      padding: .3em;
-      border-bottom: 1px solid #434343;
-    }
-    body>section>div{
-      display: flex;
-      flex-direction: column;
-    }
-      body>section>div>form{
-        text-align: center;
-        padding: 0;
-        margin: .8em .5em;
-        box-shadow: .4em .4em .2em grey;
-        width: 60%;
-      }
-      body>section>div>form>input{
-        width: 100%;
-        border: 1px solid #434343;
-        border-radius: 2px;
-        padding: .4em;
-        margin-top: .1em;
-        background-color: #fff;
-        color: #000;
-      }
-      body>section>div>form>input:hover{
-        background-color: #E8E8E8;
-      }
-      body>section>div>form>input:focus{
-        background-color: #F5E6B3;
-      }
-      body>section>div>form>span{
-        margin-top: .1em;
-      }
-      body>section>div>p{
-        margin-top: .2em 0 0 0;
-        width: 100%;
-      }
-      body>section>div>p:last-of-type{
-        width: 100%;
-      }
-      body>section>div>article{
-        background-color: #fff;
-        padding: 0;
-        margin: .8em .5em;
-        flex-grow: 1; /*Para crecer todo el espacio libre posible*/
-        display: flex;
-        flex-direction: column;
-        box-shadow: .4em .4em .2em grey;
-      }
-        body>section>div>article>img{
-          display: block;
-          margin-left: auto;
-          margin-right: auto;
-          width: 100%;
-        }
-        body>section>div>article>p{
-          margin: 1.6em .8em .5em .8em;
-        }
-        body>section>div>article>a{
-          text-decoration: none;
-          color: #434343;
-        }
-          body>section>div>article>a>h3{
-            font-size: 18px;
-            text-overflow: ellipsis; /*Completar con puntos suspensivos el título de los articulos*/
-            overflow: hidden; /*Esconder lo que sobra*/
-            width: 90%;
-            white-space: nowrap; /*Consigues que no baje de linea*/
-            margin: 1.6em .8em .5em .8em;
-          }
-          body>section>div>article>a>h3:hover{
-            text-decoration: underline;
-          }
-          body>section>div>article>a>p{
-            font-size: 16px;
-            flex-grow: 1;
-            margin: .5em 1em 1em 1em;
-            text-decoration: none;
-            text-decoration-style: none;
-          }
-          body>section>div>article>a>p:hover{
-            color: #428d8f;
-          }
-          body>section>div>article>time{
-            text-align: center;
-            margin: 0 0 0 .8em;
-            color: #5F5F5F;
-          }
-          body>section>div>article>footer{
-            border-top: 1px dotted #434343;
-            padding: .3em 1.2em;
-            display: flex;
-          }
-            body>section>div>article>footer>p{
-              flex: row;
-              margin: .2em 0;
-              width: 50%;
-            }
-            body>section>div>article>footer>p:last-of-type{
-              text-align: right;
-            }
-
-    .interacIconsL{
-      cursor: pointer;
-      text-decoration: none;
-      color: #434343;
-    }
-    .interacIconsL:hover{
-      font-weight: bold;
-      color: #428d8f;
-    }
-    .interacIconsD{
-      cursor: pointer;
-      text-decoration: none;
-      color: #434343;
-    }
-    .interacIconsD:hover{
-      font-weight: bold;
-      color: #D84646;
-    }
-    .interacIconsC{
-      cursor: pointer;
-      text-decoration: none;
-      color: #434343;
-    }
-    .interacIconsC:hover{
-      font-weight: bold;
-      color: #000;
-    }
-    .filtros{
-      display: flex;
-      flex-direction: column;
-      margin: 0 1.5em 0 1.5em;
-      font-size: 14px;
-      text-align: center;
-    }
-      .filtros>p>select{
-        border: 1px solid #434343;
-        border-radius: 2px;
-        padding: .4em;
-        background-color: #fff;
-        color: #000;
-      }
-      .filtros>p>select:hover{
-        background-color: #E8E8E8;
-      }
-      .filtros>p>select:focus{
-        background-color: #F5E6B3;
-      }
-      .filtros>p>input{
-        border: 1px solid #434343;
-        border-radius: 2px;
-        padding: .4em;
-        background-color: #fff;
-        color: #000;
-      }
-      .filtros>p>input:hover{
-        background-color: #E8E8E8;
-      }
-      .filtros>p>input:focus{
-        background-color: #F5E6B3;
-      }
-    .pags{
-      text-align: center;
-      text-decoration: none;
-    }
-      .pags>a{
-        color: #434343;
-        text-decoration: none;
-      }
-      .pags>a:hover{
-        color: #000000;
-      }
-    #divReg{
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: space-around;
-    }
-    .botonForm{
-      border: 1px solid #434343;
-      border-radius: 2px;
-      padding: .4em;
-      margin-top: .1em;
-      background-color: #428d8f;
-      cursor: pointer;
-      color: #fff;
-    }
-    .botonForm:hover{
-      background-color: #2F6466;
-    }
-    .Nac{
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-    }
-      .Nac>label{
-        padding: .4em;
-      }
-      .Nac>input{
-        flex-grow: 1;
-        border: 1px solid #434343;
-        border-radius: 2px;
-        padding: .4em;
-        background-color: #fff;
-        color: #000;
-      }
-      .Nac>input:hover{
-        background-color: #E8E8E8;
-      }
-      .Nac>input:focus{
-        background-color: #F5E6B3;
-      }
-      .Nac>select{
-        flex-grow: 1;
-        border: 1px solid #434343;
-        border-radius: 2px;
-        padding: .4em;
-        background-color: #fff;
-        color: #000;
-      }
-      .Nac>select:hover{
-        background-color: #E8E8E8;
-      }
-      .Nac>select:focus{
-        background-color: #F5E6B3;
-      }
-    #Time0{
-      width: 100%;
-      display: flex;
-      flex-direction: row;
-    }
-    .Time{
-      display: flex;      
-      flex-direction: row;
-      width: 50%;
-    }
-      .Time>label{
-        padding: .4em;
-      }
-      .Time>input{
-        border: 1px solid #434343;
-        border-radius: 2px;
-        padding: .4em;
-        width: 60%;
-        flex-grow: 1;
-        background-color: #fff;
-        color: #000;
-      }
-      .Time>input:hover{
-        background-color: #E8E8E8;
-      }
-      .Time>input:focus{
-        background-color: #F5E6B3;
-      }
-    #recipeData{
-      display: flex;
-      flex-direction: row;
-      text-align: center;
-      margin: 0;
-      color: #5F5F5F;
-      border-bottom: 1px dotted #434343;
-    }
-      #recipeData>p{
-        flex-grow: 1;
-        margin: 0;
-      }
-      #recipeData>p:first-of-type{
-        text-align: left;
-        margin-left: 1em;
-      }
-      #recipeData>p:last-of-type{
-        text-align: right;
-        margin-right: 1em;
-      }
-    #pieImagen{
-      text-align: center;
-      color: #5F5F5F;
-      font-size: 12px;
-      margin-top: .2em;
-    }
-      #pieImagen>a{
-        color: #434343;
-        text-decoration: none;
-        font-size: 16px;
-        margin: 0 .5em;
-      }
-      #pieImagen>a:hover{
-        color: #000;
-      }
-    .titReceta{
-      margin: 1em .8em;
-    }
-    .comment{
-      border-radius: 15px;
-    }
-      .comment>h3{
-        font-size: 14px;
-        margin: .5em .8em;
-      }
-      .comment>p{
-        margin: .5em .8em .5em .8em;
-      }
-        .comment>a>p{
-          font-size: 14px;
-          margin: 0 .8em .5em .8em;
-        }
-    #comForm{
-      width: 60%;
-    }
-    .tArea{
-      width: 100%;
-      margin-top: .1em;
-      border: 1px solid #434343;
-      border-radius: 2px;
-      color: #000;
-      background-color: #fff;
-      padding: .4em;
-    }
-      .tArea:hover{
-        background-color: #E8E8E8;
-      }
-      .tArea:focus{
-        background-color: #F5E6B3;
-      }
-
-    #gAcerca{
-      display: grid;
-      grid-template-areas: 
-        "bGrAs      bFoNo"
-        "bPrac      bFoNo"  
-    }
-      #b1{
-        grid-area: bGrAs;
-        align-self: center;
-        font-weight: bold;
-      }
-      #b2{
-        grid-area: bPrac;
-        align-self: center;
-      }
-      #b3{
-        grid-area: bFoNo;
-        align-self: center;
-        justify-self: center;
-        width: 60%;
-        margin-left: 2em;
-        display: grid;
-        grid-template-areas: 
-          "bI      bNom"
-          "bI      bDNI" 
-      }
-      #b6{
-        grid-area: bI;
-        align-self: center;
-        width: 70%;
-      }
-      #b4{
-        grid-area: bNom;
-        align-self: center;
-        margin-left: .5em;
-      }
-      #b5{
-        grid-area: bDNI;
-        align-self: center; 
-        margin-left: .5em;
-      }
 
 
-
-/* BODY>FOOTER */     
-  body>footer{
+  #logo{
     overflow: hidden;
-    background-color: #434343;
-    color: #fff;
-    padding: .5em;
-    /*text-align: center;*/
-    font-size: 16px;
+    align-self: left;
+    width: 30%;
+    color: #920B0B;
+
     display: flex;
     flex-direction: row;
   }
+    #logo>a{
+    }
+    #logo>h1{
+      margin: auto;
+    }
+  #busqueda{
+    align-self: center;
+    width: 40%;
+
+    display: flex;
+    flex-direction: row;
+  }
+  #usuario{
+    text-align: right;
+    width: 30%;
+  }
+
+/* FOOTER */     
+  body>footer{
+    background-color: #434343;
+    color: #fff;
+    padding: .5em;
+    font-size: 16px;
+    text-align: center;
+  }
     body>footer>p{
       margin: 0 0 0 1.2em;
-      width: 46.5%;
+      align-self: center;
     }
       body>footer>p>a{
         color: #fff;
@@ -515,129 +90,3 @@ body>nav{
       text-decoration: none;
       font-weight: bold;
     }
-
-/* MEDIA QUERIES */
-@media all and (min-width: 480px){
-  body>nav>ul>li{
-    display: inline-block;
-  }
-    body>nav>ul>li:first-of-type>label{
-      display: none;
-    }
-    body>nav>ul>li>a {
-      border-right: solid #434343;
-      border-width: 1px;
-    }
-      body>nav>ul>li>a>span{
-        display: none;
-      }
-} 
-
-@media all and (min-width: 560px){
-  body>section>div>form{
-    width: 50%;
-  }
-  .Nac{
-    flex-direction: row;
-    text-align: left;
-  }
-    .Nac>label{
-      width: 40%;
-    }
-    .Nac>input{
-      width: 60%;
-    }
-}
-
-@media all and (min-width: 580px){
-  body>header{
-    flex-direction: row;
-  }
-    body>header>div{
-      margin-left: 1em;
-      flex-grow: 1; /* Prioridad para crecer si no hay espacio*/
-    }
-    .filtros{
-      flex-direction: row;
-    }
-    #section>div{
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: space-around;
-    }
-      #section>div>p{
-        text-align: right;
-        width: 55%;
-      }
-      #section>div>p:last-of-type{
-        width: 30%;
-        flex-grow: 1;
-      }
-      #section>div>article{
-        width: 42%; 
-        margin: .8em .8em;
-      }
-}
-
-@media all and (min-width: 640px){
-  body>nav>ul>li>a>span{
-    display: inline-block;
-  }
-  body>section>div>form{
-    width: 40%;
-  }
-}
-
-@media all and (min-width: 780px){
-  #section>div>article{
-    width: 28%;
-  }
-}
-
-/* ICON FONTS */
-@font-face {
-  font-family: 'fontello';
-  src: url('./font/fontello.eot?12133501');
-  src: url('./font/fontello.eot?12133501#iefix') format('embedded-opentype'),
-       url('./font/fontello.woff?12133501') format('woff'),
-       url('./font/fontello.ttf?12133501') format('truetype'),
-       url('./font/fontello.svg?12133501#fontello') format('svg');
-  font-weight: normal;
-  font-style: normal;
-} 
-
-.demo-icon
-{
-  font-family: "fontello";
-  font-style: normal;
-  font-weight: normal;
-  speak: none;
-     
-  display: inline-block;
-  text-decoration: inherit;
-  width: 1em;
-  margin-right: .2em;
-  text-align: center;
-  /* opacity: .8; */
-     
-  /* For safety - reset parent styles, that can break glyph codes*/
-  font-variant: normal;
-  text-transform: none;
-     
-  /* fix buttons height, for twitter bootstrap */
-  line-height: 1em;
-     
-  /* Animation center compensation - margins should be symmetric */
-  /* remove if not needed */
-  margin-left: .2em;
-     
-  /* You can be more comfortable with increased icons size */
-  /* font-size: 120%; */
-     
-  /* Font smoothing. That was taken from TWBS */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-     
-  /* Uncomment for 3D effect */
-  text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3);
-}

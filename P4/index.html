@@ -6,25 +6,30 @@
 	<link rel="stylesheet" type="text/css" href="estilos/estilo1.css">
 </head>
 <body>
-	<header>
+	<header id="header">
 		<!-- Logotipo -->
-		<a href="index.html"><img src="recursos/LogoRecetea2.png" alt="Preti Logo"></a>
-		<h1>Creativity & Beyond</h1>
+		<div id="logo">
+			<a href="index.html"><img src="recursos/LogoRecetea2.png" alt="Preti Logo"></a>
+			<h1>Creativity & Beyond</h1>
+		</div>
 
 		<!-- Buscador -->
-		<form>
-			<input type="search" name="buscador" placeholder='Buscar... '>
-			<input type="submit" name="buscador" value="🔍" >
-		</form>
+		<div id="busqueda">
+			<form>
+				<input type="search" name="buscador" placeholder='Buscar... '>
+				<input type="submit" name="buscador" value="🔍" >
+			</form>
 
-		<!-- Enlaces a Buscar -->
-		<a href="buscar.html">Búsqueda Avanzada</a>
+			<!-- Enlaces a Buscar -->
+			<a href="buscar.html">Búsqueda Avanzada</a>
+		</div>
 
 		<!-- Enlaces a Login/Registro -->
-		<a href="usuarioRegistrado.html">Perfil de Usuario</a>
-		<a href="login.html">Login</a>
-		<a href="registro.html">Registro</a>
-		<hr>
+		<div id="usuario">
+			<a href="login.html">Login</a>
+			<a href="registro.html">Registro</a>
+		</div>
+		
 	</header>
 
 	<section> <!-- 5 Ultimas Imagenes -->
@@ -83,6 +88,7 @@
 	<footer>
 		<!-- Copyright -->
 		<p>&copy; <a href="about.html"><strong>Alejandro Roca Vande Sype, Víctor Conejero Vicente</strong></a> <time datetime="2018-09">| Septiembre 2018</time></p>
+		<a href="#header">↑</a>
 	</footer>
 </body>
 </html>

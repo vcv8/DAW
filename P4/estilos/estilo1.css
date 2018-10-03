@@ -1,7 +1,9 @@
+/* GLOBAL */
 *{
   box-sizing: border-box;
 }
 
+/* BODY */
 body {
   width: 100%;
   font-size: 14px;
@@ -17,7 +19,6 @@ body {
 }
 
 /* HEADER */
-
   body>header{
     display: flex;
     flex-direction: row;
@@ -34,7 +35,6 @@ body {
     margin: 0;
   }
 
-
   #logo{
     overflow: hidden;
     align-self: left;
@@ -48,6 +48,7 @@ body {
     }
     #logo>h1{
       margin: auto;
+      margin-left: .2em;
     }
   #busqueda{
     align-self: center;
@@ -59,6 +60,8 @@ body {
   #usuario{
     text-align: right;
     width: 30%;
+    margin: auto;
+    margin-right: .2em;
   }
 
 /* FOOTER */     

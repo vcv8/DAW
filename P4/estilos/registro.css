@@ -34,8 +34,8 @@ body {
     margin: 0;
   }
 
-
-  #InicioSesion{
+/* Bloque formulario */
+#Registro{
   
     text-align: center;
     font-size: 15px;
@@ -43,40 +43,63 @@ body {
     padding: 5% 10% 10% 10%;  /* arriba, derecha, abajo, izqd */
   }
 
- .boxesForm{
-
-    width: 80%;
-    margin: 5px 0;
-    padding: 12px 0;
-    border: none;
-    border-bottom: 2px solid grey;
- }
-
- .enlaceBoton{
-
-    font-size: 16px;
-    margin:25px 0;
-    padding: 12px 28px;
-    border-radius: 8px;
-
- }
-
- .enlaceBoton:hover {
-    background-color: white; 
-}
-
-
 
   .marcoInicioRegistro{
-    
+
     border-width: 2px;
     border-color: grey;
     background-color: white;
     box-shadow: 2px 2px 5px #999;
     display: inline-block;
     width:30%;
-    height: 100%;
+   
   }
+
+/* Contenido formularios */
+
+   .boxesForm{
+
+      width: 80%;
+      margin: 5px 0;
+      padding: 12px 0;
+      border: none;
+      border-bottom: 2px solid grey;
+   }
+   /* Boton Enviar Formulario */
+   .enlaceBoton{
+
+      font-size: 16px;
+      margin:25px 0;
+      padding: 12px 28px;
+      border-radius: 8px;
+
+   }
+
+   .enlaceBoton:hover {
+      background-color: white; 
+  }
+
+  /*Fecha Nacimiento */
+  .mes{
+
+      width:40%;
+      margin: 5px 0;
+      padding: 12px 0;
+      border: none;
+      border-bottom: 2px solid grey;
+
+   }
+
+   .diaMes{
+
+      width:20%;
+      margin: 5px 0;
+      padding: 12px 0;
+      border: none;
+      border-bottom: 2px solid grey;
+
+   }
+
   
 
 /* FOOTER */     

@@ -51,7 +51,7 @@ body {
         max-width: 15%;
         height: 90%;
         margin: 0 .8em;
-        border-right: 1px solid #FFF;
+        border-right: 1px solid #E1E1E1;
       }
         body>header>a>div>h1{
           font-size: 20px;
@@ -71,6 +71,7 @@ body {
       display: flex;
       flex-direction: row;
       align-items: center;
+      justify-content: center;
       
       align-self: center;
       overflow: hidden;
@@ -81,23 +82,33 @@ body {
       text-decoration: none;
       color: #000;
     }
+      body>header>div:first-of-type>form{
+        margin-right: .3em;
+      }
+      body>header>div:first-of-type>a{
+        text-decoration: none;
+        color: #E1E1E1;
+      }
+      body>header>div:first-of-type>a:hover{
+        text-decoration: underline;
+      }
+
+    body>header>div:last-of-type{
+      text-align: right;
+      width: 30%;
+      margin: auto;
+      margin-right: .2em;
+    }
 
     #logo{
       max-height: 100%;
       max-width: 100%;
     }
 
-  #usuario{
-    text-align: right;
-    width: 30%;
-    margin: auto;
-    margin-right: .2em;
-  }
-
 /* FOOTER */     
   body>footer{
     background-color: #434343;
-    color: #fff;
+    color: #E1E1E1;
     padding: .5em;
     font-size: 16px;
     text-align: center;
@@ -107,18 +118,18 @@ body {
       align-self: center;
     }
       body>footer>p>a{
-        color: #fff;
+        color: #E1E1E1;
         text-decoration: none;
       }
       body>footer>p>a:hover{
-        color: #fff;
+        color: #E1E1E1;
         text-decoration: underline;
       }
     body>footer>a{
-      color: #fff;
+      color: #E1E1E1;
       text-decoration: none;
     }
     body>footer>a:hover{
-      color: #fff;
+      color: #E1E1E1;
       text-decoration: none;
     }

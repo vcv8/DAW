@@ -9,20 +9,20 @@
 		<!-- Logotipo -->
 		<a href="index.html"><img src="recursos/LogoRecetea2.png" alt="Preti Logo"></a>
 		<h1>Creativity & Beyond</h1>
-		<hr>
+		<link rel="stylesheet" type="text/css" href="estilos/login.css">
 	</header>
 
-	<section> <!--Formulario de Inicio de Sesión -->
-		<h2>Inicio de Sesión</h2>
-		<form action="usuarioRegistrado.html" method="post">
-			<p><input type="email" name="correo" placeholder="Introduce tu correo" autocomplete="on" required></p>
-			<p><input type="password" name="contraseña" placeholder="Introduce tu contraseña" required></p>
-			<input type="submit" value="Iniciar Sesión">
-		</form>
-
-		<p>¿No tienes ninguna cuenta? <a href="registro.html">Regístrate</a> 
-
-
+	<section id="InicioSesion"> <!--Formulario de Inicio de Sesión -->
+		<fieldset class="marcoInicioRegistro">
+			<form action="usuarioRegistrado.html" method="post">
+				<h2>Iniciar Sesión</h2>
+				<p><input class="boxesForm" type="email" name="correo" placeholder="Introduce tu correo" autocomplete="on" required></p>
+				<p><input class="boxesForm" type="password" name="contraseña" placeholder="Introduce tu contraseña" required></p>
+				<input class="enlaceBoton" type="submit" value="Iniciar Sesión">
+			</form>
+			<br><br>
+			<p>¿No tienes ninguna cuenta? <a href="registro.html">Regístrate</a> 
+		</fieldset>
 	</section>
 
 	<footer>

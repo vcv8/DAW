@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>PRETI</title>
+	<link rel="stylesheet" type="text/css" href="estilos/usuarioRegistrado.css">
 </head>
 <body>
 	<header>
@@ -12,30 +13,30 @@
 
 		<!-- Nombre y Imagen del usuario registrado -->
 		<!--<a href="usuarioRegistrado.html"><img src="recursos/EjemploPerfil.png" alt="Preti Logo"></a> -->
-
-		<hr>
 	</header>
 
 	<!-- Seccion que contiene la foto de perfil del usuario, sus datos, enlaces .... -->
 	<section>
 		<article >
 			<figure>
-				<img src="recursos/EjemploPerfil.png" alt="Foto Perfil">
-				<figcaption>
+				<div id="FotoPerfil">
+					<img src="recursos/EjemploPerfil.png" alt="Foto Perfil" id="fotoPerfil">
 					<p><b>Roxo95</b></p>
 					<p><a href="usuarioRegistrado.html"> Cerrar Sesión</a></p>
-					<h2>Detalles de Usuario</h2>
-						<ul> <!-- Lista de datos del Usuario -->
-							<li><p><b>Correo </b> pepitodelospalotes@hotmail.com</p></li>
-							<li><p><b>Sexo </b> Hombre</p></li>
-							<li><p><b>Fecha de Nacimiento </b> 12/09/1968</p></li>
-							<li><p><b>Ciudad </b> Valencia</p></li>
-							<li><p><b>País </b> España</p></li>
-							<li><p><b>Álbumes </b><a href="usuarioRegistrado.html" title="Accede a tu lista de Álbumes">Mis Álbumes</a> <a href="usuarioRegistrado.html" title="Crea un nuevo Álbum">Crear Álbum</a> <a href="solicitudAlbum.html" title="Solicita la impresion de un Álbum">Solicitar Álbum</a> </p></li>
-						</ul>
-					<p><a href="usuarioRegistrado.html">Modificar datos</a></p>
-					<p><a href="usuarioRegistrado.html">Darme de Baja</a></p>
-				</figcaption>
+				</div>
+					<div id="InfoUsuario">
+						<h2>Detalles de Usuario</h2>
+							<ul> <!-- Lista de datos del Usuario -->
+								<li><p><b>Correo </b> pepitodelospalotes@hotmail.com</p></li>
+								<li><p><b>Sexo </b> Hombre</p></li>
+								<li><p><b>Fecha de Nacimiento </b> 12/09/1968</p></li>
+								<li><p><b>Ciudad </b> Valencia</p></li>
+								<li><p><b>País </b> España</p></li>
+								<li><p><b>Álbumes </b><a href="usuarioRegistrado.html" title="Accede a tu lista de Álbumes">Mis Álbumes</a> <a href="usuarioRegistrado.html" title="Crea un nuevo Álbum">Crear Álbum</a> <a href="solicitudAlbum.html" title="Solicita la impresion de un Álbum">Solicitar Álbum</a> </p></li>
+							</ul>
+						<p><a href="usuarioRegistrado.html">Modificar datos</a></p>
+						<p><a href="usuarioRegistrado.html">Darme de Baja</a></p>
+					</div>
 			</figure>
 		</article>
 	</section>

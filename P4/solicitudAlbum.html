@@ -3,19 +3,22 @@
 <head>
 	<meta charset="UTF-8">
 	<title>PRETI</title>
+	<link rel="stylesheet" type="text/css" href="estilos/solicitarAlbum.css">
 </head>
 <body onload="document.getElementById('resslider').value=150">
 	<header>
 		<!-- Logotipo -->
-		<a href="index.html"><img src="recursos/LogoRecetea2.png" alt="Preti Logo"></a>
-		<h1>Creativity & Beyond</h1>
-		<hr>
+		<a href="index.html">
+			<div><img src="recursos/pretilg.png" alt="Preti Logo" id="logo"></div>
+			<div><h1>Preti.</h1></div>
+			<div><h2>Creativity & Beyond</h2></div>
+		</a>
 	</header>
 
 	<section>
 		<h2>Solicitar Álbum</h2>
 		<p>Mediante esta opción puedes solicitar la impresión y envío de uno de tus álbumes a color y resolución deseada.</p>
-		<article>
+		<article id="tablaTarifas">
 			<table>
 				<caption><b>Tarifas</b></caption>
 				<tr>
@@ -38,48 +41,50 @@
 				</tr>
 			</table>
 		</article>
-		<article>
-			<h3>Formulario de solicitud</h3>
-			<p>Los parámetros marcados con (*) son obligatorios.</p>
-			<form action="resSolicitud.html">
-				<p>Nombre: <input type="text" name="nombre" placeholder="Nombre y Apellidos..." maxlength="200" required> (*)</p>
-				<p>Título: <input type="text" name="titulo" placeholder="Título para el álbum..." maxlength="200" required> (*)</p>
-				<p>Texto adicional: <input type="text" name="descripcion" placeholder="Descripción, dedicatoria..." maxlength="4000"></p>
-				<p>Correo electrónico: <input type="email" name="correo" placeholder="alguien@algo.es" autocomplete="on" maxlength="200" required> (*)</p>
-				<p>Dirección: <input type="text" name="calle" placeholder="Calle..." required>
-					<input type="number" name="numero" placeholder="Número" min="1">
-					<input type="number" name="cp" placeholder="Código Postal" required>
-					<select required>
-						<option disabled selected value> - Localidad - </option>
-						<option value="SanVicentdelRaspeig">San Vicent del Raspeig</option>
-					</select>
-					<select required>
-						<option disabled selected value> - Provincia - </option>
-						<option value="3">Alicante</option>
-					</select>
-					<select required>
-						<option disabled selected value> - País - </option>
-						<option value="Spain">España</option>
-					</select>
-				 (*)</p>
-				<p>Teléfono de contacto: <input type="tel" name="telefono" placeholder="### ### ###" required> (*)</p>
-				<p>Color de portada: <input type="color" name="color"></p>
-				<p>Número de copias: <input type="number" name="copias" value="1" min="1" required></p>
-				<p>Resolución de impresión: <input type="range" id="resslider" name="resolucion" min="150" max="900" step="150" value="150" onchange="document.getElementById('outresolucion').textContent=this.value">
-					<output id="outresolucion">150</output> dpi
-				</p>
-				<p>Álbum: 
-					<select required>
-						<option disabled selected value> - mis álbumes - </option>
-					  	<option value="paisajes">Paisajes</option>
-					  	<option value="bodajm">Boda Jose María</option>
-					  	<option value="viajeitalia">Viaje Italia</option>
-					</select>
-				 (*)</p>
-				<p>Fecha de recepción aproximada: <input type="date" name="fechaRecepcion"></p>
-				<p>Impresión a color? <input type="radio" name="cimpresion" value="color" required>Color <input type="radio" name="cimpresion" value="blancoynegro" required>Blanco y Negro  (*)</p>
-				<p><input type="submit" value="Solicitar"></p>
-			</form>	
+		<article id="SolicitudAlbum">
+			<fieldset id="marcoSolicitudAlbum">
+				<h3>Formulario de solicitud</h3>
+				<p>Los parámetros marcados con (*) son obligatorios.</p>
+				<form action="resSolicitud.html">
+					<p><b>Nombre</b><input class="boxesAlbum" type="text" name="nombre" placeholder="Nombre y Apellidos..." maxlength="200" required> (*)</p>
+					<p><b>Título</b> <input class="boxesAlbum" type="text" name="titulo" placeholder="Título para el álbum..." maxlength="200" required> (*)</p>
+					<p><b>Texto adicional</b> <input class="bigBoxes" type="text" name="descripcion" placeholder="Descripción, dedicatoria..." maxlength="4000"></p>
+					<p><b>Correo electrónico</b> <input class="boxesAlbum" type="email" name="correo" placeholder="alguien@algo.es" autocomplete="on" maxlength="200" required> (*)</p>
+					<p><b>Dirección</b> <input class="boxesAlbum"type="text" name="calle" placeholder="Calle..." required>
+						<input class="direccion" type="number" name="numero" placeholder="Número" min="1">
+						<input class="direccion" type="number" name="cp" placeholder="Código Postal" required>
+						<select class="direccion" required>
+							<option disabled selected value> - Localidad - </option>
+							<option value="SanVicentdelRaspeig">San Vicent del Raspeig</option>
+						</select>
+						<select class="direccion" required>
+							<option disabled selected value> - Provincia - </option>
+							<option value="3">Alicante</option>
+						</select>
+						<select class="direccion" required>
+							<option disabled selected value> - País - </option>
+							<option value="Spain">España</option>
+						</select>
+					 (*)</p>
+					<p><b>Teléfono de contacto </b><input class="boxesAlbum" type="tel" name="telefono" placeholder="### ### ###" required> (*)</p>
+					<p><b>Color de portada</b> <input type="color" name="color"></p>
+					<p><b>Número de copias</b> <input class="numCopias" type="number" name="copias" value="1" min="1" required></p>
+					<p><b>Resolución de impresión</b> <input class="valorRango" type="range" id="resslider" name="resolucion" min="150" max="900" step="150" value="150" onchange="document.getElementById('outresolucion').textContent=this.value">
+						<output id="outresolucion">150</output> dpi
+					</p>
+					<p><b>Álbum </b>
+						<select class="direccion" required>
+							<option disabled selected value> - mis álbumes - </option>
+						  	<option value="paisajes">Paisajes</option>
+						  	<option value="bodajm">Boda Jose María</option>
+						  	<option value="viajeitalia">Viaje Italia</option>
+						</select>
+					 (*)</p>
+					<p><b>Fecha de recepción aproximada </b><input class="direccion" type="date" name="fechaRecepcion"></p>
+					<p><b>¿Impresión a color?</b> <input type="radio" name="cimpresion" value="color" required>Color <input type="radio" name="cimpresion" value="blancoynegro" required>Blanco y Negro  (*)</p>
+					<p><input id="solicitarAlbum" type="submit" value="Solicitar"></p>
+				</form>	
+			</fieldset>
 		</article>
 		
 	</section>

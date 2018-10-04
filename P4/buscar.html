@@ -3,30 +3,45 @@
 <head>
 	<meta charset="UTF-8">
 	<title>PRETI</title>
+	<link rel="stylesheet" type="text/css" href="estilos/buscar.css">
 </head>
 <body>
-	<header>
+	<header id="header">
 		<!-- Logotipo -->
-		<a href="index.html"><img src="recursos/LogoRecetea2.png" alt="Preti Logo"></a>
-		<h1>Creativity & Beyond</h1>
+		<a href="index.html">
+			<div><img src="recursos/pretilg.png" alt="Preti Logo" id="logo"></div>
+			<div><h1>Preti.</h1></div>
+			<div><h2>Creativity & Beyond</h2></div>
+		</a>
+
 		<!-- Buscador -->
-		<input type="search" name="buscador" placeholder='Buscar... '>
-		<!-- Enlaces a Buscar -->
-		<a href="buscar.html">Búsqueda Avanzada</a>
+		<div id="busqueda">
+			<form>
+				<input type="search" name="buscador" placeholder='Buscar... '><input type="submit" name="buscador" value="🔍" >
+			</form>
+
+			<!-- Enlaces a Buscar -->
+			<a href="buscar.html">Búsqueda Avanzada</a>
+		</div>
+
 		<!-- Enlaces a Login/Registro -->
-		<a href="login.html">Login</a>
-		<a href="registro.html">Registro</a>
-		<hr>
+		<div id="usuario">
+			<a href="login.html">Login</a>
+			<a href="registro.html">Registro</a>
+		</div>
+		
 	</header>
 
-	<section>
-		<h2>Búsqueda Avanzada</h2>
-		<form action="resBuscar.html">
-			<p>Título: <input type="text" name="titulo" placeholder="Amanecer..."></p>
-			<p>Fecha entre: <input type="date" name="fechaInicial"> y: <input type="date" name="fechaFinal"></p>
-			<p>País: <input type="text" name="pais" placeholder="España..."></p>
-			<p><input type="submit" value="Buscar Fotos"></p>
-		</form>
+	<section id="busquedaAvanzada">
+		<fieldset class="marcoBusqueda">
+			<h2>Búsqueda Avanzada</h2>
+			<form action="resBuscar.html">
+				<p><b>Título </b><input class="boxesBusqueda" type="text" name="titulo" placeholder=" Amanecer..."></p>
+				<p><b>País </b><input class="boxesBusqueda" type="text" name="pais" placeholder=" España..."></p>
+				<p><b>Fecha entre </b> <input class ="fecha" type="date" name="fechaInicial"> <b> y </b> <input class ="fecha" type="date" name="fechaFinal"></p>
+				<p><input class="enlaceBoton" type="submit" value="Buscar Fotos"></p>
+			</form>
+		</fieldset>
 	</section>
 
 	<footer>

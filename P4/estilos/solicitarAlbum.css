@@ -105,6 +105,8 @@ body {
       max-width: 100%;
     }
 
+
+
     body>section>h2 {
 
       font-size: 30px;
@@ -178,7 +180,7 @@ body {
      
      }
 
-    .boxesAlbum{
+    .boxesAlbum{   /* Boxes formulario */
 
       width: 40%;
       margin: 5px 0 0 5px;
@@ -209,18 +211,19 @@ body {
    .valorRango{
 
       width: 20%;
-      margin: 5px 0 0 10px;
+      margin: 5px 10px 0 10px;
       padding: 5px 0 5px 5px;
 
       -webkit-appearance: none;
-    height: 15px;
-    border-radius: 5px;   
-    background: #d3d3d3;
-    outline: none;
-    opacity: 0.7;
-    -webkit-transition: .2s;
-    transition: opacity .2s;
+      height: 15px;
+      border-radius: 5px;   
+      background: #d3d3d3;
+      outline: none;
+      opacity: 0.7;
+      -webkit-transition: .2s;
+      transition: opacity .2s;
    }
+
 
    /* Boton Enviar Formulario */
     #solicitarAlbum{

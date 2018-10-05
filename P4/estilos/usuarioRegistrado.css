@@ -94,11 +94,48 @@ body {
       }
 
     body>header>div:last-of-type{
-      text-align: right;
+      display: flex;
+      flex-direction: row;
+      justify-content: right;
       width: 30%;
       margin: auto;
       margin-right: .2em;
     }
+      body>header>div:last-of-type>a{
+        width: 92px;
+        height: 35px;
+        text-decoration: none;
+        color: #E1E1E1;
+
+        border-bottom: solid #000;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+
+        margin-right: .5em;
+        margin-top: .2em;
+        padding: .5em .8em;
+      }
+      body>header>div:last-of-type>a:hover{
+        
+      }
+      body>header>div:last-of-type>a:first-of-type{
+        border-top: solid #4B483F;
+      }
+      body>header>div:last-of-type>a:first-of-type:hover{
+        background-color: #E1E1E1;
+        border-top: solid #E1E1E1;
+        color: #000;
+      }
+      body>header>div:last-of-type>a:last-of-type{
+        background-color: #000;
+        border-top: solid #000;
+        margin-right: .8em;
+      }
+      body>header>div:last-of-type>a:last-of-type:hover{
+        background-color: #FFDB70;
+        border-top: solid #FFDB70;
+        color: #000;
+      }
 
     #logo{
       max-height: 100%;
@@ -115,6 +152,19 @@ body {
     font-size: 15px;
   }
 
+  #FotoPerfil>img{
+
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+  }
+
+  #NombreUsuario{
+
+     font-size: 20px;
+     padding-left: 4%;
+  }
+
+  /* Bloque info Usuario */
   .marcoUsuario{
 
     border-width: 2px;
@@ -123,12 +173,54 @@ body {
     box-shadow: 2px 2px 5px #999;
     display: inline-block;
     width:50%;
-    margin-top: 5%;
+    margin-top: 5%; 
+    margin-bottom: 5%;
+    margin-left: auto;
+    margin-right: auto;
     padding-left: 1%;
+    font-size: 18px;
   }
 
-  #InfoUsuario {
-    font-size: 18px;
+  .listaInfo{
+
+
+  }
+
+  #InfoUsuario{
+
+    list-style-type: none;
+    margin: 0;
+    padding: 0 0 0 2%;
+  }
+
+  /* Enlaces Info Usuario */
+  #Modificar-Borrar{
+
+    display: block;
+    width:40%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 6%;
+    margin-bottom: 3%;
+  }
+
+  .enlacesUsuario{
+
+   color: white;
+   background-color: grey;
+   text-decoration: none;
+   border-radius: 4px;
+   padding: 8px 24px;
+   margin-left: 3%;
+   transition-duration: 0.4s;
+  }
+
+ .enlacesUsuario:hover{
+
+    background-color: white; /* Green */
+    color: black;
+    border: 1px solid black;
+   
   }
 
   /* FOOTER */     

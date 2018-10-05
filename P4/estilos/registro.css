@@ -107,12 +107,15 @@ body {
 
 
 /* Bloque formulario */
-#Registro{
+.Inicio-Registro{
   
     text-align: center;
     font-size: 15px;
     display: block;
-    padding: 5% 10% 10% 10%;  /* arriba, derecha, abajo, izqd */
+    padding: 5% 0 10% 0;  /* arriba, derecha, abajo, izqd */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
   }
 
 
@@ -136,8 +139,8 @@ body {
       padding: 12px 0 12px 5px;
       border: none;
       border-bottom: 2px solid grey;
-      background-color: #FFF;
-      color: #000;
+      background-color: white;
+      color: black;
    }
    /* Boton Enviar Formulario */
    .enlaceBoton{

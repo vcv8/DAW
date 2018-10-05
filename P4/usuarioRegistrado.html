@@ -16,34 +16,37 @@
 
 		<!-- Nombre y Imagen del usuario registrado -->
 		<!--<a href="usuarioRegistrado.html"><img src="recursos/EjemploPerfil.png" alt="Preti Logo"></a> -->
+
+		<!-- Enlaces a Login/Registro -->
+	<!--	<div>
+			<a href="login.html">Login</a><a href="registro.html">Registro</a>
+		</div>-->
 	</header>
 
 	<!-- Seccion que contiene la foto de perfil del usuario, sus datos, enlaces .... -->
 	<section>
-		<article >
-			<figure>
-				<div id="FotoPerfil">
-					<img src="recursos/EjemploPerfil.png" alt="Foto Perfil" id="fotoPerfil">
-					<p><b>Roxo95</b></p>
-					<p><a href="usuarioRegistrado.html"> Cerrar Sesión</a></p>
+		<div id="FotoPerfil">
+			<img src="recursos/EjemploPerfil.png" alt="Foto Perfil" id="fotoPerfil">
+			<p id="NombreUsuario"><b>Roxo95</b></p>
+			<p><a class="enlacesUsuario" href="usuarioRegistrado.html" title="Cierra sesión en este dispositivo"> Cerrar Sesión</a></p>
+		</div>
+		<div>
+			<fieldset class="marcoUsuario">
+				<h2>Detalles de Usuario</h2>
+				<ul id="InfoUsuario"> <!-- Lista de datos del Usuario -->
+					<li><p class="listaInfo"><b>Correo </b> pepitodelospalotes@hotmail.com</p></li>
+					<li><p><b>Sexo </b> Hombre</p></li>
+					<li><p><b>Fecha de Nacimiento </b> 12/09/1968</p></li>
+					<li><p><b>Ciudad </b> Valencia</p></li>
+					<li><p><b>País </b> España</p></li>
+					<li><p><b>Álbumes </b><a class="enlacesUsuario" href="usuarioRegistrado.html" title="Accede a tu lista de Álbumes">Mis Álbumes</a> <a class="enlacesUsuario" href="usuarioRegistrado.html" title="Crea un nuevo Álbum">Crear Álbum</a> <a class="enlacesUsuario" href="solicitudAlbum.html" title="Solicita la impresion de un Álbum">Solicitar Álbum</a> </p></li>
+				</ul>
+				<div id="Modificar-Borrar">
+					<p><a class="enlacesUsuario" href="usuarioRegistrado.html" title="Modifica tus datos personales">Modificar datos</a>
+					<a class="enlacesUsuario" href="usuarioRegistrado.html" title="Darte de baja en Preti">Darme de Baja</a></p>
 				</div>
-					<div id="InfoUsuario">
-						<fieldset class="marcoUsuario">
-							<h2>Detalles de Usuario</h2>
-								<ul> <!-- Lista de datos del Usuario -->
-									<li><p><b>Correo </b> pepitodelospalotes@hotmail.com</p></li>
-									<li><p><b>Sexo </b> Hombre</p></li>
-									<li><p><b>Fecha de Nacimiento </b> 12/09/1968</p></li>
-									<li><p><b>Ciudad </b> Valencia</p></li>
-									<li><p><b>País </b> España</p></li>
-									<li><p><b>Álbumes </b><a href="usuarioRegistrado.html" title="Accede a tu lista de Álbumes">Mis Álbumes</a> <a href="usuarioRegistrado.html" title="Crea un nuevo Álbum">Crear Álbum</a> <a href="solicitudAlbum.html" title="Solicita la impresion de un Álbum">Solicitar Álbum</a> </p></li>
-								</ul>
-							<p><a href="usuarioRegistrado.html">Modificar datos</a></p>
-							<p><a href="usuarioRegistrado.html">Darme de Baja</a></p>
-						</fieldset>
-					</div>
-			</figure>
-		</article>
+			</fieldset>
+		</div>
 	</section>
 
 	<footer>

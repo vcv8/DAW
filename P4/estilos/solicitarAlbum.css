@@ -196,6 +196,8 @@ body {
       width: 35%;
       margin: 5px 0 0 5px;
       padding: 5px 0 5px 5px;
+      background-color: white;
+    color: black;
    }
 
    .bigBoxes{
@@ -203,6 +205,8 @@ body {
       width: 40%;
       margin: 5px 0 0 5px;
       padding: 5px 0 30px 5px;
+      background-color: white;
+    color: black;
    }
 
    .direccion{
@@ -210,6 +214,8 @@ body {
       width: 20%;
       margin: 5px 0 0 5px;
       padding: 5px 0 5px 5px;
+      background-color: white;
+    color: black;
    }
 
    .numCopias{
@@ -217,6 +223,8 @@ body {
       width: 7%;
       margin: 5px 0 0 5px;
       padding: 5px 0 5px 5px;
+      background-color: white;
+    color: black;
    }
 
    .valorRango{

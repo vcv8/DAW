@@ -274,3 +274,7 @@ body {
       color: #E1E1E1;
       text-decoration: none;
     }
+
+body>p{
+  text-align: center;
+}

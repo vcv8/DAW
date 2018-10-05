@@ -171,7 +171,7 @@ body {
     background-color: white;
     box-shadow: 2px 2px 5px #999;
     display: inline-block;
-    width:72%;
+    width:50%;
     margin-top: 5%; 
     margin-bottom: 5%;
     margin-left: auto;
@@ -196,7 +196,7 @@ body {
   #Modificar-Borrar{
 
     display: block;
-    width:47%;
+    width:40%;
     margin-left: auto;
     margin-right: auto;
     margin-top: 6%;

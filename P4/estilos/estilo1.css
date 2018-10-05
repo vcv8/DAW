@@ -79,7 +79,7 @@
       #detalle>article>div>p>a{
         font-weight: bold;
         text-decoration: none;
-        color: #E4BA16;
+        color: #FFDB70;
       }
       #detalle>article>div>p>a:hover{
         text-decoration: underline;
@@ -99,7 +99,7 @@ body {
   width: 100%;
   font-size: 14px;
   color: #434343;
-  background-color: #E4BA16;
+  background-color: #FFDB70;
   /*min-width: 320px;
   max-width: 960px;*/
   margin: 0 auto ; 
@@ -278,3 +278,380 @@ body {
 body>p{
   text-align: center;
 }
+
+/* Bloque formulario */
+.Inicio-Registro{
+  
+    text-align: center;
+    font-size: 15px;
+    display: block;
+    padding: 5% 0 10% 0;  /* arriba, derecha, abajo, izqd */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+
+  .marcoInicioRegistro{
+
+    border-width: 2px;
+    border-color: grey;
+    background-color: white;
+    box-shadow: 2px 2px 5px #999;
+    display: inline-block;
+    width:30%;
+   
+  }
+
+/* Contenido formularios */
+
+   .boxesForm{
+
+      width: 80%;
+      margin: 5px 0;
+      padding: 12px 0 12px 5px;
+      border: none;
+      border-bottom: 2px solid grey;
+      background-color: white;
+      color: black;
+   }
+   /* Boton Enviar Formulario */
+   .enlaceBoton{
+
+      font-size: 16px;
+      margin:25px 0;
+      padding: 12px 28px;
+      border-radius: 8px;
+      transition-duration: 0.4s;
+
+   }
+
+   .enlaceBoton:hover {
+      background-color: white; 
+      color: black;
+      border: 2px solid black;
+  }
+
+  /*Fecha Nacimiento */
+  .mes{
+
+      width:40%;
+      margin: 5px 0;
+      padding: 12px 0 12px 5px;
+      border: none;
+      border-bottom: 2px solid grey;
+      background-color: white;
+      color: black;
+
+   }
+
+   .diaMes{
+
+      width:20%;
+      margin: 5px 0;
+      padding: 12px 0 12px 5px;
+      border: none;
+      border-bottom: 2px solid grey;
+      background-color: white;
+      color: black;
+
+   }
+
+/* Bloque foto de Perfil */ 
+
+  #FotoPerfil{
+
+    padding: 5% 0 0 3%;
+    float:left;
+    width:25%;
+    font-size: 15px;
+  }
+
+  #FotoPerfil>img{
+
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+  }
+
+  #NombreUsuario{
+
+     font-size: 20px;
+     padding-left: 4%;
+  }
+
+  /* Bloque info Usuario */
+  .marcoUsuario{
+
+    border-width: 2px;
+    border-color: grey;
+    background-color: white;
+    box-shadow: 2px 2px 5px #999;
+    display: inline-block;
+    width:72%;
+    margin-top: 5%; 
+    margin-bottom: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1%;
+    font-size: 18px;
+  }
+
+  #InfoUsuario{
+
+    list-style-type: none;
+    margin: 0;
+    padding: 0 0 0 2%;
+  }
+
+  /* Enlaces Info Usuario */
+  #Modificar-Borrar{
+
+    display: block;
+    width:47%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 6%;
+    margin-bottom: 3%;
+  }
+
+  .enlacesUsuario{
+
+   color: white;
+   background-color: grey;
+   text-decoration: none;
+   border-radius: 4px;
+   padding: 8px 24px;
+   margin-left: 3%;
+   transition-duration: 0.4s;
+  }
+
+ .enlacesUsuario:hover{
+
+    background-color: white; 
+    color: black;
+    border: 1px solid black;
+   
+  }
+
+  /* Bloque Busqueda Avanzada */
+
+#busquedaAvanzada{
+
+    text-align: left;
+    font-size: 20px;
+    display: block;
+    padding: 5% 10% 10% 10%;  /* arriba, derecha, abajo, izqd */
+
+}
+
+.marcoBusqueda{
+
+    border-width: 2px;
+    border-color: grey;
+    background-color: white;
+    box-shadow: 2px 2px 5px #999;
+    display: inline-block;
+    width:55%;
+    margin-left: 25%;
+    padding-left: 2%;
+
+}
+
+/* Contenido formularios */
+
+   .boxesBusqueda{
+
+      width: 35%;
+      margin: 5px 5px 0 5px;
+      padding: 5px 0 5px 10px;
+      display: inline-block;
+
+   }
+
+   /* Boton Enviar Formulario */
+   #buscarFotos{
+
+      font-size: 16px;
+      padding: 12px 28px;
+      border-radius: 8px;
+      display: block;
+      margin-left: auto;
+      margin-right:auto;
+      margin-top: 5%;
+      width: 30%;
+      transition-duration: 0.4s;
+
+   }
+
+   #buscarFotos:hover {
+      background-color: white; /* Green */
+      color: black;
+      border: 2px solid black;
+  }
+
+  label{
+
+    display: inline-block;
+    float: left;
+    clear: left;
+    width: 110px;
+    text-align: left;
+  }
+
+
+  /**/
+
+  body>section>h2 {
+
+      font-size: 30px;
+      padding-left: 1%;
+
+    }
+
+    body>section>p {
+
+      font-size: 18px;
+      padding-left: 1%;
+
+    }
+
+
+
+    /* Tabla Info precios */
+    #tablaTarifas{
+
+      font-size: 20px;
+      display: block;
+      padding: 2% 0 5% 20%;  /* arriba, derecha, abajo, izqd */
+
+    }
+    table, caption{
+
+      border: 1px solid black;
+      text-align: center;
+      border-collapse: collapse;  /* Para que los bordes se junten */
+      
+
+    }
+    th, table>caption{
+
+        background-color: grey;
+        border: 1px solid black;
+        padding: 10px;
+
+    }
+    td{
+
+        background-color: white;
+        border: 1px solid black;
+        padding: 10px;
+
+    }
+
+    /* Formulario Solicitud Album */
+
+    body>section>article>fieldset>h3{
+      font-size: 30px;
+    }
+
+    label{
+
+    display: inline-block;
+    float: left;
+    clear: left;
+    width: 180px;
+    text-align: left;
+  }
+
+
+    #SolicitudAlbum{
+
+      font-size: 18px;
+      display: block;
+      padding: 0 10% 10% 22%;  /* arriba, derecha, abajo, izqd */
+      margin-left: auto;
+      margin-right: auto;
+
+    }
+
+     #marcoSolicitudAlbum{
+
+      border-width: 2px;
+      border-color: grey;
+      background-color: white;
+      box-shadow: 2px 2px 5px #999;
+      display: inline-block;
+      width:75%;
+      padding-left: 2%;
+     
+     }
+
+    .boxesAlbum{   /* Boxes formulario */
+
+      width: 35%;
+      margin: 5px 0 0 5px;
+      padding: 5px 0 5px 5px;
+      background-color: white;
+    color: black;
+   }
+
+   .bigBoxes{
+
+      width: 40%;
+      margin: 5px 0 0 5px;
+      padding: 5px 0 30px 5px;
+      background-color: white;
+    color: black;
+   }
+
+   .direccion{
+
+      width: 20%;
+      margin: 5px 0 0 5px;
+      padding: 5px 0 5px 5px;
+      background-color: white;
+    color: black;
+   }
+
+   .numCopias{
+
+      width: 7%;
+      margin: 5px 0 0 5px;
+      padding: 5px 0 5px 5px;
+      background-color: white;
+    color: black;
+   }
+
+   .valorRango{
+
+      width: 20%;
+      margin: 5px 10px 0 10px;
+      padding: 5px 0 5px 5px;
+
+      -webkit-appearance: none;
+      height: 15px;
+      border-radius: 5px;   
+      background: #d3d3d3;
+      outline: none;
+      opacity: 0.7;
+      -webkit-transition: .2s;
+      transition: opacity .2s;
+   }
+
+
+   /* Boton Enviar Formulario */
+    #solicitarAlbum{
+
+      font-size: 16px;
+      margin:5% 0 0 42%;
+      padding: 12px 28px;
+      border-radius: 8px;
+      transition-duration: 0.4s;
+
+   }
+
+   #solicitarAlbum:hover {
+      background-color: white; /* Green */
+      color: black;
+      border: 2px solid black;
+  }

@@ -38,7 +38,6 @@ body {
       flex-direction: row;
       align-items: center;
       
-      align-self: left;
       overflow: hidden;
       width: 30%;
       
@@ -160,6 +159,16 @@ body {
       font-size: 30px;
     }
 
+    label{
+
+    display: inline-block;
+    float: left;
+    clear: left;
+    width: 180px;
+    text-align: left;
+  }
+
+
     #SolicitudAlbum{
 
       font-size: 18px;
@@ -184,14 +193,14 @@ body {
 
     .boxesAlbum{   /* Boxes formulario */
 
-      width: 40%;
+      width: 35%;
       margin: 5px 0 0 5px;
       padding: 5px 0 5px 5px;
    }
 
    .bigBoxes{
 
-      width: 50%;
+      width: 40%;
       margin: 5px 0 0 5px;
       padding: 5px 0 30px 5px;
    }
@@ -234,11 +243,14 @@ body {
       margin:5% 0 0 42%;
       padding: 12px 28px;
       border-radius: 8px;
+      transition-duration: 0.4s;
 
    }
 
    #solicitarAlbum:hover {
-      background-color: white; 
+      background-color: white; /* Green */
+      color: black;
+      border: 2px solid black;
   }
 
 

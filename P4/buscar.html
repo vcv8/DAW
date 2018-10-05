@@ -15,8 +15,8 @@
 		</a>
 
 		<!-- Buscador -->
-		<div id="busqueda">
-			<form>
+		<div>
+			<form action="resBuscar.html" method="get">
 				<input type="search" name="buscador" placeholder='Buscar... '><input type="submit" name="buscador" value="🔍" >
 			</form>
 
@@ -36,9 +36,9 @@
 		<fieldset class="marcoBusqueda">
 			<h2>Búsqueda Avanzada</h2>
 			<form action="resBuscar.html">
-				<p><b>Título </b><input class="boxesBusqueda" type="text" name="titulo" placeholder=" Amanecer..."></p>
-				<p><b>País </b><input class="boxesBusqueda" type="text" name="pais" placeholder=" España..."></p>
-				<p><b>Fecha entre </b> <input class="boxesBusqueda" type="date" name="fechaInicial"> <b> y </b> <input class="boxesBusqueda" type="date" name="fechaFinal"></p>
+				<p><label><b>Título </b></label><input class="boxesBusqueda" type="text" name="titulo" placeholder=" Amanecer..."></p>
+				<p><label><b>País </b></label><input class="boxesBusqueda" type="text" name="pais" placeholder=" España..."></p>
+				<p><label><b>Fecha entre </b></label> <input class="boxesBusqueda" type="date" name="fechaInicial"> <b> y </b> <input class="boxesBusqueda" type="date" name="fechaFinal"></p>
 				<p><input id="buscarFotos" type="submit" value="Buscar Fotos"></p>
 			</form>
 		</fieldset>

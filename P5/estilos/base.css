@@ -1,0 +1,16 @@
+
+/* Por defecto ocultaremos todo aquello que lleve estas clases */
+.display-great {
+
+	display: none;
+}
+
+.display-medium {
+
+	display: none;
+}
+
+.display-mini{
+
+	display: none;
+}

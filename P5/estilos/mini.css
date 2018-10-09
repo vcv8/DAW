@@ -1,0 +1,5 @@
+
+/* Activamos esta clase para que todo aquello que lo lleve se pueda mostrar */
+.display-mini {
+	display: inherit !important;
+}

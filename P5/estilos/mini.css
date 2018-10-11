@@ -3,3 +3,7 @@
 .display-mini {
 	display: inherit !important;
 }
+
+body>header>a>div:first-of-type{
+	border-right: none;
+}

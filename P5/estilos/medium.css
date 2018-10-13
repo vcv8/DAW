@@ -5,6 +5,17 @@
 }
 
 
+/* Para que se muestren los labels al lado de los inputs */
+label {
+
+	  padding: 12px 12px 12px 0;
+	  display: inline-block;
+	  float: left;
+	  width: 25%;
+	  margin-top: 6px;
+}
+
+
 /*body{
 	background-color: white;
 } */

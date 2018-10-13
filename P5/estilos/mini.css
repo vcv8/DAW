@@ -5,7 +5,7 @@
 }
 /* FORMULARIOS */
 /* Para que las cajas y demas de los Formularios se muestren uno encima de otro y no a los lados */
-.boxesAlbum, .bigBoxes, .direccion, .numCopias, .valorRango, #solicitarAlbum, .boxesForm, .enlaceBoton {
+.boxesAlbum, .bigBoxes, .direccion, .numCopias, .valorRango, #solicitarAlbum, .boxesForm, .enlaceBoton, label {
 
 	width: 100%;
     margin-top: 0;
@@ -20,6 +20,26 @@
 
 	width: 80%;
 }
+
+ #SolicitudAlbum {
+
+ 	 padding: 0 5% 0 5%;
+ 	 float: center;
+
+}
+
+#marcoSolicitudAlbum {
+
+	width: 100%;
+}
+
+input[type=radio] {
+
+	
+	margin-top: 0;
+}
+
+
 
 
 #headerItems>a>div:first-of-type{

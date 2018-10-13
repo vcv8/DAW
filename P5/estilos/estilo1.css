@@ -186,9 +186,6 @@ body>section{
     .headerItems>div:last-of-type{
       flex-wrap: wrap;
       flex: 1 0 0%;
-
-      /*width: 34%;*/
-      /*margin: auto;*/
       margin-right: 2%;
 
       display: flex;

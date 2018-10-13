@@ -4,12 +4,3 @@
 	display: inherit !important;
 }
 
-
-label{
-
-    display: inline-block;
-    float: left;
-    clear: left;
-    width: 180px;
-    text-align: left;
-  }

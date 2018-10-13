@@ -490,14 +490,15 @@ body>p{
       border: 2px solid black;
   }
 
-  label{
+  /*label{
 
     display: inline-block;
     float: left;
     clear: left;
     width: 110px;
     text-align: left;
-  }
+  } */
+
 
 
   /**/
@@ -579,26 +580,26 @@ body>p{
 
     .boxesAlbum{   /* Boxes formulario */
 
-      width: 35%;
-      margin: 5px 0 0 5px;
+      width: 30%;
+      margin: 6px 0 0 5px;
       padding: 5px 0 5px 5px;
       background-color: white;
-    color: black;
+      color: black;
    }
 
    .bigBoxes{
 
       width: 40%;
-      margin: 5px 0 0 5px;
+      margin: 6px 0 0 5px;
       padding: 5px 0 30px 5px;
       background-color: white;
-    color: black;
+      color: black;
    }
 
    .direccion{
 
       width: 20%;
-      margin: 5px 0 0 5px;
+      margin: 6px 0 0 5px;
       padding: 5px 0 5px 5px;
       background-color: white;
     color: black;
@@ -607,16 +608,16 @@ body>p{
    .numCopias{
 
       width: 7%;
-      margin: 5px 0 0 5px;
+      margin: 6px 0 0 5px;
       padding: 5px 0 5px 5px;
       background-color: white;
-    color: black;
+      color: black;
    }
 
    .valorRango{
 
       width: 20%;
-      margin: 5px 10px 0 10px;
+      margin: 6px 10px 0 10px;
       padding: 5px 0 5px 5px;
 
       -webkit-appearance: none;
@@ -634,10 +635,13 @@ body>p{
     #solicitarAlbum{
 
       font-size: 16px;
-      margin:5% 0 0 42%;
       padding: 12px 28px;
+      margin-top: 50px;
       border-radius: 8px;
       transition-duration: 0.4s;
+
+      margin-left: auto;
+      margin-right: auto;
 
    }
 

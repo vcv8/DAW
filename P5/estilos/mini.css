@@ -4,12 +4,16 @@
 	display: inherit !important;
 }
 
+/* Para que las cajas y demas de los Formularios se muestren uno encima de otro y no a los lados */
+.boxesAlbum, .bigBoxes, .direccion, .numCopias, .valorRango, #solicitarAlbum, .boxesForm{
 
-label{
+	width: 100%;
+    margin-top: 0;
+}
 
-    display: inline-block;
-    float: left;
-    clear: left;
-    width: 60em;
-    text-align: left;
-  }
+.diaMes {
+
+	margin-top: 0;
+	width: 28.5%;
+}
+

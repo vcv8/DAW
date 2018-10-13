@@ -4,6 +4,6 @@
 	display: inherit !important;
 }
 
-#headerItems>a>div:first-of-type{
+.headerItems>a>div:first-of-type{
 	border-right: none;
 }

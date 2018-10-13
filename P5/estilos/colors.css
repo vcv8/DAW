@@ -1,0 +1,32 @@
+:root {
+	--1: #cfcfd1;
+	--2: #7d7d80;
+	--3: #38383d;
+	--4: #2a2a2c;
+	--5: #0078d7;
+	--6: #ffffff;
+	--7: #000000;
+}
+
+.top-right {
+  background-color: rgba(0, 0, 0, 0.6);;
+  border-left: solid 1px var(--6);
+}
+
+#detalle>article>figure>img{
+    border: solid 1px var(--6);
+}
+
+body {
+  width: 100%;
+  font-size: 14px;
+  color: var(--7);
+  background-color: var(--1);
+  /*min-width: 320px;
+  max-width: 960px;*/
+  margin: 0 auto ; 
+  border-left: solid var(--6); 
+  border-right: solid var(--6);
+  border-bottom: solid var(--6); 
+  padding: 0; /*.5em .5em .5em;*/
+}

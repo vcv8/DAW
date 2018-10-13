@@ -7,27 +7,38 @@
 </head>
 <body>
 	<header id="header">
-		<!-- Logotipo -->
-		<a href="index.html">
-			<div><img src="recursos/pretilg.png" alt="Preti Logo" class="imagen"></div>
-			<div><h1>Preti.</h1></div>
-			<div><h2>Creativity & Beyond</h2></div>
-		</a>
+		<div class="headerItems">
+			<!-- Logotipo -->
+			<a href="index.html">
+				<div><img src="recursos/pretilg.png" alt="Preti Logo" class="imagen"></div>
+				<div class="display-medium display-great"><h1>Preti.</h1></div>
+				<div class="display-great"><h2>Creativity & Beyond</h2></div>
+			</a>
 
-		<!-- Buscador -->
-		<div>
-			<form action="resBuscar.html" method="get">
-				<input type="search" name="buscador" placeholder='Buscar... '><input type="submit" name="buscador" value="🔍" >
-			</form>
+			<!-- Menu -->
+			<div>
+				<label for="ckburger" id="burger">≣</label>
+				<!-- <p class="menutext display-medium display-great">Menú</p> -->
+			</div>
 
-			<!-- Enlaces a Buscar -->
-			<a href="buscar.html">Búsqueda Avanzada</a>
+			<!-- Enlaces a Login/Registro -->
+			<div class="display-medium display-great">
+				<a href="login.html">Login</a><a href="registro.html">Registro</a>
+			</div>
 		</div>
 
-		<!-- Enlaces a Login/Registro -->
-		<div>
-			<a href="login.html">Login</a><a href="registro.html">Registro</a>
-		</div>
+		<input type="checkbox" id="ckburger">
+		<nav id="navbar">
+			<ul>
+				<li><a href="index.html" class="display-medium display-great">Inicio</a></li>
+				<li><a href="buscar.html" class="display-medium display-great">Búsqueda Avanzada</a></li>
+				<li><a href="usuarioRegistrado.html" class="display-medium display-great">Perfil de Usuario</a></li>
+				<li><form action="resBuscar.html" method="get" class="display-medium display-great">
+						<input type="search" name="buscador" placeholder='Buscar... '><input type="submit" name="buscador" value="🔍" >
+					</form>
+				</li>
+			</ul>
+		</nav>
 	</header>
 	
 	<p>Mostrando resultados para:</p>

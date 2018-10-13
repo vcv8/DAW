@@ -97,13 +97,11 @@ body {
   font-size: 14px;
   color: #434343;
   background-color: #FFDB70;
-  /*min-width: 320px;
-  max-width: 960px;*/
   margin: 0 auto ; 
   border-left: solid #fff; 
   border-right: solid #fff;
   border-bottom: solid #fff; 
-  padding: 0; /*.5em .5em .5em;*/
+  padding: 0;
 }
 
 body>section{

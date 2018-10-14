@@ -3,12 +3,11 @@
 .display-medium {
 	display: inherit !important;
 }
-
+/* FORMULARIOS */
 .boxesAlbum, .bigBoxes, .numCopias, .valorRango, label {
 
 	width: 50%;
 }
-
 
 /* Para que se muestren los labels al lado de los inputs */
 label {
@@ -20,7 +19,32 @@ label {
 	  margin-top: 6px;
 }
 
+/* USUARIO REGISTRADO */
+#FotoPerfil>img{
+
+    display: block;
+    margin-left: 100%;
+    margin-right: 100%;
+    width: 50%;
+
+}
+
+.marcoUsuario {
+
+	width: 85%;
+	margin-left: auto,
+	margin-right:auto;
+	display: block;
+}
+
+ #Modificar-Borrar {
+
+ 	width:40%;
+ }
+
+
+ 
 
 body{
-	background-color: white;
+	background-color: cyan;
 } 

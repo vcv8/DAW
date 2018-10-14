@@ -15,7 +15,55 @@
 	display: none;
 }
 
+/* Formularios */
 .marcoInicioRegistro{
 
 	width: 30%;
 }
+
+/* Usuario Registrado */
+
+#FotoPerfil>img{
+
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+  }
+
+
+ #InfoUsuario{
+
+    list-style-type: none;
+    margin: 0;
+    padding: 0 0 0 2%;
+  }
+
+.enlacesUsuario, #cierreSesion{
+
+   color: white;
+   background-color: grey;
+   text-decoration: none;
+   transition-duration: 0.4s;
+
+   border-radius: 4px;
+   padding: 8px 24px;
+   margin-left: 3%;
+  
+  }
+
+.enlacesUsuario:hover, #cierreSesion:hover {
+
+    background-color: white; 
+    color: black;
+    border: 1px solid black;
+   
+  }
+
+  /* Enlaces Info Usuario */
+  #Modificar-Borrar{
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 6%;
+    margin-bottom: 3%;
+  }

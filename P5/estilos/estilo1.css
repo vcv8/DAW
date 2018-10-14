@@ -421,11 +421,6 @@ body>p{
     font-size: 15px;
   }
 
-  #FotoPerfil>img{
-
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
-  }
 
   #NombreUsuario{
 
@@ -440,7 +435,7 @@ body>p{
     border-color: grey;
     background-color: white;
     box-shadow: 2px 2px 5px #999;
-    display: inline-block;
+    display: block;
     width:50%;
     margin-top: 5%; 
     margin-bottom: 5%;
@@ -450,42 +445,6 @@ body>p{
     font-size: 18px;
   }
 
-  #InfoUsuario{
-
-    list-style-type: none;
-    margin: 0;
-    padding: 0 0 0 2%;
-  }
-
-  /* Enlaces Info Usuario */
-  #Modificar-Borrar{
-
-    display: block;
-    width:40%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 6%;
-    margin-bottom: 3%;
-  }
-
-  .enlacesUsuario{
-
-   color: white;
-   background-color: grey;
-   text-decoration: none;
-   border-radius: 4px;
-   padding: 8px 24px;
-   margin-left: 3%;
-   transition-duration: 0.4s;
-  }
-
- .enlacesUsuario:hover{
-
-    background-color: white; 
-    color: black;
-    border: 1px solid black;
-   
-  }
 
   /* Bloque Busqueda Avanzada */
 

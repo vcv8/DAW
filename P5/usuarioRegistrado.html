@@ -2,8 +2,15 @@
 <html lang="es">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0" /> <!-- Para que se pueda aplicar un diseño adaptable y la correcta visualizacion en dispo móviles -->
 	<title>PRETI</title>
 	<link rel="stylesheet" type="text/css" href="estilos/estilo1.css">
+	<link rel="stylesheet" type="text/css" href="estilos/base.css" />  <!-- Para definir las propiedades que queremos que siempre se apliquen independientemente del tam de pantalla-->
+	<!-- Estilos que se aplican en función del tam de la pantalla -->
+	<!-- Indicamos el medio (pantallas) y la anchura mínima requerida para que se active este css --> 
+	<link rel="stylesheet" type="text/css" href="estilos/great.css" media="screen and (min-width: 981px)" />  <!-- Pantallas Grandes -->
+	<link rel="stylesheet" type="text/css" href="estilos/medium.css" media="screen and (min-width: 481px) and (max-width: 980px)" /> <!-- Pantallas Medianas -->
+	<link rel="stylesheet" type="text/css" href="estilos/mini.css" media="screen and (max-width: 480px)" /> <!-- Pantallas Pequeñas (Móviles) -->
 </head>
 <body>
 	<header>
@@ -20,7 +27,7 @@
 		<div id="FotoPerfil">
 			<img src="recursos/EjemploPerfil.png" alt="Foto Perfil" id="fotoPerfil">
 			<p id="NombreUsuario"><b>Roxo95</b></p>
-			<p><a class="enlacesUsuario" href="usuarioRegistrado.html" title="Cierra sesión en este dispositivo"> Cerrar Sesión</a></p>
+			<p class="display-great"><a class="enlacesUsuario" href="usuarioRegistrado.html" title="Cierra sesión en este dispositivo"> Cerrar Sesión</a></p>
 		</div>
 		<div>
 			<fieldset class="marcoUsuario">
@@ -31,13 +38,22 @@
 					<li><p><b>Fecha de Nacimiento </b> 12/09/1968</p></li>
 					<li><p><b>Ciudad </b> Valencia</p></li>
 					<li><p><b>País </b> España</p></li>
-					<li><p><b>Álbumes </b><a class="enlacesUsuario" href="usuarioRegistrado.html" title="Accede a tu lista de Álbumes">Mis Álbumes</a> <a class="enlacesUsuario" href="usuarioRegistrado.html" title="Crea un nuevo Álbum">Crear Álbum</a> <a class="enlacesUsuario" href="solicitudAlbum.html" title="Solicita la impresion de un Álbum">Solicitar Álbum</a> </p></li>
+					<li><p><b>Álbumes </b></p>
+						<p class="display-great"><a class="enlacesUsuario" href="usuarioRegistrado.html" title="Accede a tu lista de Álbumes">Mis Álbumes</a> <a class="enlacesUsuario" href="usuarioRegistrado.html" title="Crea un nuevo Álbum">Crear Álbum</a> <a class="enlacesUsuario" href="solicitudAlbum.html" title="Solicita la impresion de un Álbum">Solicitar Álbum</a> </p>
+
+						<p class="display-mini"><a class="enlacesUsuario" href="usuarioRegistrado.html" title="Accede a tu lista de Álbumes">Mis Álbumes</a></p> <p class="display-mini"> <a class="enlacesUsuario" href="usuarioRegistrado.html" title="Crea un nuevo Álbum">Crear Álbum</a></p> <p class="display-mini"> <a class="enlacesUsuario" href="solicitudAlbum.html" title="Solicita la impresion de un Álbum">Solicitar Álbum</a> </p>
+					</li>
 				</ul>
+				<hr class="display-mini">
 				<div id="Modificar-Borrar">
-					<p><a class="enlacesUsuario" href="usuarioRegistrado.html" title="Modifica tus datos personales">Modificar datos</a>
+					<p class="display-great"><a class="enlacesUsuario" href="usuarioRegistrado.html" title="Modifica tus datos personales">Modificar datos</a>
 					<a class="enlacesUsuario" href="usuarioRegistrado.html" title="Darte de baja en Preti">Darme de Baja</a></p>
+
+					<p class="display-mini"><a class="enlacesUsuario" href="usuarioRegistrado.html" title="Modifica tus datos personales">Modificar datos</a></p>
+					<p class="display-mini"> <a class="enlacesUsuario" href="usuarioRegistrado.html" title="Darte de baja en Preti">Darme de Baja</a></p>
 				</div>
 			</fieldset>
+			<p class="menu display-mini display-medium"><a id="cierreSesion" href="usuarioRegistrado.html" title="Cierra sesión en este dispositivo"> Cerrar Sesión</a></p>
 		</div>
 	</section>
 

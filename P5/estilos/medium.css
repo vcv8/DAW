@@ -4,6 +4,11 @@
 	display: inherit !important;
 }
 
+.boxesAlbum, .bigBoxes, .numCopias, .valorRango, label {
+
+	width: 50%;
+}
+
 
 /* Para que se muestren los labels al lado de los inputs */
 label {
@@ -16,6 +21,6 @@ label {
 }
 
 
-/*body{
+body{
 	background-color: white;
-} */
+} 

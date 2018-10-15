@@ -15,13 +15,46 @@
 	display: none;
 }
 
-/* Formularios */
+/* FORMULARIOS */
+
+.Inicio-Registro{
+  
+    text-align: center;
+    font-size: 15px;
+    display: block;
+    padding: 5% 0 10% 0;  /* arriba, derecha, abajo, izqd */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
 .marcoInicioRegistro{
 
-	width: 30%;
-}
+    border-width: 2px;
+    border-color: grey;
+    background-color: white;
+    box-shadow: 2px 2px 5px #999;
+    display: inline-block;
+   
+  }
 
-/* Usuario Registrado */
+
+#SolicitudAlbum{
+
+     font-size: 18px;
+     display: block;
+  }
+
+#marcoSolicitudAlbum{
+
+      border-width: 2px;
+      border-color: grey;
+      background-color: white;
+      box-shadow: 2px 2px 5px #999;
+      display: inline-block; 
+ }
+
+/* USUARIO REGISTRADO */
 
 #FotoPerfil>img{
 
@@ -29,12 +62,27 @@
 
   }
 
-
  #InfoUsuario{
 
     list-style-type: none;
     margin: 0;
     padding: 0 0 0 2%;
+  }
+
+ .marcoUsuario{
+
+    border-width: 2px;
+    border-color: grey;
+    background-color: white;
+    box-shadow: 2px 2px 5px #999;
+    display: block;
+    width:50%;
+    margin-top: 5%; 
+    margin-bottom: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1%;
+    font-size: 18px;
   }
 
 .enlacesUsuario, #cierreSesion{
@@ -45,8 +93,7 @@
    transition-duration: 0.4s;
 
    border-radius: 4px;
-   padding: 8px 24px;
-   margin-left: 3%;
+   text-align: center;
   
   }
 
@@ -57,13 +104,9 @@
     border: 1px solid black;
    
   }
-
-  /* Enlaces Info Usuario */
+/* Enlaces Info Usuario */
   #Modificar-Borrar{
-
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
     margin-top: 6%;
     margin-bottom: 3%;
+    text-align: center;
   }

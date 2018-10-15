@@ -10,9 +10,29 @@ label {
 
 	  padding: 12px 12px 12px 0;
 	  display: inline-block;
-	  float: left;
-	  width: 25%;
-	  margin-top: 6px;
+	  width: 100%;
+}
+
+.boxesAlbum {
+
+	width: 30%;
+	display: block;
+}
+
+.marcoInicioRegistro {
+
+	width:35%;
+}
+
+#marcoSolicitudAlbum {
+
+	width:75%;
+    padding-left: 2%;
+}
+
+#SolicitudAlbum{
+
+	padding: 0 10% 10% 22%;  /* arriba, derecha, abajo, izqd */
 }
 
 /* USUARIO REGISTRADO */
@@ -37,5 +57,4 @@ label {
   .enlacesUsuario{
 
 	   padding: 8px 21px;
-  
   }

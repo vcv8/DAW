@@ -45,8 +45,7 @@
    transition-duration: 0.4s;
 
    border-radius: 4px;
-   padding: 8px 24px;
-   margin-left: 3%;
+   text-align: center;
   
   }
 
@@ -57,13 +56,9 @@
     border: 1px solid black;
    
   }
-
-  /* Enlaces Info Usuario */
+/* Enlaces Info Usuario */
   #Modificar-Borrar{
-
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
     margin-top: 6%;
     margin-bottom: 3%;
+    text-align: center;
   }

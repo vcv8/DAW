@@ -394,21 +394,6 @@ body>p{
 
 /* Bloque foto de Perfil */ 
 
-  #FotoPerfil{
-
-    padding: 5% 0 0 3%;
-    float:left;
-    width:25%;
-    font-size: 15px;
-  }
-
-
-  #NombreUsuario{
-
-     font-size: 20px;
-     padding-left: 4%;
-  }
-
   /* Bloque info Usuario */
   .marcoUsuario{
 

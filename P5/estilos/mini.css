@@ -96,3 +96,24 @@ hr {
 .headerItems>a>div:first-of-type{
 	border-right: none;
 }
+.headerItems>div>a{
+	
+}
+
+nav>ul{
+	max-height: 500px;
+}
+nav>ul>li{
+	/*padding: 0 .4em;*/
+	margin: 1.8em 0;
+	display: block;
+	border: none;
+}
+.firstlast{
+	border: none;
+	margin: .8em 0;
+}
+
+#ckburger:checked + nav{
+  max-height: 500px;
+}

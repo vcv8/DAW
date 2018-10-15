@@ -6,8 +6,6 @@
 }
 
 .imagen{
-  /*max-height: 100%;
-  max-width: 100%;*/
   max-height: auto;
   max-width: 68%;
 }
@@ -21,6 +19,7 @@
   margin: 0;
 }
 
+/* FOTOS EN PREVIEW */
 .contenedor{
   position: relative;
   text-align: center;
@@ -43,7 +42,17 @@
   text-align: right;
 }
 .imgResume>p{
-  margin: 2em 0;
+  padding: 0 .4em;
+  margin: 1.6em 0;
+  margin-top: 3em;
+}
+.imgResume>p:first-of-type{
+  padding-bottom: .5em;
+  margin-top: .5em;
+}
+.imgResume>p:last-of-type{
+  margin-top: 1.6em;
+  margin-bottom: 3em;
 }
 
 #detalle{
@@ -110,10 +119,6 @@ body>section{
 }
 
 /* HEADER */
-  body>header{
-    color: #E1E1E1;
-    background-color: #4B483F;
-  }
     .headerItems{
       max-width: 1040px;
       margin: 0 auto;
@@ -135,7 +140,6 @@ body>section{
       
       font-family: 'Source Serif Pro', serif;
       text-decoration: none;
-      color: #E1E1E1;
     }
       .headerItems>a>div:first-of-type{
         width: 2em;
@@ -143,7 +147,6 @@ body>section{
         height: 70%;
         margin-right: .8em;
         padding-right: .5em;
-        border-right: 1px solid #E1E1E1;
 
         display: flex;
         align-items: center;
@@ -179,7 +182,6 @@ body>section{
         width: 15px;
 
         cursor: pointer;
-        background-image: url(../recursos/burgerW.png);
         background-size: 15px 15px;
       }
 
@@ -196,9 +198,7 @@ body>section{
         width: 92px;
         height: 35px;
         text-decoration: none;
-        color: #E1E1E1;
 
-        border-bottom: solid #000;
         border-top-left-radius: 5px;
         border-top-right-radius: 5px;
 
@@ -206,29 +206,11 @@ body>section{
         margin-top: .2em;
         padding: .5em .8em;
       }
-      .headerItems>div:last-of-type>a:first-of-type{
-        border-top: solid #4B483F;
-      }
-      .headerItems>div:last-of-type>a:first-of-type:hover{
-        background-color: #E1E1E1;
-        border-top: solid #E1E1E1;
-        color: #000;
-      }
       .headerItems>div:last-of-type>a:last-of-type{
-        background-color: #000;
-        border-top: solid #000;
         margin-right: .8em;
-      }
-      .headerItems>div:last-of-type>a:last-of-type:hover{
-        background-color: #FFDB70;
-        border-top: solid #FFDB70;
-        color: #000;
       }
 
     nav{
-      background-color: #000;
-      border-top: solid 1px #fff;
-
       max-height: 0;
       overflow: hidden;
 
@@ -254,24 +236,30 @@ body>section{
         margin-left: .8em;
       }
         nav>ul>li>a {
-          color: #434343;
           text-decoration: none;
           padding: .2em .5em;
           margin: 0;
-        }
-        nav>ul>li>a:hover {
-          color: #fff;
         }
 
     #ckburger{
       display: none;
     }
-    #ckburger2:checked + #burger{
-      background: #000;
-    }
     #ckburger:checked + nav{
       max-height: 50px;
     }
+
+    #brbar{
+      padding: 3px 3px 3px 8px;
+      border: none;
+    }
+    #brbutton{
+      cursor: pointer;
+      padding-bottom: 3px;
+      padding-left: 5px;
+      border-radius: 5px;
+      border-bottom-left-radius: 0;
+    }
+
 
 /*SECTION FOTOS PREVIEW*/
   .preview{
@@ -290,7 +278,6 @@ body>section{
       height: 300px;
       margin: 0 1.4em;
       margin-top: 2.8em;
-      border: solid 1px #FFF;
     }
       .preview>article>figure{
         max-height: 100%;
@@ -301,33 +288,27 @@ body>section{
 
 /* FOOTER */     
   body>footer{
-    background-color: #434343;
-    color: #E1E1E1;
     padding: .5em;
     font-size: 16px;
     text-align: center;
-    margin-top: 2.8em;
+    margin-top: 4.5em;
   }
     body>footer>p{
       margin: 0;
       align-self: center;
     }
       body>footer>p>a{
-        color: #E1E1E1;
         text-decoration: none;
       }
       body>footer>p>a:hover{
-        color: #E1E1E1;
         text-decoration: underline;
       }
-    body>footer>a{
-      color: #E1E1E1;
-      text-decoration: none;
-    }
-    body>footer>a:hover{
-      color: #E1E1E1;
-      text-decoration: none;
-    }
+      body>footer>p>a:last-of-type:hover{
+        text-decoration: none;
+      }
+      body>footer>p>time{
+        margin-right: 2em; 
+      }
 
 body>p{
   text-align: center;

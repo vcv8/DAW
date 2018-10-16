@@ -64,6 +64,10 @@ input[type=radio] {
 
 
 /* USUARIO REGISTRADO */
+
+#FotoPerfil{
+    margin-top:5%;
+  }
 #FotoPerfil>img{
 
     display: block;

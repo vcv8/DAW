@@ -120,3 +120,10 @@ body>footer>p>a{
 body>footer>a{
   color: var(--3);
 }
+
+/* FORMULARIOS */
+
+.swaplink{
+  color: var(--5);
+  text-decoration: none;
+}

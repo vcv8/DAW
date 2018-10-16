@@ -132,3 +132,9 @@ option {
     display: inline-block;
 
  }
+
+
+/*HEADER*/
+.headerItems>div>a>span:first-of-type{
+  display: none;
+}

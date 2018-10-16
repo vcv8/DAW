@@ -55,6 +55,7 @@
   margin-bottom: 3em;
 }
 
+/* DETALLE FOTO */
 #detalle{
   padding: 1em 8em 3em 8em;
 }
@@ -159,7 +160,7 @@ body {
           margin: 0 .2em;
         }
 
-    .headerItems>span:first-of-type{
+    .headerItems>span{
       flex: 0 1 auto;
       width: 5em;
       min-width: 20px;
@@ -292,7 +293,7 @@ body {
       body>footer>p>a:hover{
         text-decoration: underline;
       }
-      body>footer>p>a:last-of-type:hover{
+      #arriba{
         text-decoration: none;
       }
       body>footer>p>time{

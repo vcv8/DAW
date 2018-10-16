@@ -133,7 +133,6 @@ hr {
 }
 
 #buscarFotos{
-
       display: block;
       margin-left: auto;
       margin-right:auto;
@@ -144,14 +143,17 @@ hr {
 
 
 /* HEADER */
-
 .headerItems>a>div:first-of-type{
 	border-right: none;
 }
 .headerItems>div>a{
-	
+	width: 40px;
+}
+.headerItems>div>a>span:last-of-type{
+	display: none;
 }
 
+/* MENU NAVEGACION */
 nav>ul{
 	max-height: 500px;
 }

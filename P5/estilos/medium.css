@@ -128,7 +128,6 @@ label {
    margin-left: 35%;
   }
 
-
 /* BUSQUEDA AVANZADA */
 .marcoBusqueda{
 
@@ -156,6 +155,10 @@ label {
 }
 
 
+/*HEADER*/
+.headerItems>div>a>span:first-of-type{
+	display: none;
+}
 
  
 

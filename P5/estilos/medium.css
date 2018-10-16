@@ -81,7 +81,10 @@ label {
    margin-left: 35%;
   }
 
-
+/*HEADER*/
+.headerItems>div>a>span:first-of-type{
+	display: none;
+}
  
 
 /*body{

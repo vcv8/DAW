@@ -58,3 +58,8 @@ label {
 
 	   padding: 8px 21px;
   }
+
+/*HEADER*/
+.headerItems>div>a>span:first-of-type{
+  display: none;
+}

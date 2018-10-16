@@ -24,13 +24,60 @@ label {
 
 #marcoSolicitudAlbum {
 
-	width:75%;
+	width:80%;
+}
+
+.boxesAlbum{   /* Boxes formulario */
+
+      width: 55%;
+   }
+
+.bigBoxes{
+
+    width: 60%;
+    margin: 3px 0 0 5px;
+    padding: 5px 0 30px 5px;
+   }
+
+.direccion{
+
+    width: 45%;
+   }
+
+.numCopias{
+
+    width: 15%;
+   }
+
+.valorRango{
+
+    width: 35%;
+   }
+
+.boxesAlbum, .direccion, .numCopias, .valorRango {
+
+	margin: 6px 0 0 5px;
+    padding: 5px 0 5px 5px;
 }
 
 #SolicitudAlbum{
 
 	padding: 0 10% 10% 22%;  /* arriba, derecha, abajo, izqd */
 }
+
+#SolicitudAlbum{
+
+	padding: 0 0 10% 15%;  /* arriba, derecha, abajo, izqd */
+}
+
+#solicitarAlbum{
+
+    margin-left: 30%;
+    margin-right: auto;
+    margin-top: 30px;
+    width: 40%;
+
+   }
 
 
 
@@ -80,6 +127,34 @@ label {
    padding: 8px 24px;
    margin-left: 35%;
   }
+
+
+/* BUSQUEDA AVANZADA */
+.marcoBusqueda{
+
+   width:85%;
+   margin-left: 5%;
+
+}
+
+.boxesBusqueda{
+
+    width: 60%;
+    margin: 0 5px 0 5px;
+    padding: 5px 0 5px 10px;
+    display: block;
+
+}
+
+#buscarFotos{
+
+    margin-left: 25%;
+    margin-right:auto;
+    margin-top: 5%;
+    width: 50%;
+
+}
+
 
 
  

@@ -26,14 +26,60 @@ label {
 
 #marcoSolicitudAlbum {
 
-	width:75%;
+	width:80%;
     padding-left: 2%;
+}
+option {
+
+	text-align: center;
+}
+
+.boxesAlbum{   /* Boxes formulario */
+
+      width: 40%;
+   }
+
+.bigBoxes{
+
+    width: 45%;
+    margin: 6px 0 0 5px;
+    padding: 5px 0 30px 5px;
+   }
+
+.direccion{
+
+    width: 30%;
+   }
+
+.numCopias{
+
+    width: 10%;
+   }
+
+.valorRango{
+
+    width: 35%;
+   }
+
+.boxesAlbum, .direccion, .numCopias, .valorRango {
+
+	margin: 6px 0 0 5px;
+    padding: 5px 0 5px 5px;
 }
 
 #SolicitudAlbum{
 
 	padding: 0 10% 10% 22%;  /* arriba, derecha, abajo, izqd */
 }
+
+#solicitarAlbum{
+
+    margin-left: 35%;
+    margin-right: auto;
+    margin-top: 50px;
+    width: 30%;
+
+   }
 
 /* USUARIO REGISTRADO */
 #FotoPerfil{
@@ -48,13 +94,41 @@ label {
   }
 
 
-  #NombreUsuario{
+#NombreUsuario{
 
      font-size: 20px;
      padding-left: 4%;
   }
 
-  .enlacesUsuario{
+.enlacesUsuario{
 
 	   padding: 8px 21px;
   }
+
+
+/* BUSQUEDA AVANZADA */
+.marcoBusqueda{
+
+   width:70%;
+   margin-left: 15%;
+
+}
+
+#buscarFotos{
+
+    margin-left: auto;
+    margin-right:auto;
+    margin-top: 5%;
+    width: 50%;
+    margin-left: 25%;
+
+   }
+
+.boxesBusqueda{
+
+    width: 45%;
+    margin: 0 5px 0 5px;
+    padding: 5px 0 5px 5px;
+    display: inline-block;
+
+ }

@@ -6,7 +6,7 @@
 
 /* FORMULARIOS */
 /* Para que las cajas y demas de los Formularios se muestren uno encima de otro y no a los lados */
-.boxesAlbum, .bigBoxes, .direccion, .numCopias, .valorRango, #solicitarAlbum, .boxesForm, .enlaceBoton, label {
+.boxesAlbum, .bigBoxes, .direccion, .numCopias, .valorRango, #solicitarAlbum, .boxesForm, .enlaceBoton, label, .boxesBusqueda {
 
 	width: 100%;
     margin-top: 0;
@@ -33,12 +33,41 @@
 	width: 100%;
 }
 
+.boxesAlbum{   /* Boxes formulario */
+
+      padding: 5px 0 5px 5px;
+   }
+
+.bigBoxes{
+
+    padding: 5px 0 30px 5px;
+   }
+
+.direccion{
+
+    padding: 5px 0 5px 5px;
+   }
+
+.numCopias{
+
+    padding: 5px 0 5px 5px;
+   }
+
+.valorRango{
+
+    padding: 5px 0 5px 5px;
+   }
+
 input[type=radio] {
 	margin-top: 0;
 }
 
 
 /* USUARIO REGISTRADO */
+
+#FotoPerfil{
+    margin-top:5%;
+  }
 #FotoPerfil>img{
 
     display: block;
@@ -87,8 +116,37 @@ hr {
   }
 
 
+/* BUSQUEDA AVANZADA */
 
-/*HEADER*/
+#busquedaAvanzada{
+    font-size: 18px;
+
+}
+
+.marcoBusqueda{
+
+    width: 100%;
+	margin-left: auto,
+	margin-right:auto;
+	display: block;
+}
+
+.boxesBusqueda{
+
+    padding: 5px 0 5px 10px;
+}
+
+#buscarFotos{
+      display: block;
+      margin-left: auto;
+      margin-right:auto;
+      margin-top: 5%;
+      width: 100%;
+   }
+
+
+
+/* HEADER */
 .headerItems>a>div:first-of-type{
 	border-right: none;
 }

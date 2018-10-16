@@ -45,6 +45,10 @@
      display: block;
   }
 
+ body>section>article>fieldset>h3{
+      font-size: 30px;
+   }
+
 #marcoSolicitudAlbum{
 
       border-width: 2px;
@@ -53,6 +57,43 @@
       box-shadow: 2px 2px 5px #999;
       display: inline-block; 
  }
+
+
+.boxesAlbum, .bigBoxes, .direccion, .numCopias{   /* Boxes formulario */
+
+      background-color: white;
+      color: black;
+   }
+
+
+.valorRango{
+    -webkit-appearance: none;
+    height: 15px;
+    border-radius: 5px;   
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+   }
+
+ /* Boton Enviar Formulario */
+#solicitarAlbum{
+
+    font-size: 16px;
+    padding: 12px 28px;
+    border-radius: 8px;
+    transition-duration: 0.4s;
+
+   }
+
+#solicitarAlbum:hover {
+    background-color: white; /* Green */
+    color: black;
+    border: 2px solid black;
+ }
+
+
 
 /* USUARIO REGISTRADO */
 
@@ -109,4 +150,49 @@
     margin-top: 6%;
     margin-bottom: 3%;
     text-align: center;
+  }
+
+
+/* BUSQUEDA AVANZADA */
+
+#busquedaAvanzada{
+
+    text-align: left;
+    font-size: 20px;
+    padding: 5% 10% 10% 10%;  /* arriba, derecha, abajo, izqd */
+
+}
+
+.marcoBusqueda{
+
+    border-width: 2px;
+    border-color: grey;
+    background-color: white;
+    box-shadow: 2px 2px 5px #999;
+    display: inline-block;
+    padding-left: 2%;
+
+}
+
+body>#busquedaAvanzada>.marcoBusqueda>h2,  body>section>#SolicitudAlbum>#marcoSolicitudAlbum>h3 {
+
+ 	text-align: center;
+ }
+
+
+/* Boton Enviar Formulario */
+#buscarFotos{
+
+      font-size: 16px;
+      padding: 12px 28px;
+      border-radius: 8px;
+      transition-duration: 0.4s;
+
+   }
+
+
+#buscarFotos:hover {
+      background-color: white; /* Green */
+      color: black;
+      border: 2px solid black;
   }

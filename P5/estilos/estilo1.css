@@ -360,73 +360,6 @@ body>p{
    }
 
 
-  /* Bloque Busqueda Avanzada */
-
-#busquedaAvanzada{
-
-    text-align: left;
-    font-size: 20px;
-    display: block;
-    padding: 5% 10% 10% 10%;  /* arriba, derecha, abajo, izqd */
-
-}
-
-.marcoBusqueda{
-
-    border-width: 2px;
-    border-color: grey;
-    background-color: white;
-    box-shadow: 2px 2px 5px #999;
-    display: inline-block;
-    width:55%;
-    margin-left: 25%;
-    padding-left: 2%;
-
-}
-
-/* Contenido formularios */
-
-   .boxesBusqueda{
-
-      width: 35%;
-      margin: 5px 5px 0 5px;
-      padding: 5px 0 5px 10px;
-      display: inline-block;
-
-   }
-
-   /* Boton Enviar Formulario */
-   #buscarFotos{
-
-      font-size: 16px;
-      padding: 12px 28px;
-      border-radius: 8px;
-      display: block;
-      margin-left: auto;
-      margin-right:auto;
-      margin-top: 5%;
-      width: 30%;
-      transition-duration: 0.4s;
-
-   }
-
-   #buscarFotos:hover {
-      background-color: white; /* Green */
-      color: black;
-      border: 2px solid black;
-  }
-
-  /*label{
-
-    display: inline-block;
-    float: left;
-    clear: left;
-    width: 110px;
-    text-align: left;
-  } */
-
-
-
   /**/
 
   body>section>h2 {
@@ -447,9 +380,9 @@ body>p{
     /* Tabla Info precios */
     #tablaTarifas{
 
-      font-size: 20px;
+      font-size: 18px;
       display: block;
-      padding: 2% 0 5% 20%;  /* arriba, derecha, abajo, izqd */
+      padding: 1% 0 5% 1%;  /* arriba, derecha, abajo, izqd */
 
     }
     table, caption{
@@ -477,81 +410,4 @@ body>p{
 
     /* Formulario Solicitud Album */
 
-    body>section>article>fieldset>h3{
-      font-size: 30px;
-    }
-
-
-    .boxesAlbum{   /* Boxes formulario */
-
-      width: 30%;
-      margin: 6px 0 0 5px;
-      padding: 5px 0 5px 5px;
-      background-color: white;
-      color: black;
-   }
-
-   .bigBoxes{
-
-      width: 40%;
-      margin: 6px 0 0 5px;
-      padding: 5px 0 30px 5px;
-      background-color: white;
-      color: black;
-   }
-
-   .direccion{
-
-      width: 20%;
-      margin: 6px 0 0 5px;
-      padding: 5px 0 5px 5px;
-      background-color: white;
-    color: black;
-   }
-
-   .numCopias{
-
-      width: 7%;
-      margin: 6px 0 0 5px;
-      padding: 5px 0 5px 5px;
-      background-color: white;
-      color: black;
-   }
-
-   .valorRango{
-
-      width: 20%;
-      margin: 6px 10px 0 10px;
-      padding: 5px 0 5px 5px;
-
-      -webkit-appearance: none;
-      height: 15px;
-      border-radius: 5px;   
-      background: #d3d3d3;
-      outline: none;
-      opacity: 0.7;
-      -webkit-transition: .2s;
-      transition: opacity .2s;
-   }
-
-
-   /* Boton Enviar Formulario */
-    #solicitarAlbum{
-
-      font-size: 16px;
-      padding: 12px 28px;
-      margin-top: 50px;
-      border-radius: 8px;
-      transition-duration: 0.4s;
-
-      margin-left: auto;
-      margin-right: auto;
-
-   }
-
-    #solicitarAlbum:hover {
-      background-color: white; /* Green */
-      color: black;
-      border: 2px solid black;
-    }
 

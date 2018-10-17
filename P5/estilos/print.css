@@ -1,7 +1,6 @@
 
 
 /* Version para la impresión de la pagina web */
-
 header{
 
   display: none;
@@ -9,6 +8,8 @@ header{
 
 body {
   background-image: none;
+  font-style: serif;
+  font-size: 12px;
 }
 
 /* Muestra la url de todos los enlaces que lleven a un contenido externo de la pagina */
@@ -20,3 +21,8 @@ a:after {
 	content:" <" attr(href) ">";
 }
 
+/* Evitar Saltos de pagina */
+ul, img, table  {
+
+	page-break-inside: avoid;
+}

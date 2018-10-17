@@ -325,9 +325,7 @@ body>p{
       margin: 5px 0;
       padding: 12px 0 12px 5px;
       border: none;
-      border-bottom: 2px solid grey;
-      background-color: white;
-      color: black;
+      font-family: 'Roboto', sans-serif;
    }
    /* Boton Enviar Formulario */
    .enlaceBoton{
@@ -337,14 +335,8 @@ body>p{
       padding: 12px 28px;
       border-radius: 8px;
       transition-duration: 0.4s;
-
+      font-family: 'Roboto', sans-serif;
    }
-
-   .enlaceBoton:hover {
-      background-color: white; 
-      color: black;
-      border: 2px solid black;
-  }
 
   /*Fecha Nacimiento */
   .mes{
@@ -353,9 +345,6 @@ body>p{
       margin: 5px 0;
       padding: 12px 0 12px 5px;
       border: none;
-      border-bottom: 2px solid grey;
-      background-color: white;
-      color: black;
 
    }
 
@@ -365,9 +354,6 @@ body>p{
       margin: 5px 0;
       padding: 12px 0 12px 5px;
       border: none;
-      border-bottom: 2px solid grey;
-      background-color: white;
-      color: black;
 
    }
 

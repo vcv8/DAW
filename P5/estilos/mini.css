@@ -175,3 +175,8 @@ nav>ul>li{
 #ckburger:checked + nav{
   max-height: 500px;
 }
+
+/*SECTION FOTOS PREVIEW*/
+.preview>article{
+  width: 100%;
+} 

@@ -161,7 +161,11 @@ label {
 	display: none;
 }
 
- 
+/*SECTION FOTOS PREVIEW*/
+.preview>article{
+  width: 100%;
+  max-width: 476px;
+} 
 
 /*body{
 	background-color: cyan;

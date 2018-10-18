@@ -206,7 +206,7 @@ body>#busquedaAvanzada>.marcoBusqueda>h2,  body>section>#SolicitudAlbum>#marcoSo
 /* TABLA TARIFAS */
 table, caption{
 
-      border: 1px solid black;
+      /*border: 1px solid black;*/
       text-align: center;
       border-collapse: collapse;  /* Para que los bordes se junten */
       

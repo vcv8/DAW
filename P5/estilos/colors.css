@@ -155,7 +155,7 @@ body>footer>a{
 
 /* Tabla Info precios */
 table, caption{
-  border: 1px solid var(--7);
+  /*border: 1px solid var(--7);*/
 }
 th, table>caption{
     background-color: var(--2);

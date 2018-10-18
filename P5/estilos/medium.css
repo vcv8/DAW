@@ -153,13 +153,14 @@ label {
 
 /* TABLA TARIFAS */
     #tablaTarifas{
-
-      font-size: 18px;
-      display: block; 
+      
       width: 100%;
-      padding: 1% 0 5% 20%;  /* arriba, derecha, abajo, izqd */
-
-
+      margin: auto;
+      text-align: center;
+      font-size: 18px;
+      display: inline-block;
+      padding: 1% 1% 5% 1%;  /* arriba, derecha, abajo, izqd */
+      
     }
 
 

@@ -1,28 +1,46 @@
 
 
 /* Version para la impresión de la pagina web */
-header{
 
+
+header{
   display: none;
 }
 
 body {
   background-image: none;
   font-style: serif;
-  font-size: 12px;
+  font-size: 12pt;
+  background-color: white;
 }
 
-/* Muestra la url de todos los enlaces que lleven a un contenido externo de la pagina */
-/*a[href^=http]:after {
-	content:" <" attr(href) ">";
-}*/
+
+ 
+.preview { 
+	width: auto; 
+	border: 0; 
+	margin: 0 5%; 
+	padding: 0; 
+	float: none !important; 
+}
+
+
 /* Muestra la url de todos los enlaces que hayan en la pagina. After --> para añadir contenido estético a un elemento */
-a:after {
+a:link:after, a:visited:after {
 	content:" <" attr(href) ">";
+	font-size: 90%;
+}
+
+a:link, a:visited { 
+
+	color: #520; 
+	background: transparent; 
+	font-weight: bold; 
+	text-decoration: underline; 
 }
 
 /* Evitar Saltos de pagina */
-ul, img, table  {
+.prov, ul, img, table {
 
 	page-break-inside: avoid;
 }

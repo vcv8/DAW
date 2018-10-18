@@ -60,10 +60,6 @@ label {
     padding: 5px 0 5px 5px;
 }
 
-#SolicitudAlbum{
-
-	padding: 0 10% 10% 22%;  /* arriba, derecha, abajo, izqd */
-}
 
 #SolicitudAlbum{
 
@@ -154,6 +150,17 @@ label {
     width: 50%;
 
 }
+
+/* TABLA TARIFAS */
+    #tablaTarifas{
+
+      font-size: 18px;
+      display: block; 
+      width: 100%;
+      padding: 1% 0 5% 20%;  /* arriba, derecha, abajo, izqd */
+
+
+    }
 
 
 /*HEADER*/

@@ -134,6 +134,17 @@ option {
  }
 
 
+ /* TABLA TARIFAS */
+    #tablaTarifas{
+
+      font-size: 18px;
+      display: block; 
+      padding: 1% 0 5% 1%;  /* arriba, derecha, abajo, izqd */
+
+    }
+
+
+
 /*HEADER*/
 .headerItems>div>a>span:first-of-type{
   display: none;

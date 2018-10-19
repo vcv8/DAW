@@ -67,7 +67,7 @@ nav{
   border-top: solid 1px var(--7);
 }
 nav>ul>li{
-  border-left: solid 1px var(--7);
+  border-left: none;
 }
 .firstlast{
   border-left: none;

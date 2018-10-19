@@ -151,3 +151,8 @@ option {
 .headerItems>div>a>span:first-of-type{
   display: none;
 }
+
+/* DETALLE FOTO */
+#detalle>article>figure>img{
+  max-width: 600px;
+}

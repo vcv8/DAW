@@ -82,3 +82,14 @@ nav>ul>li{
 body>footer{
   font-size: 16px;
 }
+
+/* DETALLE FOTO */
+#detalle>article>figure>figcaption>div>p>a{
+  text-decoration: underline;
+}
+#detalle>article>figure>figcaption>div>p>a:hover{
+  text-decoration: none;
+}
+#detalle>article>figure>figcaption>p{
+  font-size: 18px;
+}

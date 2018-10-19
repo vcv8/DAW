@@ -146,14 +146,20 @@ body>footer>p>a:hover{
 /* ALEX */
 /* Contenido formularios */
 .boxesForm{
-  border-bottom: 2px solid var(--2);
+  border-bottom: 2px solid var(--7);
   background-color: var(--6);
   color: var(--7);
+  font-size: 16px;
+}
+.enlaceBoton{
+  background-color: var(--6);
+  color: var(--5);
+  border: 2px solid var(--5);
 }
 .enlaceBoton:hover {
-  background-color: var(--6); 
-  color: var(--7);
-  border: 2px solid var(--7);
+  background-color: var(--5);
+  color: var(--6);
+  border: 2px solid var(--5);
 }
 
 /*Fecha Nacimiento */
@@ -179,4 +185,105 @@ th, table>caption{
 td{
     background-color: var(--6);
     border: 1px solid var(--7);
+}
+
+/* DETALLE FOTO */
+#detalle>article>figure>figcaption>div>p>a:hover{
+  color: var(--6);
+  background-color: var(--5);
+}
+
+/* FORMULARIOS */
+
+.marcoInicioRegistro{
+    border-color: grey;
+    background-color: black;
+    box-shadow: 2px 2px 5px #999;
+  }
+
+
+#marcoSolicitudAlbum{
+  border-color: grey;
+  background-color: black;
+  box-shadow: 2px 2px 5px #999;
+}
+
+
+.boxesAlbum, .bigBoxes, .direccion, .numCopias{   /* Boxes formulario */
+
+      background-color: black;
+      color: white;
+   }
+
+ /* Boton Enviar Formulario */
+#solicitarAlbum{
+
+  background-color: var(--6);
+  color: var(--5);
+  border: 2px solid var(--5);
+
+}
+
+#solicitarAlbum:hover {
+  background-color: var(--5);
+  color: var(--6);
+  border: 2px solid var(--5);
+}
+
+
+
+/* USUARIO REGISTRADO */
+
+#FotoPerfil>img{
+
+    box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+  }
+
+ .marcoUsuario{
+    border-color: grey;
+    background-color: var(--6);
+    box-shadow: 2px 2px 5px #999;
+  }
+
+.enlacesUsuario, #cierreSesion{
+
+  background-color: var(--6);
+  color: var(--5);
+  border: 2px solid var(--5);
+
+}
+
+.enlacesUsuario:hover, #cierreSesion:hover {
+
+  background-color: var(--5);
+  color: var(--6);
+  border: 2px solid var(--5);
+ 
+}
+
+
+/* BUSQUEDA AVANZADA */
+
+.marcoBusqueda{
+    border-color: grey;
+    background-color: var(--6);
+    box-shadow: 2px 2px 5px #999;
+}
+
+#buscarFotos{
+  background-color: var(--6);
+  color: var(--5);
+  border: 2px solid var(--5);
+}
+#buscarFotos:hover {
+  background-color: var(--5);
+  color: black;
+  border: 2px solid var(--5);
+}
+
+
+/* TABLA TARIFAS */
+th, table>caption{
+  background-color: var(--6);
 }

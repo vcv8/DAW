@@ -194,3 +194,13 @@ nav>ul>li{
   margin: 0 .4em;
   margin-top: 2em;
 } 
+
+/* DETALLE FOTO */
+#detalle>article>figure{
+  flex-direction: column;
+  width: auto;
+  max-width: 600px;
+}
+#detalle>article>figure>figcaption>div{
+  margin-top: 5%;
+}

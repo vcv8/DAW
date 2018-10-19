@@ -175,6 +175,16 @@ label {
   max-width: 476px;
 } 
 
+/* DETALLE FOTO */
+#detalle>article>figure{
+  flex-direction: column;
+  width: auto;
+  max-width: 600px;
+}
+#detalle>article>figure>figcaption>div{
+  margin-top: 5%;
+}
+
 /*body{
 	background-color: cyan;
 } */

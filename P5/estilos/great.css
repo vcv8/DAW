@@ -153,6 +153,9 @@ option {
 }
 
 /* DETALLE FOTO */
+#detalle>article>figure>div{
+  max-width: 600px;
+}
 #detalle>article>figure>img{
   max-width: 600px;
 }

@@ -88,3 +88,7 @@ a:link, a:visited {
         margin-top: .3em;
         margin-bottom: .3em;
       }
+
+input[type=submit] {
+	display: none;
+}

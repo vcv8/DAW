@@ -8,7 +8,10 @@
 	<link rel="stylesheet" type="text/css" href="estilos/base.css" />  
 	<link rel="stylesheet" type="text/css" href="estilos/colors.css" />
 	<link rel="stylesheet" type="text/css" href="recursos/fontello-848afb9a/css/fontello.css">
-	
+	<!-- Estilos Alternativos -->
+	<link rel="alternate stylesheet" type="text/css" title="Accesibilidad" href="estilos/accesibility.css" />
+	<link rel="alternate stylesheet" type="text/css" title="Accesibilidad" href="estilos/colors3.css" />
+	<link rel="alternate stylesheet" type="text/css" title="Modo sin responsive" href="estilos/estilo2.css" />
 	<!-- Para definir las propiedades que queremos que siempre se apliquen independientemente del tam de pantalla-->
 	<!-- Estilos que se aplican en función del tam de la pantalla -->
 	<!-- Indicamos el medio (pantallas) y la anchura mínima requerida para que se active este css --> 
@@ -41,7 +44,7 @@
 			</div>
 		</div>
 
-		<input type="checkbox" id="ckburger">
+		<input type="checkbox" id="ckburger" checked>
 		<nav id="navbar">
 			<ul>
 				<li class="firstlast"><a href="index.html"><span class="icon-home"> Inicio</a></li><li><a href="buscar.html"><span class="icon-search"> Búsqueda Avanzada</a></li><li><a href="usuarioRegistrado.html"><span class="icon-cog"> Perfil de Usuario</a></li><li class="firstlast"><form action="resBuscar.html" method="get">
@@ -56,9 +59,9 @@
 		<fieldset class="marcoBusqueda">
 			<h2>Búsqueda Avanzada</h2>
 			<form action="resBuscar.html">
-				<p><label><b>Título </b></label><input class="boxesBusqueda" type="text" name="titulo" placeholder=" Amanecer..."></p>
-				<p><label><b>País </b></label><input class="boxesBusqueda" type="text" name="pais" placeholder=" España..."></p>
-				<p><label><b>Fecha entre </b></label> <input class="boxesBusqueda" type="date" name="fechaInicial"> <b> y </b> <input class="boxesBusqueda" type="date" name="fechaFinal"></p>
+				<p><label><b>Título </b></label><input class="boxesAlbum" type="text" name="titulo" placeholder=" Amanecer..."></p>
+				<p><label><b>País </b></label><input class="boxesAlbum" type="text" name="pais" placeholder=" España..."></p>
+				<p><label><b>Fecha entre </b></label> <input class="boxesAlbum" type="date" name="fechaInicial"> <b> y </b> <input class="boxesAlbum" type="date" name="fechaFinal"></p>
 				<p><input id="buscarFotos" type="submit" value="Buscar Fotos"></p>
 			</form>
 		</fieldset>

@@ -114,6 +114,10 @@ nav>ul>li>a:hover {
 .imgResume>p:first-of-type{
   border-bottom: solid 1px var(--5);
 }
+.preview>article>a>figure{
+  background-color: var(--1);
+  color: var(--7);
+}
 
 /* FOOTER */
 body>footer{
@@ -135,10 +139,4 @@ body>footer>a{
 .swaplink{
   color: var(--5);
   text-decoration: none;
-}
-
-/* FOTOS PREVIEW */
-.preview>article>a>figure{
-  background-color: var(--1);
-  color: var(--7);
 }

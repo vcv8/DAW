@@ -78,12 +78,13 @@
 			<fieldset id="marcoSolicitudAlbum">
 				<h3>Formulario de solicitud</h3>
 				<p>Los parámetros marcados con (*) son obligatorios.</p>
-				<form action="resSolicitud.html">
+
+				<form action="resSolicitud.html" method="GET">
 					<p><label><b>Nombre (*)</b></label><input class="boxesAlbum" type="text" name="nombre" placeholder="Nombre y Apellidos..." maxlength="200" required></p>
 					<p><label><b>Título (*)</b></label> <input class="boxesAlbum" type="text" name="titulo" placeholder="Título para el álbum..." maxlength="200" required></p>
 					<p><label><b>Texto adicional</b> </label><input class="bigBoxes" type="text" name="descripcion" placeholder="Descripción, dedicatoria..." maxlength="4000"></p>
 					<p><label><b>Correo electrónico (*)</b> </label><input class="boxesAlbum" type="email" name="correo" placeholder="alguien@algo.es" autocomplete="on" maxlength="200" required></p>
-					<p><label><b>Dirección (*)</b> </label><input class="boxesAlbum"type="text" name="calle" placeholder="Calle..." required>
+					<p><label><b>Dirección (*)</b> </label><input class="boxesAlbum" type="text" name="calle" placeholder="Calle..." required>
 						<input class="direccion" type="number" name="numero" placeholder="Número" min="1">
 						<input class="direccion" type="number" name="cp" placeholder="Código Postal" required></p>
 						<p><select class="direccion" required>
@@ -105,15 +106,15 @@
 					<p><label><b>Resolución de impresión</b> </label><input class="valorRango" type="range" id="resslider" name="resolucion" min="150" max="900" step="150" value="150" onchange="document.getElementById('outresolucion').textContent=this.value">
 						<output id="outresolucion">150</output> dpi
 					</p>
-					<p><label><b>Álbum (*)</label></b>
-						<select class="direccion" required>
+					<p><label><b>Álbum (*)</b></label>
+						<select class="direccion" name="album" required>
 							<option disabled selected value> - mis álbumes - </option>
-						  	<option value="paisajes">Paisajes</option>
+						  	<option value="paisajes" selected="selected" >Paisajes</option>
 						  	<option value="bodajm">Boda Jose María</option>
 						  	<option value="viajeitalia">Viaje Italia</option>
 						</select>
 					 </p>
-					<p><label><b>Fecha de recepción aproximada </label></b><input class="direccion" type="date" name="fechaRecepcion"></p>
+					<p><label><b>Fecha de recepción aproximada </b></label><input class="direccion" type="date" name="fechaRecepcion"></p>
 					<p class="menu display-great display-medium"><label><b>¿Impresión a color? (*)</b> </label><br><input type="radio" name="cimpresion" value="color" required>Color <input type="radio" name="cimpresion" value="blancoynegro" required>Blanco y Negro </p>
 
 					<p class="display-mini"><label><b>¿Impresión a color? (*)</b> </label>

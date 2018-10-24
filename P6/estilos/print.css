@@ -1,0 +1,28 @@
+
+
+/* Version para la impresión de la pagina web */
+header{
+
+  display: none;
+}
+
+body {
+  background-image: none;
+  font-style: serif;
+  font-size: 12px;
+}
+
+/* Muestra la url de todos los enlaces que lleven a un contenido externo de la pagina */
+/*a[href^=http]:after {
+	content:" <" attr(href) ">";
+}*/
+/* Muestra la url de todos los enlaces que hayan en la pagina. After --> para añadir contenido estético a un elemento */
+a:after {
+	content:" <" attr(href) ">";
+}
+
+/* Evitar Saltos de pagina */
+ul, img, table  {
+
+	page-break-inside: avoid;
+}

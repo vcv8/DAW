@@ -134,7 +134,28 @@ option {
  }
 
 
+ /* TABLA TARIFAS */
+    #tablaTarifas{
+      width: 100%;
+      margin: auto;
+      font-size: 18px;
+      display: inline-block; 
+      text-align: center;
+      padding: 1% 1% 5% 1%;  /* arriba, derecha, abajo, izqd */
+
+    }
+
+
+
 /*HEADER*/
 .headerItems>div>a>span:first-of-type{
   display: none;
+}
+
+/* DETALLE FOTO */
+#detalle>article>figure>div{
+  max-width: 600px;
+}
+#detalle>article>figure>img{
+  max-width: 600px;
 }

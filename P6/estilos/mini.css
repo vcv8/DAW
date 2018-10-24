@@ -144,6 +144,18 @@ hr {
       width: 100%;
    }
 
+ /* TABLA TARIFAS */
+    #tablaTarifas{
+      
+      width: 100%;
+      margin: auto;
+      text-align: center;
+      font-size: 16px;
+      display: inline-block;
+      padding: 1% 1% 5% 1%;  /* arriba, derecha, abajo, izqd */
+      
+    }
+
 
 
 /* HEADER */
@@ -179,4 +191,16 @@ nav>ul>li{
 /*SECTION FOTOS PREVIEW*/
 .preview>article{
   width: 100%;
+  margin: 0 .4em;
+  margin-top: 2em;
 } 
+
+/* DETALLE FOTO */
+#detalle>article>figure{
+  flex-direction: column;
+  width: auto;
+  max-width: 600px;
+}
+#detalle>article>figure>figcaption>div{
+  margin-top: 5%;
+}

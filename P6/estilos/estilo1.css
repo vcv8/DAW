@@ -19,52 +19,6 @@
   margin: 0;
 }
 
-/* DETALLE FOTO */
-#detalle{
-  padding: 1em 8em 3em 8em;
-}
-  #detalle>article{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-  }
-    #detalle>article>figure{
-      margin: 0;
-      margin-top: 2.8em;
-    }
-    #detalle>article>div{
-      height: 23.2em;
-      color: #FFF;
-      margin: 0;
-      margin-top: 2.8em;
-      padding-left: 4em;
-      padding-right: 2em;
-      background-color: #4B483F;
-    }
-      #detalle>article>div>h2{
-        margin-top: 1.8em; 
-        margin-bottom: 1em;
-        font-size: 22px;
-      }
-      #detalle>article>div>p>a{
-        font-weight: bold;
-        text-decoration: none;
-        color: #FFDB70;
-      }
-      #detalle>article>div>p>a:hover{
-        text-decoration: underline;
-      }
-
-    .info{
-      margin-left: 1.4em;
-      font-size: 12px;
-    }
-
-    .albuminfo{
-      margin-top: 8em;
-    }
-
 /* BODY */
 body {
   width: 100%;
@@ -270,7 +224,6 @@ body>header{
         align-items: center;
       }
       .imgResume{
-        flex-direction: column;
         text-align: right;
       }
       .imgResume>p{
@@ -374,38 +327,55 @@ body>p{
 
     }
 
-
-    /* Tabla Info precios */
-    #tablaTarifas{
-
-      font-size: 18px;
-      display: block;
-      padding: 1% 0 5% 1%;  /* arriba, derecha, abajo, izqd */
-
+/* DETALLE FOTO */
+#detalle{
+  padding: 0;
+}
+  #detalle>article{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+    #detalle>article>figure{
+      margin: 0;
+      margin-top: 2.8em;
+      display: flex;
+      flex-direction: row;
     }
-    table, caption{
+      #detalle>article>figure>figcaption{
+        margin: 2% .5em;
+        display: flex;
+        flex-direction: column;
+      }
+        #detalle>article>figure>figcaption>h2{
+          margin: .8em .3em;
+          padding: .2em;
+        }
+        #detalle>article>figure>figcaption>p{
+          font-size: 14px;
+          margin: 0 .6em;
+          padding: .2em;
+        }
+        #detalle>article>figure>figcaption>div{
+          margin-top: 65%;
+        }
+        #detalle>article>figure>figcaption>div>p{
+          margin: 0 .6em;
+          padding: .2em;
+        }
+        #detalle>article>figure>figcaption>div>p>a{
+          font-weight: 500;
+          text-decoration: none;
+        }
 
-      border: 1px solid black;
-      text-align: center;
-      border-collapse: collapse;  /* Para que los bordes se junten */
-      
-
+    .info{
+      margin-left: 1.4em;
+      font-size: 12px;
     }
-    th, table>caption{
 
-        background-color: grey;
-        border: 1px solid black;
-        padding: 10px;
-
+    .albuminfo{
+      margin-top: 8em;
     }
-    td{
-
-        background-color: white;
-        border: 1px solid black;
-        padding: 10px;
-
-    }
-
-    /* Formulario Solicitud Album */
 
 

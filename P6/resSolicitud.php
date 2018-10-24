@@ -18,7 +18,15 @@
 
 	<section>
 		<h2>Confirmación de solicitud</h2>
-		<p>Se ha registrado su solicitud de impresión para el álbum <b>Paisajes</b>.</p>
+
+		<?php
+
+			$album = $_GET['album'];
+
+			echo "<p>Se ha registrado su solicitud de impresión para el album <b>$album</b> <p>"
+
+		?>
+		<!--<p>Se ha registrado su solicitud de impresión para el álbum <b>Paisajes</b>.</p> -->
 		<p>El coste total de la operación son <b>13.40 €</b>.</p>
 		<a href="usuarioRegistrado.php">Volver a mi perfil.</a>
 	</section>

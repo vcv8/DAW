@@ -26,8 +26,11 @@
 			header("Location: http://$host$uri/$extra");
 			exit; 
 		}else{
-			header("Location: usuarioRegistrado.php"); 
-			exit;
+			$host = $_SERVER['HTTP_HOST']; 
+			$uri  = rtrim(dirname($_SERVER[’PHP_SELF’]), '/\\'); 
+			$extra = 'P6/usuarioRegistrado.php'; 
+			header("Location: http://$host$uri/$extra");
+			exit; 
 		}
 	?>
 </body>

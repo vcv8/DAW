@@ -18,19 +18,19 @@
 	<section class="Inicio-Registro"> <!--Formulario de Registro -->
 		<fieldset class="marcoInicioRegistro">
 			<h2>Registro</h2>
-			<form action="usuarioRegistrado.html" method="post">
+			<form action="resRegistro.php" method="POST">
 				<p><input class="boxesForm" type="text" name="Usuario" placeholder="Usuario" autocomplete="on" required></p>
 				<p><input class="boxesForm" type="password" name="Contraseña" placeholder="Contraseña" required></p>
-				<p><input class="boxesForm" type="password" name="Repetir Contraseña" placeholder="Repetir Contraseña" required></p>
+				<p><input class="boxesForm" type="password" name="Contraseña2" placeholder="Repetir Contraseña" required></p>
 				<p><input class="boxesForm" type="email" name="Correo" placeholder="Correo" required></p>
 				<p><input class="boxesForm" type="text" name="Sexo" placeholder="Sexo"></p>
 				<!--<p><input type="date" name="Fecha Nacimiento" min="1918-01-01" max="2000-01-01" required></p>-->
 				<p>
-					<select required class="mes" >
+					<select required class="mes" name="Mes">
 							<option disabled selected value selected="selected" >  Mes de Nacimiento  </option>
-						  	<option  value="mes">Enero</option>
-						  	<option value="mes">Febrero</option>
-						  	<option value="mes">Marzo</option>
+						  	<option value="1">Enero</option>
+						  	<option value="2">Febrero</option>
+						  	<option value="3">Marzo</option>
 					</select>
 					<input class="diaMes" type="number" name="Dia" placeholder="Día" max="31" min="1"> <input class="diaMes"  type="number" name="Año" placeholder="Año" max="2000" min="1918">
 			    </p>

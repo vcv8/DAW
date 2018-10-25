@@ -378,4 +378,15 @@ body>p{
       margin-top: 8em;
     }
 
+/* MENSAJE DE ERROR LOGIN */
+#errorMSG{
+  font-weight: 400;
+}
+#errorMSG>span{
+  color: red;
+}
+#errorMSG>a{
+  text-decoration: none;
+  color: #0078d7;
+}
 

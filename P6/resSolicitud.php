@@ -6,17 +6,17 @@
 	<title>PRETI</title>
 
 	<?php
-		require_once("includes/estilos.inc");  # Contiene todos los enlaces con el css necesario para las paginas
+		require("includes/estilos.inc");  # Contiene todos los enlaces con el css necesario para las paginas
 	?>
 	
 </head>
 <body>
 	
 	<?php
-		require_once("includes/cabecera.inc");  # Cabecera de la pagina con el logo, login y registro
+		require("includes/cabecera.inc");  # Cabecera de la pagina con el logo, login y registro
 	?>
 
-	<section>
+	<article id="resAlbum">
 		<fieldset id="marcoResAlbum">
 			<h2>Confirmación de solicitud</h2>
 
@@ -75,10 +75,10 @@
 			?>
 			<a href="usuarioRegistrado.php">Volver a mi perfil.</a>
 		</fieldset>
-	</section>
+	</article>
 
 	<?php
-		require_once("includes/pie.inc");  # Pie de la pagina con el copyright
+		require("includes/pie.inc");  # Pie de la pagina con el copyright
 	?>
 	
 </body>

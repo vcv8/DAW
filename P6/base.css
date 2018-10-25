@@ -29,7 +29,7 @@
     margin-right: auto;
   }
 
-.marcoInicioRegistro{
+.marcoInicioRegistro, #marcoSolicitudAlbum, #marcoResAlbum, #marcoCrearAlbum {
 
     border-width: 2px;
     border-color: grey;
@@ -38,6 +38,21 @@
     display: inline-block;
    
   }
+
+#crearAlbum {
+
+  font-size: 18px;
+  display: block;
+  margin-left: 30%;
+  margin-right: auto;
+  margin-top: 5%;
+
+}
+
+#marcoCrearAlbum {
+
+  width:50%;
+}
 
 
 #SolicitudAlbum{
@@ -62,14 +77,6 @@
       font-size: 30px;
    }
 
-#marcoSolicitudAlbum, #marcoResAlbum {
-
-      border-width: 2px;
-      border-color: grey;
-      background-color: white;
-      box-shadow: 2px 2px 5px #999;
-      display: inline-block; 
- }
 
  #marcoResAlbum {
 

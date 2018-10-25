@@ -79,7 +79,7 @@
 				<h3>Formulario de solicitud</h3>
 				<p>Los parámetros marcados con (*) son obligatorios.</p>
 
-				<form action="resSolicitud.html" method="GET">
+				<form action="resSolicitud.php" method="GET">
 					<p><label><b>Nombre (*)</b></label><input class="boxesAlbum" type="text" name="nombre" placeholder="Nombre y Apellidos..." maxlength="200" required></p>
 					<p><label><b>Título (*)</b></label> <input class="boxesAlbum" type="text" name="titulo" placeholder="Título para el álbum..." maxlength="200" required></p>
 					<p><label><b>Texto adicional</b> </label><input class="bigBoxes" type="text" name="descripcion" placeholder="Descripción, dedicatoria..." maxlength="4000"></p>
@@ -100,7 +100,7 @@
 							<option value="Spain">España</option>
 						</select>
 					 </p>
-					<p><label><b>Teléfono de contacto (*)</b></label><input class="boxesAlbum" type="tel" name="telefono" placeholder="### ### ###" required></p>
+					 <p><label><b>Teléfono de contacto (*)</b></label><input class="boxesAlbum" type="tel" name="telefono" placeholder="### ### ###" required></p>
 					<p><label><b>Color de portada</b> </label><input type="color" name="color"></p>
 					<p><label><b>Número de copias</b> </label><input class="numCopias" type="number" name="copias" value="1" min="1" required></p>
 					<p><label><b>Resolución de impresión</b> </label><input class="valorRango" type="range" id="resslider" name="resolucion" min="150" max="900" step="150" value="150" onchange="document.getElementById('outresolucion').textContent=this.value">
@@ -109,23 +109,22 @@
 					<p><label><b>Álbum (*)</b></label>
 						<select class="direccion" name="album" required>
 							<option disabled selected value> - mis álbumes - </option>
-						  	<option value="paisajes" selected="selected" >Paisajes</option>
+						  	<option value="paisajes">Paisajes</option>
 						  	<option value="bodajm">Boda Jose María</option>
 						  	<option value="viajeitalia">Viaje Italia</option>
 						</select>
 					 </p>
-					<p><label><b>Fecha de recepción aproximada </b></label><input class="direccion" type="date" name="fechaRecepcion"></p>
+					 <p><label><b>Fecha de recepción aproximada </b></label><input class="direccion" type="date" name="fechaRecepcion"></p>
 					<p class="menu display-great display-medium"><label><b>¿Impresión a color? (*)</b> </label><br><input type="radio" name="cimpresion" value="color" required>Color <input type="radio" name="cimpresion" value="blancoynegro" required>Blanco y Negro </p>
-
-					<p class="display-mini"><label><b>¿Impresión a color? (*)</b> </label>
+					<!--<p class="display-mini"><label><b>¿Impresión a color? (*)</b> </label>
 						<select class="direccion" required>
 							<option disabled selected value> - Tipo de Impresión - </option>
 							<option value="blancoynegro">Blanco y Negro</option>
 							<option value="color">Color</option>
 						</select>
-					</p>
-
+					</p> -->
 					<p><input id="solicitarAlbum" type="submit" value="Solicitar" title="Solicitar impresión"></p>
+
 				</form>	
 			</fieldset>
 		</article>

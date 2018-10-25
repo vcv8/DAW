@@ -23,7 +23,7 @@
 		<nav id="navbar">
 			<ul>
 				<li class="firstlast"><a href="index.php"><span class="icon-home"> Inicio</a></li><li><a href="buscar.php"><span class="icon-search"> Búsqueda Avanzada</a></li><li><a href="usuarioRegistrado.php"><span class="icon-cog"> Perfil de Usuario</a></li><li class="firstlast"><form action="resBuscar.php" method="get">
-						<input type="search" id="brbar" name="buscador" placeholder='Buscar... '><input type="submit" id="brbutton" name="buscador" value="🔍" >
+						<input type="search" id="brbar" name="brapida" placeholder='Buscar... '><input type="submit" id="brbutton" name="buscador" value="🔍" >
 					</form>
 				</li>
 			</ul>

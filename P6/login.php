@@ -18,7 +18,7 @@
 
 	<section class="Inicio-Registro"> <!--Formulario de Inicio de Sesión -->
 		<fieldset class="marcoInicioRegistro">
-			<form action="usuarioRegistrado.html" method="post">
+			<form action="controlAcces.php" method="POST">
 				<h2>Inicio de Sesión</h2>
 				<p><input class="boxesForm" type="email" name="correo" placeholder="Introduce tu correo" autocomplete="on" required></p>
 				<p><input class="boxesForm" type="password" name="contraseña" placeholder="Introduce tu contraseña" required></p>

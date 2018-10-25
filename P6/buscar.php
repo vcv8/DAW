@@ -19,7 +19,7 @@
 	<section id="busquedaAvanzada">
 		<fieldset class="marcoBusqueda">
 			<h2>Búsqueda Avanzada</h2>
-			<form action="resBuscar.html">
+			<form action="resBuscar.php" method="GET">
 				<p><label><b>Título </b></label><input class="boxesAlbum" type="text" name="titulo" placeholder=" Amanecer..."></p>
 				<p><label><b>País </b></label><input class="boxesAlbum" type="text" name="pais" placeholder=" España..."></p>
 				<p><label><b>Fecha entre </b></label> <input class="boxesAlbum" type="date" name="fechaInicial"> <b> y </b> <input class="boxesAlbum" type="date" name="fechaFinal"></p>

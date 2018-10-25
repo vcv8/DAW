@@ -15,11 +15,19 @@
 		require_once("includes/cabecera.inc");  # Cabecera de la pagina con el logo, login y registro
 	?>
 	
-	<p>Mostrando resultados para:</p>
-	<p>Título: <b>Amanecer</b></p>
-	<p>Fecha entre: <b>26-09-2018</b> y: <b>29-09-2018</b></p>
-	<p>País: <b>España</b></p>
+	<?php
 
+		$titulo = $_GET['titulo']; 
+		$fechaInicial = $_GET['fechaInicial']; 
+		$fechaFinal = $_GET['fechaFinal']; 
+		$pais = $_GET['pais']; 
+
+		echo "<p>Mostrando resultados para:</p>
+			  <p>Título: <b>$titulo</b></p>
+			  <p>Fecha entre: <b>$fechaInicial</b> y: <b>$fechaFinal</b></p>
+			  <p>País: <b>$pais</b></p>"
+	
+	?>
 	<section class="preview"> <!-- 5 Ultimas Imagenes -->
 		<article>
 			<a href="detalleFoto.php">

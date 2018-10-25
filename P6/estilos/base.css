@@ -46,17 +46,35 @@
      display: block;
   }
 
+#marcoResAlbum {
+  font-size: 20px;
+  width: 60%;
+}
+
+#resAlbum {
+
+  margin-left: 30%;
+  margin-right: auto;
+  margin-top: 5%;
+}
+
  body>section>article>fieldset>h3{
       font-size: 30px;
    }
 
-#marcoSolicitudAlbum{
+#marcoSolicitudAlbum, #marcoResAlbum {
 
       border-width: 2px;
       border-color: grey;
       background-color: white;
       box-shadow: 2px 2px 5px #999;
       display: inline-block; 
+ }
+
+ #marcoResAlbum {
+
+  background-color: white;
+  
  }
 
 

@@ -19,11 +19,12 @@
 	<div id="crearAlbum">
 		<fieldset id="marcoCrearAlbum">
 			<h2>Crear Album</h2>
+			<p>Los parámetros marcados con (*) son obligatorios.</p>
 			<form action="usuarioRegistrado.php" method="GET">
 				<p><label><b>Titulo (*)</b></label><input class="boxesAlbum" type="text" name="tituloAlbum" placeholder="Título del Album" maxlength="200" required></p>
 				<p><label><b>Descripción</b> </label><input class="bigBoxes" type="text" name="descripcionAlbum" placeholder="Descripción del Álbum" maxlength="4000"></p>
 
-				<p><input id="solicitarAlbum" type="submit" value="Crear Album" title="Creacion de un nuevo Album"></p>
+				<p><input id="solicitarAlbum" type="submit" value="Crear Album" title="Creación de un nuevo Album"></p>
 			</form>
 		</fieldset>
 

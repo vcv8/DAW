@@ -73,7 +73,7 @@
 
 
 			?>
-			<a href="usuarioRegistrado.php">Volver a mi perfil.</a>
+			<a href="usuarioRegistrado.php" class="swaplink">Volver a mi perfil.</a>
 		</fieldset>
 	</article>
 

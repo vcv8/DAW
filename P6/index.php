@@ -19,7 +19,7 @@
 	<section class="preview"> <!-- 5 Ultimas Imagenes -->
 		<?php
 			$actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-			if($actual_link=='http://localhost/P6/index.php?loginError'){
+			if($actual_link=='http://localhost/P6/index.php?loginError'){ # Comprueba si el link actual es el de error de usuario no registrado para no mostrarlo
 				echo '<p id="errorMSG"><span>ERROR</span>! La cuenta con la que se ha iniciado sesión no está registrada. <a href="registro.php">Registrarse</a>.</p>';
 			}
 		?>

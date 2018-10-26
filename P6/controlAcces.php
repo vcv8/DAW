@@ -18,14 +18,14 @@
 			}
 		}
 
-		if($redir=='0'){
+		if($redir=='0'){  # No es ninguno de los usuarios registrados
 			/* Redirecciona a una página diferente que se encuentra en el directorio actual */ 
 			$host = $_SERVER['HTTP_HOST']; 
 			$uri  = rtrim(dirname($_SERVER[’PHP_SELF’]), '/\\'); 
 			$extra = 'P6/index.php?loginError'; 
 			header("Location: http://$host$uri/$extra");
 			exit; 
-		}else{
+		}else{ # Usuario registrado
 			$host = $_SERVER['HTTP_HOST']; 
 			$uri  = rtrim(dirname($_SERVER[’PHP_SELF’]), '/\\'); 
 			$extra = 'P6/usuarioRegistrado.php'; 

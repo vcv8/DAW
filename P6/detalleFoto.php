@@ -22,7 +22,7 @@
 					<?php
 						$actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 						list($url, $parametro) = explode('?', $actual_link);
-						if($parametro%'2'=='0'){
+						if($parametro%'2'=='0'){ # En funcion de si es par o no, se almacena un array o otro
 							$res = array('gat2.jpg', 'Vichyssoise', '20/10/2018','Francia', 'Animales', '@VictorCV8');
 						}else{
 							$res = array('paisaje.png', 'Amanecer', '19/09/2018','España', 'Paisajes', '@Roxo95');

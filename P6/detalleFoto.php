@@ -21,7 +21,7 @@
 				<div>
 					<?php
 						$actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-						list($url, $parametro) = explode('?', $actual_link);
+						list($url, $parametro) = explode('?', $actual_link); # Separamos la url a partir de la interrogacion y lo asignamos a dos valores distintos
 						if($parametro%'2'=='0'){ # En funcion de si es par o no, se almacena un array o otro
 							$res = array('gat2.jpg', 'Vichyssoise', '20/10/2018','Francia', 'Animales', '@VictorCV8');
 						}else{

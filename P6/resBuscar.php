@@ -41,7 +41,7 @@
 	?>
 	<section class="preview"> <!-- 5 Ultimas Imagenes -->
 		<article>
-			<a href="detalleFoto.php">
+			<a href="detalleFoto.php?1">
 				<figure>
 					<img src="recursos/paisaje.png" class="prov">
 					<figcaption class="top-right">
@@ -55,7 +55,7 @@
 			</a>
 		</article>
 		<article>
-			<a href="detalleFoto.php">
+			<a href="detalleFoto.php?2">
 				<figure>
 					<img src="recursos/Screenshot_20171128_183907.png" class="prov">
 					<figcaption class="top-right">
@@ -69,7 +69,7 @@
 			</a>
 		</article>
 		<article>
-			<a href="detalleFoto.php">
+			<a href="detalleFoto.php?3">
 				<figure>
 					<img src="recursos/artemania.jpg" class="prov">
 					<figcaption class="top-right">
@@ -83,7 +83,7 @@
 			</a>
 		</article>
 		<article>
-			<a href="detalleFoto.php">
+			<a href="detalleFoto.php?4">
 				<figure>
 					<img src="recursos/gat2.jpg" class="prov">
 					<figcaption class="top-right">
@@ -97,7 +97,7 @@
 			</a>
 		</article>
 		<article>
-			<a href="detalleFoto.php">
+			<a href="detalleFoto.php?5">
 				<figure>
 					<img src="recursos/gujero.jpg" class="prov">
 					<figcaption class="top-right">

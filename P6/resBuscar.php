@@ -17,15 +17,26 @@
 	
 	<?php
 
-		$titulo = $_GET['titulo']; 
-		$fechaInicial = $_GET['fechaInicial']; 
-		$fechaFinal = $_GET['fechaFinal']; 
-		$pais = $_GET['pais']; 
+		$actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+		$cut1 = explode('?', $actual_link)
+		$cut2 = explode('=', $cut1[1])
+		if($cut2[0]=='titulo'){
+			$titulo = $_GET['titulo']; 
+			$fechaInicial = $_GET['fechaInicial']; 
+			$fechaFinal = $_GET['fechaFinal']; 
+			$pais = $_GET['pais']; 
 
-		echo "<p>Mostrando resultados para:</p>
-			  <p>Título: <b>$titulo</b></p>
-			  <p>Fecha entre: <b>$fechaInicial</b> y: <b>$fechaFinal</b></p>
-			  <p>País: <b>$pais</b></p>"
+			echo "<p>Mostrando resultados para:</p>
+				  <p>Título: <b>$titulo</b></p>
+				  <p>Fecha entre: <b>$fechaInicial</b> y: <b>$fechaFinal</b></p>
+				  <p>País: <b>$pais</b></p>"
+		}
+		if ($cut2[0]=='brapida') {
+			$cadena = $_GET['brapida'];
+			echo "<p>Mostrando resultados para:</p>
+				  <p>Cadena: <b>$cadena</b></p>"
+		}
+		
 	
 	?>
 	<section class="preview"> <!-- 5 Ultimas Imagenes -->

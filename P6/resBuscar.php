@@ -26,15 +26,15 @@
 			$fechaFinal = $_GET['fechaFinal']; 
 			$pais = $_GET['pais']; 
 
-			echo "<p>Mostrando resultados para:</p>
-				  <p>Título: <b>$titulo</b></p>
-				  <p>Fecha entre: <b>$fechaInicial</b> y: <b>$fechaFinal</b></p>
-				  <p>País: <b>$pais</b></p>";
+			echo "<p>Mostrando resultados para</p>
+				  <p>Título <b>$titulo</b></p>
+				  <p>Fecha entre <b>$fechaInicial</b> y <b>$fechaFinal</b></p>
+				  <p>País <b>$pais</b></p>";
 		}
 		if ($cut2[0]=='brapida') {
 			$cadena = $_GET['brapida'];
-			echo "<p>Mostrando resultados para:</p>
-				  <p>Cadena: <b>$cadena</b></p>";
+			echo "<p>Mostrando resultados para</p>
+				  <p><b>$cadena</b></p>";
 		}
 		
 	

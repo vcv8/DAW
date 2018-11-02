@@ -1,3 +1,6 @@
+<?php
+	session_start(); # Inicializamos la gestion de sesiones
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -21,8 +24,14 @@
 		<div id="FotoPerfil">
 			<img src="recursos/EjemploPerfil.png" alt="Foto Perfil" id="fotoPerfil">
 			<p id="NombreUsuario"><b>Roxo95</b></p>
-			<p class="display-great"><a class="enlacesUsuario" href="usuarioRegistrado.php" title="Cierra sesión en este dispositivo"> Cerrar Sesión</a></p>
+			<p class="display-great"><a class="enlacesUsuario" href="cierreSesion.php" title="Cierra sesión en este dispositivo"> Cerrar Sesión</a></p>
 		</div>
+		<?php
+			if(isset($_SESSION["usuario"])) { # Si existe entonces mostramos su nombre
+				echo "<p> Hola " . $_SESSION["usuario"] . "</p>";
+			}
+			
+		?>
 		<div>
 			<fieldset class="marcoUsuario">
 				<h2>Detalles de Usuario</h2>
@@ -48,7 +57,7 @@
 				</div>
 			</fieldset>
 			<div class="menu display-mini display-medium" >
-				<a id="cierreSesion" href="usuarioRegistrado.php" title="Cierra sesión en este dispositivo"> Cerrar Sesión</a>
+				<a id="cierreSesion" href="cierreSesion.php" title="Cierra sesión en este dispositivo"> Cerrar Sesión</a>
 			</div>
 	</section>
 

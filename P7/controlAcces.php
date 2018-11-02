@@ -1,3 +1,6 @@
+<?php
+	session_start(); # Inicializamos la gestion de sesiones
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,6 +29,9 @@
 			header("Location: http://$host$uri/$extra");
 			exit; 
 		}else{ # Usuario registrado
+
+			$_SESSION["usuario"] = $_POST["usuario"]; # Almacenamos el nombre de usuario en una variable global
+			
 			$host = $_SERVER['HTTP_HOST']; 
 			$uri  = rtrim(dirname($_SERVER[’PHP_SELF’]), '/\\'); 
 			$extra = 'P7/usuarioRegistrado.php'; 

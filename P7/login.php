@@ -17,8 +17,8 @@
 
 	<?php
 		require_once("includes/cabecera2.inc");  # Cabecera de la pagina con solo logo
+	
 	?>
-
 	<section class="Inicio-Registro"> <!--Formulario de Inicio de Sesión -->
 		<fieldset class="marcoInicioRegistro">
 			<form action="controlAcces.php" method="POST">
@@ -30,9 +30,17 @@
 			<br>
 			<p>¿No tienes ninguna cuenta? <a href="registro.php" class="swaplink">Regístrate</a> 
 		</fieldset>
+		<br><br>
+		<?php
+			if($_GET && $_GET['Error1']=="loginError")
+			{ # Comprueba si el link actual es el de usuario no registrado para no mostrarlo
+				echo '<p id="errorMSG">!<span>ERROR</span>! La cuenta con la que se ha iniciado sesión no está registrada. <a href="registro.php">Registrarse</a>.</p>';
+			}
+		?>
 	</section>
 
-	<?php
+	
+	<?php	
 		require_once("includes/pie.inc");  # Pie de la pagina con el copyright
 	?>
 	

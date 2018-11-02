@@ -1,3 +1,6 @@
+<?php
+	session_start(); # Inicializamos la gestion de sesiones
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -20,7 +23,7 @@
 		<fieldset class="marcoInicioRegistro">
 			<form action="controlAcces.php" method="POST">
 				<h2>Inicio de Sesión</h2>
-				<p><input class="boxesForm" type="email" name="correo" placeholder="Introduce tu correo" autocomplete="on" required></p>
+				<p><input class="boxesForm" type="text" name="usuario" placeholder="Introduce tu nombre de usuario" autocomplete="on" required></p>
 				<p><input class="boxesForm" type="password" name="contraseña" placeholder="Introduce tu contraseña" required></p>
 				<input class="enlaceBoton" type="submit" value="Iniciar Sesión">
 			</form>

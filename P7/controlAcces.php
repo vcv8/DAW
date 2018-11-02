@@ -6,14 +6,14 @@
 </head>
 <body>
 	<?php 
-		$regUser = array('manolo100@gmail.com' => 'holasoymanolo', 'cristian100@gmail.com' => 'holasoycristian' , 'pedro100@gmail.com' => 'holasoypedro' , 'knekro100@gmail.com' => 'holasoyknekro');
+		$regUser = array('manolo100' => 'holasoymanolo', 'cristian100' => 'holasoycristian' , 'pedro100' => 'holasoypedro' , 'knekro100' => 'holasoyknekro');
 		$redir = '0';
 
-		$correo = $_POST['correo'];
+		$usuario = $_POST['usuario'];
 		$pass = $_POST['contraseña'];
 
 		foreach ($regUser as $email => $clave) {
-			if($email==$correo and $clave==$pass){
+			if($email==$usuario and $clave==$pass){
 				$redir = '1';
 			}
 		}
@@ -22,13 +22,13 @@
 			/* Redirecciona a una página diferente que se encuentra en el directorio actual */ 
 			$host = $_SERVER['HTTP_HOST']; 
 			$uri  = rtrim(dirname($_SERVER[’PHP_SELF’]), '/\\'); 
-			$extra = 'P6/index.php?loginError'; 
+			$extra = 'P7/index.php?loginError'; 
 			header("Location: http://$host$uri/$extra");
 			exit; 
 		}else{ # Usuario registrado
 			$host = $_SERVER['HTTP_HOST']; 
 			$uri  = rtrim(dirname($_SERVER[’PHP_SELF’]), '/\\'); 
-			$extra = 'P6/usuarioRegistrado.php'; 
+			$extra = 'P7/usuarioRegistrado.php'; 
 			header("Location: http://$host$uri/$extra");
 			exit; 
 		}

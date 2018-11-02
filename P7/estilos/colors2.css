@@ -39,27 +39,23 @@ body>header{
 #burger{
   background-image: url(../recursos/burgerW.png);
 }
-.headerItems>div:last-of-type>a:first-of-type{
+.headerItems>div>a{
   color: var(--7);
   border-bottom: solid var(--5);
-}
-.headerItems>div:last-of-type>a:last-of-type{
-  color: var(--7);
-  border-bottom: solid var(--5);
-}
-.headerItems>div:last-of-type>a:first-of-type{
   border-top: solid var(--6);
 }
-.headerItems>div:last-of-type>a:first-of-type:hover{
+.headerItems>div>#aReg{
+  color: var(--7);
+  border-bottom: solid var(--5);
+  background-color: var(--5);
+  border-top: solid var(--5);
+}
+.headerItems>div>a:hover{
   color: var(--8);
   background-color: var(--1);
   border-top: solid var(--1);
 }
-.headerItems>div:last-of-type>a:last-of-type{
-  background-color: var(--5);
-  border-top: solid var(--5);
-}
-.headerItems>div:last-of-type>a:last-of-type:hover{
+.headerItems>div>#aReg:hover{
   color: var(--8);
   background-color: var(--1);
   border-top: solid var(--1);

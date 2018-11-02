@@ -1,4 +1,3 @@
-
 <header id="header">
 		<div class="headerItems">
 			<!-- Logotipo -->
@@ -15,14 +14,14 @@
 
 			<!-- Enlaces a Login/Registro -->
 			<div>
-				<a href="login.php"><span class="icon-user"></span><span>Login</span></a><a href="registro.php"><span class="icon-user-plus"></span><span>Registro</span></a>
+				<a href="login.php"><span class="icon-user"></span><span>Login</span></a><a href="registro.php" id="aReg"><span class="icon-user-plus"></span><span>Registro</span></a>
 			</div>
 		</div>
 
 		<input type="checkbox" id="ckburger" checked>
 		<nav id="navbar">
 			<ul>
-				<li class="firstlast"><a href="index.php"><span class="icon-home"> Inicio</a></li><li><a href="buscar.php"><span class="icon-search"> Búsqueda Avanzada</a></li><li><a href="usuarioRegistrado.php"><span class="icon-cog"> Perfil de Usuario</a></li><li class="firstlast"><form action="resBuscar.php" method="get">
+				<li class="firstlast"><a href="index.php"><span class="icon-home"> Inicio</a></li><li><a href="buscar.php"><span class="icon-search"> Búsqueda Avanzada</a></li><li class="firstlast"><form action="resBuscar.php" method="get">
 						<input type="search" id="brbar" name="brapida" placeholder='Buscar... '><input type="submit" id="brbutton" name="buscador" value="🔍" >
 					</form>
 				</li>

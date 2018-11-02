@@ -14,7 +14,7 @@
 
 			<!-- Enlaces a Login/Registro -->
 			<div>
-				<a href="usuarioRegistrado.php"><span class="icon-cog"></span><span>Perfil</span></a>
+				<a href="usuarioRegistrado.php"><span class="icon-cog"></span><?php echo "<span>" . $_SESSION["usuario"] . "</span>"?></a>
 			</div>
 		</div>
 

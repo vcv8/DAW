@@ -16,7 +16,13 @@
 <body>
 	
 	<?php
-		require_once("includes/cabecera.inc");  # Cabecera de la pagina con el logo, login y registro
+		if(isset($_SESSION["usuario"])){
+			require_once("includes/cabecera1.inc");  # Cabecera de la pagina con el logo y usuario registrado
+		}
+		else{
+			require_once("includes/cabecera.inc");  # Cabecera de la pagina con el logo, login y registro
+		}
+		
 	?>
 
 	<section class="preview"> <!-- 5 Ultimas Imagenes -->

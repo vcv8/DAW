@@ -6,9 +6,24 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1.0" /> <!-- Para que se pueda aplicar un diseño adaptable y la correcta visualizacion en dispo móviles -->
-	<title>PRETI</title>
+
 
 	<?php
+
+		if(isset($_SESSION["usuario"]))
+		{
+			echo "<title>PRETI/" . $_SESSION["usuario"] . "</title>";
+		}
+		else
+		{
+
+	?>
+
+		<title>PRETI/usuarioRegistrado</title>
+
+	<?php
+	
+		}
 		require_once("includes/estilos.inc");  # Contiene todos los enlaces con el css necesario para las paginas
 	?>
 

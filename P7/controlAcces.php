@@ -25,7 +25,7 @@
 			/* Redirecciona a una página diferente que se encuentra en el directorio actual */ 
 			$host = $_SERVER['HTTP_HOST']; 
 			$uri  = rtrim(dirname($_SERVER[’PHP_SELF’]), '/\\'); 
-			$extra = 'P7/index.php?loginError'; 
+			$extra = 'P7/login.php?Error1=loginError'; 
 			header("Location: http://$host$uri/$extra");
 			exit; 
 		}else{ # Usuario registrado
@@ -34,7 +34,7 @@
 			
 			$host = $_SERVER['HTTP_HOST']; 
 			$uri  = rtrim(dirname($_SERVER[’PHP_SELF’]), '/\\'); 
-			$extra = 'P7/usuarioRegistrado.php'; 
+			$extra = 'P7/usuarioRegistrado.php?firstLogin'; 
 			header("Location: http://$host$uri/$extra");
 			exit; 
 		}

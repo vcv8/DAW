@@ -38,12 +38,18 @@
 	<section>
 		<div id="FotoPerfil">
 			<img src="recursos/EjemploPerfil.png" alt="Foto Perfil" id="fotoPerfil">
-			<p id="NombreUsuario"><b>Roxo95</b></p>
+			<p id="NombreUsuario">
+				<?php 
+					if(isset($_SESSION["usuario"]))
+					echo "<b>" . $_SESSION["usuario"] . "</b>" 
+				?>
+			</p>
 			<p class="display-great"><a class="enlacesUsuario" href="cierreSesion.php" title="Cierra sesión en este dispositivo"> Cerrar Sesión</a></p>
 		</div>
 		<?php
-			if(isset($_SESSION["usuario"])) { # Si existe entonces mostramos su nombre
-				echo "<p> Hola " . $_SESSION["usuario"] . "</p>";
+			$actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+			if(isset($_SESSION["usuario"]) && $actual_link=='http://localhost/P7/usuarioRegistrado.php?firstLogin') {  # Si hay un usuario conectado y es el primer login
+					echo "<p> Hola " . $_SESSION["usuario"] . "</p>"; 													# entonces muestra el saludo
 			}
 			
 		?>

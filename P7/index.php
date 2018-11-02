@@ -1,3 +1,6 @@
+<?php
+	session_start(); # Inicializamos la gestion de sesiones
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -17,14 +20,24 @@
 	?>
 
 	<section class="preview"> <!-- 5 Ultimas Imagenes -->
-		<?php
-			$actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-			if($actual_link=='http://localhost/P7/index.php?loginError'){ # Comprueba si el link actual es el de error de usuario no registrado para no mostrarlo
-				echo '<p id="errorMSG"><span>ERROR</span>! La cuenta con la que se ha iniciado sesión no está registrada. <a href="registro.php">Registrarse</a>.</p>';
-			}
-		?>
 		<article>
+			<?php 
+				if(isset($_SESSION["usuario"])){
+			?>
+
 			<a href="detalleFoto.php?1">
+
+			<?php
+				}
+				else 
+				{
+			?>
+
+			<a href="index.php">
+
+			<?php
+				}
+			?>
 				<figure>
 					<img src="recursos/paisaje.png" class="prov">
 					<figcaption class="top-right">
@@ -38,7 +51,23 @@
 			</a>
 		</article>
 		<article>
+			<?php 
+				if(isset($_SESSION["usuario"])){
+			?>
+
 			<a href="detalleFoto.php?2">
+
+			<?php
+				}
+				else 
+				{
+			?>
+
+			<a href="index.php">
+
+			<?php
+				}
+			?>
 				<figure>
 					<img src="recursos/Screenshot_20171128_183907.png" class="prov">
 					<figcaption class="top-right">
@@ -52,7 +81,23 @@
 			</a>
 		</article>
 		<article>
+			<?php 
+				if(isset($_SESSION["usuario"])){
+			?>
+
 			<a href="detalleFoto.php?3">
+
+			<?php
+				}
+				else 
+				{
+			?>
+
+			<a href="index.php">
+
+			<?php
+				}
+			?>
 				<figure>
 					<img src="recursos/artemania.jpg" class="prov">
 					<figcaption class="top-right">
@@ -66,7 +111,23 @@
 			</a>
 		</article>
 		<article>
+			<?php 
+				if(isset($_SESSION["usuario"])){
+			?>
+
 			<a href="detalleFoto.php?4">
+
+			<?php
+				}
+				else 
+				{
+			?>
+
+			<a href="index.php">
+
+			<?php
+				}
+			?>
 				<figure>
 					<img src="recursos/gat2.jpg" class="prov">
 					<figcaption class="top-right">
@@ -80,7 +141,23 @@
 			</a>
 		</article>
 		<article>
+			<?php 
+				if(isset($_SESSION["usuario"])){
+			?>
+
 			<a href="detalleFoto.php?5">
+
+			<?php
+				}
+				else 
+				{
+			?>
+
+			<a href="index.php">
+
+			<?php
+				}
+			?>
 				<figure>
 					<img src="recursos/gujero.jpg" class="prov">
 					<figcaption class="top-right">

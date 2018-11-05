@@ -1,3 +1,6 @@
+<?php
+	session_start(); # Inicializamos la gestion de sesiones
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -12,7 +15,13 @@
 <body>
 
 	<?php
-		require_once("includes/cabecera.inc");  # Cabecera de la pagina con el logo, login y registro
+		if(isset($_SESSION["usuario"])){
+			require_once("includes/cabecera1.inc");  # Cabecera de la pagina con el logo y usuario registrado
+		}
+		else{
+			require_once("includes/cabecera.inc");  # Cabecera de la pagina con el logo, login y registro
+		}
+		
 	?>
 
 	<section>

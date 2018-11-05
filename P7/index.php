@@ -27,23 +27,7 @@
 
 	<section class="preview"> <!-- 5 Ultimas Imagenes -->
 		<article>
-			<?php 
-				if(isset($_SESSION["usuario"])){
-			?>
-
 			<a href="detalleFoto.php?1">
-
-			<?php
-				}
-				else 
-				{
-			?>
-
-			<a href="index.php">
-
-			<?php
-				}
-			?>
 				<figure>
 					<img src="recursos/paisaje.png" class="prov">
 					<figcaption class="top-right">
@@ -57,23 +41,7 @@
 			</a>
 		</article>
 		<article>
-			<?php 
-				if(isset($_SESSION["usuario"])){
-			?>
-
 			<a href="detalleFoto.php?2">
-
-			<?php
-				}
-				else 
-				{
-			?>
-
-			<a href="index.php">
-
-			<?php
-				}
-			?>
 				<figure>
 					<img src="recursos/Screenshot_20171128_183907.png" class="prov">
 					<figcaption class="top-right">
@@ -87,23 +55,7 @@
 			</a>
 		</article>
 		<article>
-			<?php 
-				if(isset($_SESSION["usuario"])){
-			?>
-
 			<a href="detalleFoto.php?3">
-
-			<?php
-				}
-				else 
-				{
-			?>
-
-			<a href="index.php">
-
-			<?php
-				}
-			?>
 				<figure>
 					<img src="recursos/artemania.jpg" class="prov">
 					<figcaption class="top-right">
@@ -117,23 +69,7 @@
 			</a>
 		</article>
 		<article>
-			<?php 
-				if(isset($_SESSION["usuario"])){
-			?>
-
 			<a href="detalleFoto.php?4">
-
-			<?php
-				}
-				else 
-				{
-			?>
-
-			<a href="index.php">
-
-			<?php
-				}
-			?>
 				<figure>
 					<img src="recursos/gat2.jpg" class="prov">
 					<figcaption class="top-right">
@@ -147,23 +83,7 @@
 			</a>
 		</article>
 		<article>
-			<?php 
-				if(isset($_SESSION["usuario"])){
-			?>
-
 			<a href="detalleFoto.php?5">
-
-			<?php
-				}
-				else 
-				{
-			?>
-
-			<a href="index.php">
-
-			<?php
-				}
-			?>
 				<figure>
 					<img src="recursos/gujero.jpg" class="prov">
 					<figcaption class="top-right">

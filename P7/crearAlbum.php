@@ -1,3 +1,15 @@
+<?php
+	session_start(); # Inicializamos la gestion de sesiones
+	
+	if(!isset($_SESSION["usuario"])){
+		$host = $_SERVER['HTTP_HOST']; 
+		$uri  = rtrim(dirname($_SERVER[’PHP_SELF’]), '/\\'); 
+		$extra = 'P7/login.php'; 
+		header("Location: http://$host$uri/$extra");
+		exit;	
+	}
+	else{
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -13,7 +25,7 @@
 <body>
 
 	<?php
-		require("includes/cabecera.inc");  # Cabecera de la pagina con el logo, login y registro
+		require("includes/cabecera1.inc");  # Cabecera de la pagina con el logo, login y registro
 	?>
 
 	<div id="crearAlbum">
@@ -36,3 +48,6 @@
 
 </body>
 </html>
+<?php 
+	}
+?>

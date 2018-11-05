@@ -1,3 +1,8 @@
+<?php
+	session_start(); # Inicializamos la gestion de sesiones
+	
+	session_destroy(); # Elimina la sesión del usuario actual
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>

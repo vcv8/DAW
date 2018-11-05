@@ -53,8 +53,10 @@
     background-color: white;
     box-shadow: 2px 2px 5px #999;
     display: inline-block;
+    width: 80%;
+    max-width: 500px;
    
-  }
+}
 
 #marcoResAlbum {
   font-size: 20px;

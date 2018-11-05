@@ -1,5 +1,14 @@
 <?php
 	session_start(); # Inicializamos la gestion de sesiones
+	
+	if(!isset($_SESSION["usuario"])){
+		$host = $_SERVER['HTTP_HOST']; 
+		$uri  = rtrim(dirname($_SERVER[’PHP_SELF’]), '/\\'); 
+		$extra = 'P7/login.php'; 
+		header("Location: http://$host$uri/$extra");
+		exit;	
+	}
+	else{
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -31,7 +40,7 @@
 <body>
 
 	<?php
-		require_once("includes/cabecera.inc");  # Cabecera de la pagina con el logo, login y registro
+		require_once("includes/cabecera1.inc");  # Cabecera de la pagina con el logo, login y registro
 	?>
 
 	<!-- Seccion que contiene la foto de perfil del usuario, sus datos, enlaces .... -->
@@ -88,3 +97,6 @@
 
 </body>
 </html>
+<?php 
+	}
+?>

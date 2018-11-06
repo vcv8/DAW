@@ -34,7 +34,7 @@
 			
 			$host = $_SERVER['HTTP_HOST']; 
 			$uri  = rtrim(dirname($_SERVER[’PHP_SELF’]), '/\\'); 
-			$extra = 'P7/usuarioRegistrado.php?firstLogin'; 
+			$extra = 'P7/usuarioRegistrado.php?Saludo=firstLogin'; 
 			header("Location: http://$host$uri/$extra");
 			exit; 
 		}

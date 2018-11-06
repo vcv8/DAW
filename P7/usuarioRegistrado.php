@@ -4,7 +4,7 @@
 	if(!isset($_SESSION["usuario"])){
 		$host = $_SERVER['HTTP_HOST']; 
 		$uri  = rtrim(dirname($_SERVER[’PHP_SELF’]), '/\\'); 
-		$extra = 'P7/login.php'; 
+		$extra = 'P7/login.php?Error1=accesoUsuarioNoRegistrado'; 
 		header("Location: http://$host$uri/$extra");
 		exit;	
 	}
@@ -55,13 +55,14 @@
 			</p>
 			<p class="display-great"><a class="enlacesUsuario" href="cierreSesion.php" title="Cierra sesión en este dispositivo"> Cerrar Sesión</a></p>
 		</div>
+
 		<?php
-			$actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-			if(isset($_SESSION["usuario"]) && $actual_link=='http://localhost/P7/usuarioRegistrado.php?firstLogin') {  # Si hay un usuario conectado y es el primer login
-					echo "<p> Hola " . $_SESSION["usuario"] . "</p>"; 													# entonces muestra el saludo
+			if(isset($_SESSION["usuario"]) && $_GET && $_GET['Saludo']=="firstLogin") # Muestra el saludo solo la primera vez que inicia sesion
+			{ 
+				echo "<p> !Hola " . $_SESSION["usuario"] . "!</p>";
 			}
-			
 		?>
+
 		<div>
 			<fieldset class="marcoUsuario">
 				<h2>Detalles de Usuario</h2>

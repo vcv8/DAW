@@ -4,7 +4,7 @@
 	if(!isset($_SESSION["usuario"])){
 		$host = $_SERVER['HTTP_HOST']; 
 		$uri  = rtrim(dirname($_SERVER[’PHP_SELF’]), '/\\'); 
-		$extra = 'P7/login.php'; 
+		$extra = 'P7/login.php?Error1=accesoUsuarioNoRegistrado'; 
 		header("Location: http://$host$uri/$extra");
 		exit;	
 	}

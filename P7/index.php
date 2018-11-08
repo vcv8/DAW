@@ -1,5 +1,10 @@
 <?php
 	session_start(); # Inicializamos la gestion de sesiones
+
+	if(!isset($_SESSION["usuario"])){
+		if(isset($_COOKIE["recordar"]))
+			$_SESSION["usuario"] = $_COOKIE["recordar"];
+	}	
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -23,6 +28,12 @@
 			require_once("includes/cabecera.inc");  # Cabecera de la pagina con el logo, login y registro
 		}
 		
+	?>
+	
+	<?php
+		if(isset($_COOKIE["recordar"])){
+			echo
+		}
 	?>
 
 	<section class="preview"> <!-- 5 Ultimas Imagenes -->

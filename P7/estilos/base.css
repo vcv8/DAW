@@ -260,3 +260,17 @@ table, caption{
         padding: 10px;
 
     }
+
+/* RECUERDAME */
+#recbox{
+  margin: 0;
+  margin-right: .6em;
+  margin-top: .2em;
+}
+#reclabel{
+  margin: 0;
+  margin-top: .2em;
+  width: auto;
+  padding: 0;
+  vertical-align: top;
+}

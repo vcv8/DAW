@@ -31,7 +31,11 @@
 		}else{ # Usuario registrado
 
 			$_SESSION["usuario"] = $_POST["usuario"]; # Almacenamos el nombre de usuario en una variable global
-			
+
+			$cookie_name = "estilo";
+			$cookie_value = "accesibility";
+			setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
+
 			$host = $_SERVER['HTTP_HOST']; 
 			$uri  = rtrim(dirname($_SERVER[’PHP_SELF’]), '/\\'); 
 			$extra = 'P7/usuarioRegistrado.php?Saludo=firstLogin'; 

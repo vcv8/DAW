@@ -1,7 +1,26 @@
+
+<?php
+	
+	if(isset($_SESSION["usuario"]) && isset($_COOKIE["estilo"])) # Aplicar el estilo seleccionado por el usuario
+	{
+		echo '<link rel="stylesheet" type="text/css" href="estilos/estilo1.css">';
+		echo '<link rel="stylesheet" type="text/css" href="estilos/base.css" />';
+		echo '<link rel="stylesheet" type="text/css" href="recursos/fontello-848afb9a/css/fontello.css" />';
+		echo '<link rel="stylesheet" type="text/css" href="estilos/colors2.css" />';
+	}
+	else
+	{
+
+?>
+
 <link rel="stylesheet" type="text/css" href="estilos/estilo1.css">
 <link rel="stylesheet" type="text/css" href="estilos/base.css" />  
 <link rel="stylesheet" type="text/css" href="estilos/colors.css" />
 <link rel="stylesheet" type="text/css" href="recursos/fontello-848afb9a/css/fontello.css">
+
+<?php
+	}
+?>
 
 <!-- Estilos Alternativos -->
 <link rel="alternate stylesheet" type="text/css" title="Accesibilidad" href="estilos/accesibility.css" />

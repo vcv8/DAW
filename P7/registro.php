@@ -1,5 +1,9 @@
 <?php
 	session_start(); # Inicializamos la gestion de sesiones
+
+	if (isset($_COOKIE["recordar"])) {
+		setcookie("recordar", "", time() - 3600);
+	}
 	
 	session_destroy(); # Elimina la sesión del usuario actual
 ?>

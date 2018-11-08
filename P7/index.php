@@ -29,12 +29,6 @@
 		}
 		
 	?>
-	
-	<?php
-		if(isset($_COOKIE["recordar"])){
-			echo
-		}
-	?>
 
 	<section class="preview"> <!-- 5 Ultimas Imagenes -->
 		<article>

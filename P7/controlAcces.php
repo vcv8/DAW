@@ -22,9 +22,12 @@
 		header("Location: http://$host$uri/$extra");
 		exit; 
 	}else{ # Usuario registrado
+		if (isset($_COOKIE["recordar"])) {
+			setcookie("recordar", "", time() - 3600);
+		}
 		if ($rec) {
 			$current_visit = date("c");
-			$c_value = "$usuario";
+			$c_value = "$usuario,$pass";
 			$caduca = time() + (90 * 24 * 60 * 60); #Caduca en 90 dias
 			setcookie("recordar", $c_value, $caduca); 
 		}

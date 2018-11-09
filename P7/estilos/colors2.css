@@ -136,3 +136,69 @@ body>footer>a{
   color: var(--5);
   text-decoration: none;
 }
+
+/* FORMULARIOS */
+
+.swaplink{
+  color: var(--5);
+  text-decoration: none;
+}
+
+/* ALEX */
+/* Contenido formularios */
+.boxesForm{
+  border-bottom: 2px solid var(--2);
+  background-color: var(--6);
+  color: var(--6);
+}
+.enlaceBoton:hover {
+  background-color: var(--6); 
+  color: var(--7);
+  border: 2px solid var(--7);
+}
+input:focus { 
+    border-color: var(--5);
+}
+
+.marcoBusqueda{
+    color: var(--6);
+}
+.marcoUsuario{
+    color: var(--6);
+}
+#marcoSolicitudAlbum{
+    color: var(--6);
+}
+
+/*Fecha Nacimiento */
+.mes{
+  border-bottom: 2px solid var(--2);
+  background-color: var(--6);
+  color: var(--7);
+ }
+.diaMes{
+  border-bottom: 2px solid var(--2);
+  background-color: var(--6);
+  color: var(--7);
+}
+
+/* Tabla Info precios */
+table, caption{
+  /*border: 1px solid var(--7);*/
+}
+th, table>caption{
+    background-color: var(--2);
+    border: 1px solid var(--7);
+}
+td{
+    background-color: var(--6);
+    border: 1px solid var(--7);
+}
+
+/* DETALLE FOTO */
+#detalle>article>figure>figcaption>h2{
+  border-bottom: solid 1px var(--5);
+}
+#detalle>article>figure>figcaption>div>p>a{
+  color: var(--5);
+}

@@ -47,12 +47,7 @@
 	?>
 	
 	<?php
-
-		$actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-		#Comprobamos en que url estamos para redireccionar o a una pagina o a otra
-		$cut1 = explode('?', $actual_link); # Separamos a partir de la interrogacion
-		$cut2 = explode('=', $cut1[1]); # Dentro de esa separacion volvemos a separar
-		if($cut2[0]=='titulo'){
+		if(isset($_GET['titulo'])){
 			$titulo = $_GET['titulo']; 
 			$fechaInicial = $_GET['fechaInicial']; 
 			$fechaFinal = $_GET['fechaFinal']; 
@@ -62,8 +57,7 @@
 				  <p>Título <b>$titulo</b></p>
 				  <p>Fecha entre <b>$fechaInicial</b> y <b>$fechaFinal</b></p>
 				  <p>País <b>$pais</b></p>";
-		}
-		if ($cut2[0]=='brapida') {
+		}else if (isset($_GET['brapida'])) {
 			$cadena = $_GET['brapida'];
 			echo "<p>Mostrando resultados para</p>
 				  <p><b>$cadena</b></p>";

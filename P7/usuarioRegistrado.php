@@ -17,6 +17,14 @@
 		exit;	
 	}
 	else{
+		$dia = date('d');
+		$mes = date('F');
+		$anyo = date('Y');
+		$hora = date('h');
+		$min = date('i');
+		$sec = date('s');
+		$pm = date('A');
+		setcookie("lasttime", "Bienvenido " . $_SESSION['usuario'] . ", no te veíamos desde el día $dia de $mes de $anyo a las $hora:$min:$sec $pm.", time() + (100 * 24 * 60 * 60));
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -65,9 +73,15 @@
 		</div>
 
 		<?php
-			if(isset($_SESSION["usuario"]) && $_GET && $_GET['Saludo']=="firstLogin") # Muestra el saludo solo la primera vez que inicia sesion
-			{ 
-				echo "<p> !Hola " . $_SESSION["usuario"] . "!</p>";
+			if(isset($_SESSION["usuario"])){
+				if (!isset($_COOKIE['firsttime']))
+				{
+				    setcookie("firsttime", "no");
+
+				    if(isset($_COOKIE['lasttime'])){
+				    	echo '<p id="errorMSG">' . $_COOKIE['lasttime'] . '</p>';
+				    }
+				}
 			}
 		?>
 

@@ -8,6 +8,9 @@
 	if(isset($_COOKIE[session_name()])) { 
 	   setcookie(session_name(), '', time() - 42000, '/'); 
 	}
+	if (isset($_COOKIE["firsttime"])) {
+		setcookie("firsttime", '', time() - 3600);
+	}
 	if (isset($_COOKIE["recordar"])) {
 		setcookie("recordar", '', time() - 3600);
 	}

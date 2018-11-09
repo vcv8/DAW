@@ -2,8 +2,13 @@
 	session_start(); # Inicializamos la gestion de sesiones
 
 	if(!isset($_SESSION["usuario"])){
-		if(isset($_COOKIE["recordar"]))
-			$_SESSION["usuario"] = $_COOKIE["recordar"];
+		if(isset($_COOKIE["recordar"])){
+			$host = $_SERVER['HTTP_HOST']; 
+			$uri  = rtrim(dirname($_SERVER[’PHP_SELF’]), '/\\'); 
+			$extra = 'P7/controlAcces.php?msg=index.php'; 
+			header("Location: http://$host$uri/$extra");
+			exit;
+		}	 
 	}	
 ?>
 <!DOCTYPE html>
@@ -32,7 +37,7 @@
 
 	<section class="preview"> <!-- 5 Ultimas Imagenes -->
 		<article>
-			<a href="detalleFoto.php?1">
+			<a href="detalleFoto.php?id_foto=1">
 				<figure>
 					<img src="recursos/paisaje.png" class="prov">
 					<figcaption class="top-right">
@@ -46,7 +51,7 @@
 			</a>
 		</article>
 		<article>
-			<a href="detalleFoto.php?2">
+			<a href="detalleFoto.php?id_foto=2">
 				<figure>
 					<img src="recursos/Screenshot_20171128_183907.png" class="prov">
 					<figcaption class="top-right">
@@ -60,7 +65,7 @@
 			</a>
 		</article>
 		<article>
-			<a href="detalleFoto.php?3">
+			<a href="detalleFoto.php?id_foto=3">
 				<figure>
 					<img src="recursos/artemania.jpg" class="prov">
 					<figcaption class="top-right">
@@ -74,7 +79,7 @@
 			</a>
 		</article>
 		<article>
-			<a href="detalleFoto.php?4">
+			<a href="detalleFoto.php?id_foto=4">
 				<figure>
 					<img src="recursos/gat2.jpg" class="prov">
 					<figcaption class="top-right">
@@ -88,7 +93,7 @@
 			</a>
 		</article>
 		<article>
-			<a href="detalleFoto.php?5">
+			<a href="detalleFoto.php?id_foto=5">
 				<figure>
 					<img src="recursos/gujero.jpg" class="prov">
 					<figcaption class="top-right">

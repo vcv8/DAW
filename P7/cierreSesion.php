@@ -11,18 +11,18 @@
 	<?php 	
 
 		// Borra todas las variables de sesión 
-		 $_SESSION = array(); 
+		$_SESSION = array(); 
 		 
-		 // Borra la cookie que almacena la sesión 
-		 if(isset($_COOKIE[session_name()])) { 
-		   setcookie(session_name(), ’’, time() - 42000, ’/’); 
-		 }
-		 if (isset($_COOKIE["recordar"])) {
-			setcookie("recordar", "", time() - 3600);
-		 } 
+		// Borra la cookie que almacena la sesión 
+		if(isset($_COOKIE[session_name()])) { 
+		   setcookie(session_name(), '', time() - 42000, ’/’); 
+		}
+		if (isset($_COOKIE["recordar"])) {
+			setcookie("recordar", '', time() - 3600);
+		} 
 		 
-		 // Finalmente, destruye la sesión 
-		 session_destroy(); 
+		// Finalmente, destruye la sesión 
+		session_destroy(); 
 		
 		$host = $_SERVER['HTTP_HOST']; 
 		$uri  = rtrim(dirname($_SERVER[’PHP_SELF’]), '/\\'); 

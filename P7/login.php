@@ -1,8 +1,15 @@
 <?php
 	session_start(); # Inicializamos la gestion de sesiones
 
+	// Borra todas las variables de sesión 
+	$_SESSION = array(); 
+	 
+	// Borra la cookie que almacena la sesión 
+	if(isset($_COOKIE[session_name()])) { 
+	   setcookie(session_name(), '', time() - 42000, ’/’); 
+	}
 	if (isset($_COOKIE["recordar"])) {
-		setcookie("recordar", "", time() - 3600);
+		setcookie("recordar", '', time() - 3600);
 	}
 	
 	session_destroy(); # Elimina la sesión del usuario actual
@@ -27,7 +34,7 @@
 	?>
 	<section class="Inicio-Registro"> <!--Formulario de Inicio de Sesión -->
 		<fieldset class="marcoInicioRegistro">
-			<form action="controlAcces.php" method="POST">
+			<form action="controlAcces.php?log=true" method="POST">
 				<h2>Inicio de Sesión</h2>
 				<p><input class="boxesForm" type="text" name="usuario" placeholder="Introduce tu nombre de usuario" autocomplete="on" required></p>
 				<p><input class="boxesForm" type="password" name="contraseña" placeholder="Introduce tu contraseña" required></p>
@@ -42,13 +49,13 @@
 		#print_r($_GET);
 			if($_GET && $_GET['Error1']=="loginError") # Error cuando el usuario o la contraseña es incorrecta
 			{ 
-				echo '<p id="errorMSG">!<span>ERROR</span>! La cuenta con la que se ha iniciado sesión no está registrada. <a href="registro.php">Registrarse</a>.</p>';
+				echo '<p id="errorMSG">¡<span>ERROR</span>! La cuenta con la que se ha iniciado sesión no está registrada. <a href="registro.php">Registrarse</a>.</p>';
 			}
 			else
 			{
 				if($_GET && $_GET['Error1']=="accesoUsuarioNoRegistrado") # Error cuando se intenta acceder a una parte de la pagina que requiere estar registrado
 				{
-					echo '<p id="errorMSG">!<span>ERROR</span>! Necesita iniciar sesion para poder acceder a esta parte. <a href="registro.php">Registrarse</a>.</p>';
+					echo '<p id="errorMSG">¡<span>ERROR</span>! Necesita iniciar sesion para poder acceder a esta parte. <a href="registro.php">Registrarse</a>.</p>';
 				}
 			}
 		?>

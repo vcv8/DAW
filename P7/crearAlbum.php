@@ -1,7 +1,15 @@
 <?php
 	session_start(); # Inicializamos la gestion de sesiones
-	
+
 	if(!isset($_SESSION["usuario"])){
+		if(isset($_COOKIE["recordar"])){
+			$host = $_SERVER['HTTP_HOST']; 
+			$uri  = rtrim(dirname($_SERVER[’PHP_SELF’]), '/\\'); 
+			$extra = 'P7/controlAcces.php?msg=crearAlbum.php'; 
+			header("Location: http://$host$uri/$extra");
+			exit;
+		}
+
 		$host = $_SERVER['HTTP_HOST']; 
 		$uri  = rtrim(dirname($_SERVER[’PHP_SELF’]), '/\\'); 
 		$extra = 'P7/login.php?Error1=accesoUsuarioNoRegistrado'; 

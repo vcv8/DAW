@@ -2,6 +2,15 @@
 	session_start(); # Inicializamos la gestion de sesiones
 	
 	if(!isset($_SESSION["usuario"])){  # Si el usuario no ha iniciado sesion no puede acceder al detalle de foto
+		if(isset($_COOKIE["recordar"])){
+			$host = $_SERVER['HTTP_HOST']; 
+			$uri  = rtrim(dirname($_SERVER[’PHP_SELF’]), '/\\'); 
+			$f_id = $_GET['id_foto'];
+			$extra = "P7/controlAcces.php?msg=detalleFoto.php?id_foto=$f_id"; 
+			header("Location: http://$host$uri/$extra");
+			exit;
+		}
+
 		$host = $_SERVER['HTTP_HOST']; 
 		$uri  = rtrim(dirname($_SERVER[’PHP_SELF’]), '/\\'); 
 		$extra = 'P7/login.php?Error1=accesoUsuarioNoRegistrado'; 
@@ -29,17 +38,22 @@
 
 	<section id="detalle">
 		<article>
+		<?php
+			if(!isset($_GET['id_foto'])){
+				echo '<p id="errorMSG">¡<span>ERROR</span>! La ID de la foto introducida es errónea.</p>';
+			}else{
+				if (!is_numeric($_GET['id_foto'])) {
+					echo '<p id="errorMSG">¡<span>ERROR</span>! La ID de la foto introducida es errónea.</p>';
+				}else{
+					$id = $_GET['id_foto'];
+					if($id%'2'=='0'){ # En funcion de si es par o no, se almacena un array o otro
+						$res = array('gat2.jpg', 'Vichyssoise', '20/10/2018','Francia', 'Animales', '@VictorCV8');
+					}else{
+						$res = array('paisaje.png', 'Amanecer', '19/09/2018','España', 'Paisajes', '@Roxo95');
+					}
+		?>
 			<figure>
 				<div>
-					<?php
-						$actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-						list($url, $parametro) = explode('?', $actual_link); # Separamos la url a partir de la interrogacion y lo asignamos a dos valores distintos
-						if($parametro%'2'=='0'){ # En funcion de si es par o no, se almacena un array o otro
-							$res = array('gat2.jpg', 'Vichyssoise', '20/10/2018','Francia', 'Animales', '@VictorCV8');
-						}else{
-							$res = array('paisaje.png', 'Amanecer', '19/09/2018','España', 'Paisajes', '@Roxo95');
-						}
-					?>
 					<img src="recursos/<?php echo $res[0];?>" alt="Foto con mas detalle" class="imagen2">
 				</div>
 				<figcaption>
@@ -52,6 +66,10 @@
 					</div>
 				</figcaption>
 			</figure>
+		<?php
+				}
+			}
+		?>
 		</article>
 	</section>
 

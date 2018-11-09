@@ -1,7 +1,7 @@
 
 <?php
 	
-	if(isset($_SESSION["usuario"]) && isset($_COOKIE["estilo"])) # Aplicar el estilo seleccionado por el usuario
+	if(isset($_SESSION["usuario"]) && isset($_COOKIE["estilo"]) && ($_COOKIE["estilo"]=="noche")) # Aplicar el estilo seleccionado por el usuario
 	{
 		echo '<link rel="stylesheet" type="text/css" href="estilos/estilo1.css">';
 		echo '<link rel="stylesheet" type="text/css" href="estilos/base.css" />';
@@ -10,7 +10,20 @@
 	}
 	else
 	{
+		if(isset($_SESSION["usuario"]) && isset($_COOKIE["estilo"]) && ($_COOKIE["estilo"]=="accesibilidad"))
+		{
+			echo '<link rel="stylesheet" type="text/css" href="estilos/estilo1.css">';
+			echo '<link rel="stylesheet" type="text/css" href="estilos/base.css" />';
+			echo '<link rel="stylesheet" type="text/css" href="recursos/fontello-848afb9a/css/fontello.css" />';
+			echo '<link rel="stylesheet" type="text/css" href="estilos/accesibility.css" />';
+			echo '<link rel="stylesheet" type="text/css" href="estilos/colors3.css" />';
+		}
+		else
+		{
+	
 
+	
+		
 ?>
 
 <link rel="stylesheet" type="text/css" href="estilos/estilo1.css">
@@ -19,6 +32,7 @@
 <link rel="stylesheet" type="text/css" href="recursos/fontello-848afb9a/css/fontello.css">
 
 <?php
+		}
 	}
 ?>
 

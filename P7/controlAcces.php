@@ -1,7 +1,7 @@
 <?php
 	session_start(); # Inicializamos la gestion de sesiones
 
-	$regUser = array('manolo100' => 'holasoymanolo', 'cristian100' => 'holasoycristian' , 'pedro100' => 'holasoypedro' , 'knekro100' => 'holasoyknekro');
+	$regUser = array('manolo100' => ['holasoymanolo', 'accesibilidad'], 'cristian100' => ['holasoycristian', 'normal'], 'pedro100' => ['holasoypedro', 'noche'], 'knekro100' => ['holasoyknekro', 'normal']);
 	$redir = '0';
 
 	if(isset($_COOKIE['recordar'])){
@@ -14,8 +14,13 @@
 	}
 
 	foreach ($regUser as $email => $clave) {
-		if($email==$usuario and $clave==$pass){
+		if($email==$usuario and $clave[0]==$pass){
 			$redir = '1';
+
+			# Controlamos el estilo que tenia el usuario guardado
+			$cookie_name = "estilo";
+			$cookie_value = $clave[1];
+			setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
 		}
 	}
 
@@ -39,10 +44,7 @@
 
 		$_SESSION["usuario"] = $usuario; # Almacenamos el nombre de usuario en una variable global
 		
-		# Controlamos el estilo que tenia el usuario guardado
-		$cookie_name = "estilo";
-		$cookie_value = "accesibility";
-		setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
+		
 
 		# Redireccionamos
 		if($_GET["log"]){

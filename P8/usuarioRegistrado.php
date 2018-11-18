@@ -5,14 +5,14 @@
 		if(isset($_COOKIE["recordar"])){
 			$host = $_SERVER['HTTP_HOST']; 
 			$uri  = rtrim(dirname($_SERVER[’PHP_SELF’]), '/\\');
-			$extra = 'P7/controlAcces.php?msg=usuarioRegistrado.php'; 
+			$extra = 'P8/controlAcces.php?msg=usuarioRegistrado.php'; 
 			header("Location: http://$host$uri/$extra");
 			exit;
 		}
 
 		$host = $_SERVER['HTTP_HOST']; 
 		$uri  = rtrim(dirname($_SERVER[’PHP_SELF’]), '/\\'); 
-		$extra = 'P7/login.php?Error1=accesoUsuarioNoRegistrado'; 
+		$extra = 'P8/login.php?Error1=accesoUsuarioNoRegistrado'; 
 		header("Location: http://$host$uri/$extra");
 		exit;	
 	}

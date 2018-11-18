@@ -7,16 +7,16 @@
 			$uri  = rtrim(dirname($_SERVER[’PHP_SELF’]), '/\\');
 			if(isset($_GET['brapida'])) {
 				$ext = $_GET['brapida'];
-				$extra = "P7/controlAcces.php?msg=resBuscar.php?brapida=$ext";
+				$extra = "P8/controlAcces.php?msg=resBuscar.php?brapida=$ext";
 			}else if(isset($_GET['titulo'])){
 				$ext1 = $_GET['titulo'];
 				$ext2 = $_GET['pais'];
 				$ext3 = $_GET['fechaInicial'];
 				$ext4 = $_GET['fechaFinal'];
 				$ext = "titulo=$ext1&pais=$ext2&fechaInicial=$ext3&fechaFinal=$ext4";
-				$extra = "P7/controlAcces.php?msg=resBuscar.php?$ext";
+				$extra = "P8/controlAcces.php?msg=resBuscar.php?$ext";
 			}else{
-				$extra = 'P7/controlAcces.php?msg=resBuscar.php';
+				$extra = 'P8/controlAcces.php?msg=resBuscar.php';
 			}			 
 			header("Location: http://$host$uri/$extra");
 			exit;

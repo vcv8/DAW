@@ -6,14 +6,14 @@
 			$host = $_SERVER['HTTP_HOST']; 
 			$uri  = rtrim(dirname($_SERVER[’PHP_SELF’]), '/\\'); 
 			$f_id = $_GET['id_foto'];
-			$extra = "P7/controlAcces.php?msg=detalleFoto.php?id_foto=$f_id"; 
+			$extra = "P8/controlAcces.php?msg=detalleFoto.php?id_foto=$f_id"; 
 			header("Location: http://$host$uri/$extra");
 			exit;
 		}
 
 		$host = $_SERVER['HTTP_HOST']; 
 		$uri  = rtrim(dirname($_SERVER[’PHP_SELF’]), '/\\'); 
-		$extra = 'P7/login.php?Error1=accesoUsuarioNoRegistrado'; 
+		$extra = 'P8/login.php?Error1=accesoUsuarioNoRegistrado'; 
 		header("Location: http://$host$uri/$extra");
 		exit;	
 	}

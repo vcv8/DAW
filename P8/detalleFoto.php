@@ -1,5 +1,7 @@
 <?php
 	session_start(); # Inicializamos la gestion de sesiones
+
+	require_once("includes/conexionBD.inc"); # Comprobamos la conexion a la base de datos
 	
 	if(!isset($_SESSION["usuario"])){  # Si el usuario no ha iniciado sesion no puede acceder al detalle de foto
 		if(isset($_COOKIE["recordar"])){

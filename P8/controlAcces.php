@@ -1,6 +1,8 @@
 <?php
 	session_start(); # Inicializamos la gestion de sesiones
 
+	require_once("includes/conexionBD.inc"); # Comprobamos la conexion a la base de datos
+
 	$regUser = array('manolo100' => ['holasoymanolo', 'accesibilidad'], 'cristian100' => ['holasoycristian', 'normal'], 'pedro100' => ['holasoypedro', 'noche'], 'knekro100' => ['holasoyknekro', 'normal']);
 	$redir = '0';
 

@@ -1,6 +1,8 @@
 <?php
 	session_start(); # Inicializamos la gestion de sesiones
 
+	require_once("includes/conexionBD.inc"); # Comprobamos la conexion a la base de datos
+
 	// Borra todas las variables de sesión 
 	$_SESSION = array(); 
 	 

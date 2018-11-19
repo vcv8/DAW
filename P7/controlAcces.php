@@ -48,7 +48,7 @@
 
 		# Redireccionamos
 		if($_GET["log"]){
-			$extra = 'P7/usuarioRegistrado.php?Saludo=firstLogin';
+			$extra = 'P7/usuarioRegistrado.php';
 		}else{
 			$destino = $_GET['msg']; # Controlamos la variable de URL que nos marca la pagina a la que redireccionar
 

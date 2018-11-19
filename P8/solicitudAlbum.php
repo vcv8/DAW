@@ -1,5 +1,7 @@
 <?php
 	session_start(); # Inicializamos la gestion de sesiones
+
+	require_once("includes/conexionBD.inc"); # Contiene los datos de conexion al servidor
 	
 	if(!isset($_SESSION["usuario"])){
 		if(isset($_COOKIE["recordar"])){

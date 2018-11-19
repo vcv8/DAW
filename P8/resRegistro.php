@@ -7,6 +7,7 @@
 	
 	<?php
 		require_once("includes/estilos.inc");  # Contiene todos los enlaces con el css necesario para las paginas
+		require_once("includes/conexionBD.inc"); # Contiene los datos de conexion al servidor
 	?>
 
 </head>

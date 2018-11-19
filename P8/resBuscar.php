@@ -1,6 +1,8 @@
 <?php
 	session_start(); # Inicializamos la gestion de sesiones
 
+	require_once("includes/conexionBD.inc"); # Comprobamos la conexion a la base de datos
+
 	if(!isset($_SESSION["usuario"])){
 		if(isset($_COOKIE["recordar"])){
 			$host = $_SERVER['HTTP_HOST']; 
@@ -41,12 +43,12 @@
 
 	<?php
 		require_once("includes/estilos.inc");  # Contiene todos los enlaces con el css necesario para las paginas
-		require_once("includes/conexionBD.inc");
 	?>
 </head>
 <body>
 
 	<?php
+		
 		if(isset($_SESSION["usuario"])){
 			require_once("includes/cabecera3.inc");  # Cabecera de la pagina con el logo y usuario registrado
 		}
@@ -54,15 +56,6 @@
 			require_once("includes/cabecera4.inc");  # Cabecera de la pagina con el logo, login y registro
 		}
 		
-	?>
-	
-	<?php
-		$mysqli = new mysqli(dbServer, dbUser, dbPassword, dbDatabase);
-		if($mysqli->connect_errno)
-		{
-			die("Error: No se pudo conectar " . $mysqli->connect_error);
-		}
-
 		if(isset($_GET['titulo'])){
 			$titulo = $_GET['titulo']; 
 			$fechaInicial = $_GET['fechaInicial']; 

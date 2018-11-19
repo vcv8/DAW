@@ -22,6 +22,7 @@
 
 			<?php
 
+
 				$album = $_GET['album'];  	# Album Seleccionado
 				$copias = $_GET['copias'];	# Nº de copias del album
 				$paginas = 5; 				# Nº de paginas del album

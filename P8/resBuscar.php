@@ -41,6 +41,7 @@
 
 	<?php
 		require_once("includes/estilos.inc");  # Contiene todos los enlaces con el css necesario para las paginas
+		require_once("includes/conexionBD.inc");
 	?>
 </head>
 <body>
@@ -56,6 +57,12 @@
 	?>
 	
 	<?php
+		$mysqli = new mysqli(dbServer, dbUser, dbPassword, dbDatabase);
+		if($mysqli->connect_errno)
+		{
+			die("Error: No se pudo conectar " . $mysqli->connect_error);
+		}
+
 		if(isset($_GET['titulo'])){
 			$titulo = $_GET['titulo']; 
 			$fechaInicial = $_GET['fechaInicial']; 

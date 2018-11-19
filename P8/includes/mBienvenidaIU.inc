@@ -10,4 +10,8 @@ setcookie("lasttime" . $_SESSION["usuario"], "Bienvenido " . $_SESSION['usuario'
 if (!isset($_COOKIE['firsttime']))
 {
     setcookie("firsttime", "no");
+
+    if(isset($_COOKIE['lasttime' . $_SESSION["usuario"]])){
+    	$saludo = '<p id="errorMSG">' . $_COOKIE['lasttime' . $_SESSION["usuario"]] . '</p>';
+    }
 }

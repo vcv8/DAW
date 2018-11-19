@@ -82,13 +82,13 @@
 
 		<?php
 			if(isset($_SESSION["usuario"])){
-			if (!isset($_COOKIE['firsttime']))
-			{
-				if(isset($_COOKIE['lasttime' . $_SESSION["usuario"]])){
-					echo "$saludo";
+				if (!isset($_COOKIE['firsttime']))
+				{
+					if(isset($_COOKIE['lasttime' . $_SESSION["usuario"]])){
+						echo "$saludo";
+					}
 				}
 			}
-		}
 		?>
 
 		<div>

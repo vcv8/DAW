@@ -19,7 +19,7 @@
 		exit;	
 	}
 	else{
-		require_once("includes/mBienvenida.inc");
+		require_once("includes/mBienvenidaIU.inc");
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -71,11 +71,9 @@
 			if(isset($_SESSION["usuario"])){
 				if (!isset($_COOKIE['firsttime']))
 				{
-				    setcookie("firsttime", "no");
-
-				    if(isset($_COOKIE['lasttime'])){
-				    	echo '<p id="errorMSG">' . $_COOKIE['lasttime'] . '</p>';
-				    }
+					if(isset($_COOKIE['lasttime' . $_SESSION["usuario"]])){
+						echo "$saludo";
+					}
 				}
 			}
 		?>

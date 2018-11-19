@@ -12,7 +12,7 @@
 			exit;
 		}	 
 	}else{
-		require_once("includes/mBienvenida.inc"); //Genera la cookie que necesaria para mostrar el mensaje de bienvenida con la fecha de la ultima conexion
+		require_once("includes/mBienvenidaIU.inc"); //Genera la cookie que necesaria para mostrar el mensaje de bienvenida con la fecha de la ultima conexion
 	}
 ?>
 <!DOCTYPE html>
@@ -40,11 +40,9 @@
 		if(isset($_SESSION["usuario"])){
 			if (!isset($_COOKIE['firsttime']))
 			{
-			    setcookie("firsttime", "no");
-
-			    if(isset($_COOKIE['lasttime'])){
-			    	echo '<p id="errorMSG">' . $_COOKIE['lasttime'] . '</p>';
-			    }
+				if(isset($_COOKIE['lasttime' . $_SESSION["usuario"]])){
+					echo "$saludo";
+				}
 			}
 		}
 	?>

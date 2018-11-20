@@ -47,77 +47,53 @@
 		}
 	?>
 
+
 	<section class="preview"> <!-- 5 Ultimas Imagenes -->
+
+		<?php
+
+			$sentencia = "SELECT * FROM fotos";
+			$fotos = $mysqli->query($sentencia);  # Devuelve un objeto con todas las fotos
+			
+			if(!$fotos || $mysqli->errno) # errno devuelve el codigo de error de la ultima funcion ejecutada
+			{
+				die("Error: no se pudo realizar la consulta: " . $mysqli->error);
+			}
+
+			while($fila = $fotos->fetch_assoc())  # Obtenemos el resultado fila a fila en forma de array asociativo
+			{
+		?>
 		<article>
 			<a href="detalleFoto.php?id_foto=1">
 				<figure>
-					<img src="recursos/paisaje.png" class="prov">
+					<img <?php echo "src='" . $fila['Fichero'] . "'" ?> class="prov">
 					<figcaption class="top-right">
 						<div class="imgResume">
-							<p><b>Amanecer</b></p>
-							<p>29 Septiembre 2018</p>
-							<p>España</p>
+							<p><b><?php echo $fila['Titulo']; ?></b></p>
+							<p><?php echo $fila['Fecha']; ?></p>
+							<p>
+							<?php 
+								if($fila['Pais']==1)
+								{
+									echo "España";
+								} 
+							?>	
+							</p>
 						</div>
 					</figcaption>
 				</figure>
 			</a>
 		</article>
-		<article>
-			<a href="detalleFoto.php?id_foto=2">
-				<figure>
-					<img src="recursos/Screenshot_20171128_183907.png" class="prov">
-					<figcaption class="top-right">
-						<div class="imgResume">
-							<p><b>Hackea tu destino</b></p>
-							<p>29 Septiembre 2018</p>
-							<p>España</p>
-						</div>
-					</figcaption>
-				</figure>
-			</a>
-		</article>
-		<article>
-			<a href="detalleFoto.php?id_foto=3">
-				<figure>
-					<img src="recursos/artemania.jpg" class="prov">
-					<figcaption class="top-right">
-						<div class="imgResume">
-							<p><b>ArteManía</b></p>
-							<p>29 Septiembre 2018</p>
-							<p>España</p>
-						</div>
-					</figcaption>
-				</figure>
-			</a>
-		</article>
-		<article>
-			<a href="detalleFoto.php?id_foto=4">
-				<figure>
-					<img src="recursos/gat2.jpg" class="prov">
-					<figcaption class="top-right">
-						<div class="imgResume">
-							<p><b>Vichyssoise</b></p>
-							<p>29 Septiembre 2018</p>
-							<p>España</p>
-						</div>
-					</figcaption>
-				</figure>
-			</a>
-		</article>
-		<article>
-			<a href="detalleFoto.php?id_foto=5">
-				<figure>
-					<img src="recursos/gujero.jpg" class="prov">
-					<figcaption class="top-right">
-						<div class="imgResume">
-							<p><b>Descanso</b></p>
-							<p>29 Septiembre 2018</p>
-							<p>España</p>
-						</div>
-					</figcaption>
-				</figure>
-			</a>
-		</article>
+
+		<?php
+
+			}
+
+			# Cerramos la sesion y liberamos la memoria
+			$fotos ->free();
+			$mysqli->close();
+
+		?>
 	</section>
 
 	<?php

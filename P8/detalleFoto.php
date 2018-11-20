@@ -47,8 +47,22 @@
 			}else{
 				if (!is_numeric($_GET['id_foto'])) {
 					echo '<p id="errorMSG">¡<span>ERROR</span>! La ID de la foto introducida es errónea.</p>';
-				}else{
+				}else
+				{
 					$id = $_GET['id_foto'];
+
+					$sentencia = "SELECT * FROM fotos WHERE IdFoto=$id";
+					$foto = $mysqli->query($sentencia);  # Devuelve un objeto con la foto que tenga esa id
+
+					if(!$foto || $mysqli->errno) # errno devuelve el codigo de error de la ultima funcion ejecutada
+					{
+						die("Error: no se pudo realizar la consulta: " . $mysqli->error);
+					}
+
+					$fila = $foto->fetch_assoc();
+
+
+
 					if($id%'2'=='0'){ # En funcion de si es par o no, se almacena un array o otro
 						$res = array('gat2.jpg', 'Vichyssoise', '20/10/2018','Francia', 'Animales', '@VictorCV8');
 					}else{
@@ -57,14 +71,30 @@
 		?>
 			<figure>
 				<div>
-					<img src="recursos/<?php echo $res[0];?>" alt="Foto con mas detalle" class="imagen2">
+					<img src="<?php echo $fila['Fichero'];?>" alt="Foto con mas detalle" class="imagen2">
 				</div>
 				<figcaption>
-					<h2><?php echo $res[1]?></h2>
-					<p class="info">Tomada el <?php echo $res[2]?></p>
-					<p class="info">en <?php echo $res[3]?></p>
+					<h2><?php echo $fila['Titulo'];?></h2>
+					<p class="info">Tomada el <?php echo $fila['Fecha'];?></p>
+					<p class="info">en 
+						<?php
+							if($fila['Pais'] == 1)
+							{
+								echo "España";
+							}
+						 ?>
+						
+					</p>
 					<div>
-						<p class="albuminfo">Pertenece al álbum <a href="" title="Acceso al album de Fotos"><?php echo $res[4]?></a>.</p>
+						<p class="albuminfo">Pertenece al álbum <a href="" title="Acceso al album de Fotos">
+						<?php 
+							if($fila['Album'] == 1)
+							{
+								echo "Paisajes";
+							}
+						?>
+						</a>.
+						</p>
 						<p>Por <a href="usuarioRegistrado.php" title="Acceso al usuario Roxo95"><?php echo $res[5]?></a></p>
 					</div>
 				</figcaption>

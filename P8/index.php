@@ -64,7 +64,7 @@
 			{
 		?>
 		<article>
-			<a href="detalleFoto.php?id_foto=1">
+			<a href=<?php echo "'detalleFoto.php?id_foto=" . $fila['IdFoto'] . "' >"; ?> 
 				<figure>
 					<img <?php echo "src='" . $fila['Fichero'] . "'" ?> class="prov">
 					<figcaption class="top-right">

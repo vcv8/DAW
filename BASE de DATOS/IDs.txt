@@ -1,0 +1,37 @@
+ PAÍSES:
+ 
+    1 - España
+    2 - Francia
+    3 - Italia
+    
+
+ALBUMES:
+
+    1 - Paisajes - knekro
+    2 - Mascotas - cristian
+    3 - Viaje a Malaysia - pedro
+    4 - Random - manolo
+    
+    
+USUARIOS:
+
+    1 - knekro
+    2 - manolo
+    3 - cristian
+    4 - pedro
+    
+
+ESTILOS:
+
+    1 - normal
+    2 - noche
+    3 - accesibilidad
+    
+
+FOTOS:
+
+    1 - paisaje - Paisajes
+    2 - gato - Mascotas
+    3 - Dibujaco - Random
+    4 - Grupal - Viaje a Malaysia
+    5 - cueva - Viaje a Malaysia

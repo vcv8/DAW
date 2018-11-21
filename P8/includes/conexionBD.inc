@@ -6,5 +6,7 @@
 	if($mysqli->connect_errno)
 	{
 		die("Error: No se pudo conectar " . $mysqli->connect_error);
+	}else{
+		$mysqli->query("SET character_set_client = 'utf8'");
 	}
 ?>

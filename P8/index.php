@@ -51,7 +51,6 @@
 	<section class="preview"> <!-- 5 Ultimas Imagenes -->
 
 		<?php
-
 			$sentencia1 = "SELECT * FROM fotos";
 			$fotos = $mysqli->query($sentencia1);  # Devuelve un objeto con todas las fotos
 			

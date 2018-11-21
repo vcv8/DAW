@@ -130,11 +130,44 @@
 						<output id="outresolucion">150</output> dpi
 					</p>
 					<p><label><b>Álbum (*)</b></label>
+						<?php
+								#Comprobamos que usuario es 
+								$usuario = $_SESSION["usuario"];
+								$sentencia1 = "SELECT IdUsuario FROM usuarios WHERE NomUsuario='$usuario'";
+								$usuario = $mysqli->query($sentencia1);  
+								if(!$usuario || $mysqli->errno) # errno devuelve el codigo de error de la ultima funcion ejecutada
+								{
+									die("Error: no se pudo realizar la consulta: " . $mysqli->error);
+								}
+
+								$fila = $usuario->fetch_assoc();
+
+								# Obtenemos los albumes del usuario
+								$idUsu = $fila['IdUsuario'];
+								$sentencia2 = "SELECT Titulo FROM albumes WHERE Usuario=$idUsu";
+								$album = $mysqli->query($sentencia2);  
+								if(!$album || $mysqli->errno) # errno devuelve el codigo de error de la ultima funcion ejecutada
+								{
+									die("Error: no se pudo realizar la consulta: " . $mysqli->error);
+								}
+
+							?>
 						<select class="direccion" name="album" required>
 							<option disabled selected value> - mis álbumes - </option>
-						  	<option value="paisajes">Paisajes</option>
-						  	<option value="bodajm">Boda Jose María</option>
-						  	<option value="viajeitalia">Viaje Italia</option>
+							<?php 
+								while($fila2 = $album->fetch_assoc())  # Obtenemos el resultado fila a fila en forma de array asociativo
+								{
+
+							?>
+							<option value="<?php echo $fila2['Titulo'] ?>"><?php echo $fila2['Titulo'] ?></option>
+							<?php 
+								}
+
+								# Cerramos la sesion con la BD y liberamos la memoria
+								$album ->free();
+								$usuario ->free();
+								$mysqli->close();
+							?>
 						</select>
 					 </p>
 					 <p><label><b>Fecha de recepción aproximada </b></label><input class="direccion" type="date" name="fechaRecepcion"></p>

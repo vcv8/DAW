@@ -3,7 +3,6 @@
 
 	require_once("includes/conexionBD.inc"); # Comprobamos la conexion a la base de datos
 
-	$regUser = array('manolo100' => ['holasoymanolo', 'accesibilidad'], 'cristian100' => ['holasoycristian', 'normal'], 'pedro100' => ['holasoypedro', 'noche'], 'knekro100' => ['holasoyknekro', 'normal']);
 	$redir = '0';
 
 	if(isset($_COOKIE['recordar'])){
@@ -15,15 +14,17 @@
 		$rec = $_POST['recuerdame'];
 	}
 
-	foreach ($regUser as $email => $clave) {
-		if($email==$usuario and $clave[0]==$pass){
-			$redir = '1';
+	# Control de Usuario accediendo a la Base de datos
+	$tpass = $mysqli->query("SELECT Clave FROM usuarios WHERE NomUsuario='$usuario'");
+	$outpass = $tpass->fetch_assoc();
 
-			# Controlamos el estilo que tenia el usuario guardado
-			$cookie_name = "estilo";
-			$cookie_value = $clave[1];
-			setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
-		}
+	if($pass == $outpass['Clave']){
+		$redir = '1';
+
+		# Controlamos el estilo que tenia el usuario guardado
+		$cookie_name = "estilo";
+		$cookie_value = $clave[1];
+		setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
 	}
 
 	if($redir=='0'){  # No es ninguno de los usuarios registrados

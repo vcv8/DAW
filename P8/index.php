@@ -52,8 +52,8 @@
 
 		<?php
 
-			$sentencia = "SELECT * FROM fotos";
-			$fotos = $mysqli->query($sentencia);  # Devuelve un objeto con todas las fotos
+			$sentencia1 = "SELECT * FROM fotos";
+			$fotos = $mysqli->query($sentencia1);  # Devuelve un objeto con todas las fotos
 			
 			if(!$fotos || $mysqli->errno) # errno devuelve el codigo de error de la ultima funcion ejecutada
 			{
@@ -62,6 +62,17 @@
 
 			while($fila = $fotos->fetch_assoc())  # Obtenemos el resultado fila a fila en forma de array asociativo
 			{
+				$idPais = $fila['Pais'];
+				if( $idPais !=NULL )
+				{
+					$sentencia2 = "SELECT * FROM paises WHERE IdPais=$idPais";
+					$nomPaises = $mysqli->query($sentencia2);  # Devuelve un objeto con el pais que tenga el mismo ID
+					if(!$nomPaises || $mysqli->errno) # errno devuelve el codigo de error de la ultima funcion ejecutada
+					{
+						die("Error: no se pudo realizar la consulta: " . $mysqli->error);
+					}
+					$fila2 =  $nomPaises->fetch_assoc();
+				}
 		?>
 		<article>
 			<a href=<?php echo "'detalleFoto.php?id_foto=" . $fila['IdFoto'] . "' >"; ?> 
@@ -72,12 +83,12 @@
 							<p><b><?php echo $fila['Titulo']; ?></b></p>
 							<p><?php echo $fila['Fecha']; ?></p>
 							<p>
-							<?php 
-								if($fila['Pais']==1)
-								{
-									echo "España";
-								} 
-							?>	
+								<?php 
+									if( $idPais !=NULL )
+									{
+										echo $fila2['NomPais'];
+									}
+								?>	
 							</p>
 						</div>
 					</figcaption>
@@ -91,6 +102,7 @@
 
 			# Cerramos la sesion y liberamos la memoria
 			$fotos ->free();
+
 			$mysqli->close();
 
 		?>

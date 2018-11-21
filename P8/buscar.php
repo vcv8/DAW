@@ -44,7 +44,33 @@
 			<h2>Búsqueda Avanzada</h2>
 			<form action="resBuscar.php" method="GET">
 				<p><label><b>Título </b></label><input class="boxesAlbum" type="text" name="titulo" placeholder=" Amanecer..." required></p>
-				<p><label><b>País </b></label><input class="boxesAlbum" type="text" name="pais" placeholder=" España..."required></p>
+				<?php
+						#Obtenemos los paises disponibles
+						$sentencia1 = "SELECT NomPais FROM paises";
+						$pais = $mysqli->query($sentencia1);  
+						if(!$pais || $mysqli->errno) # errno devuelve el codigo de error de la ultima funcion ejecutada
+						{
+							die("Error: no se pudo realizar la consulta: " . $mysqli->error);
+						}
+				?>
+				<p><label><b>Pais</b></label>
+					<select class="direccion" name="pais" required>
+						<option disabled selected value> - mis álbumes - </option>
+						<?php 
+							while($fila1 = $pais->fetch_assoc())  # Obtenemos el resultado fila a fila en forma de array asociativo
+							{
+
+						?>
+						<option value="<?php echo $fila1['NomPais'] ?>"><?php echo $fila1['NomPais'] ?></option>
+						<?php 
+							}
+
+							# Cerramos la sesion con la BD y liberamos la memoria
+							$pais ->free();
+							$mysqli->close();
+						?>
+					</select>
+				</p>
 				<p><label><b>Fecha entre </b></label> <input class="boxesAlbum" type="date" name="fechaInicial" required> <b> y </b> <input class="boxesAlbum" type="date" name="fechaFinal" required></p>
 				<p><input id="buscarFotos" type="submit" value="Buscar Fotos"></p>
 			</form>

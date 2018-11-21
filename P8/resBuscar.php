@@ -49,7 +49,8 @@
 			require_once("includes/cabecera4.inc");  # Cabecera de la pagina con el logo, login y registro
 		}
 		
-		if(isset($_GET['titulo'])){
+		if(isset($_GET['titulo']))
+		{
 			$titulo = $_GET['titulo']; 
 			$fechaInicial = $_GET['fechaInicial']; 
 			$fechaFinal = $_GET['fechaFinal']; 
@@ -59,12 +60,69 @@
 				  <p>Título <b>$titulo</b></p>
 				  <p>Fecha entre <b>$fechaInicial</b> y <b>$fechaFinal</b></p>
 				  <p>País <b>$pais</b></p>";
+
+			# Obtenemos el pais
+			$sentencia2 = "SELECT IdPais FROM paises WHERE NomPais='$pais'";
+			$pais = $mysqli->query($sentencia2);  # Devuelve un objeto con el pais con ese nombre
+
+			if(!$pais || $mysqli->errno) # errno devuelve el codigo de error de la ultima funcion ejecutada
+			{
+				die("Error: no se pudo realizar la consulta: " . $mysqli->error);
+			}
+
+			$fila2 =  $pais->fetch_assoc();
+
+			$idPais = $fila2['IdPais'];
+
+
+			# Obtenemos las fotos con los datos del formulario de busqueda
+			$sentencia1 = "SELECT * FROM fotos WHERE Titulo='$titulo' AND FRegistro BETWEEN '$fechaInicial' AND '$fechaFinal'";
+			$fotos = $mysqli->query($sentencia1);  # Devuelve un objeto con todas las fotos
+
+			if(!$fotos || $mysqli->errno) # errno devuelve el codigo de error de la ultima funcion ejecutada
+			{
+				die("Error: no se pudo realizar la consulta: " . $mysqli->error);
+			}
+
+			while($fila = $fotos->fetch_assoc())  # Obtenemos el resultado fila a fila en forma de array asociativo
+			{
+
+			 ?>
+
+			<section class="preview"> 
+				<article>
+					<a href=<?php echo "'detalleFoto.php?id_foto=" . $fila['IdFoto'] . "' >"; ?> 
+						<figure>
+							<img <?php echo "src='" . $fila['Fichero'] . "'" ?> class="prov">
+							<figcaption class="top-right">
+								<div class="imgResume">
+									<p><b><?php echo $fila['Titulo']; ?></b></p>
+									<p><?php echo $fila['Fecha']; ?></p>
+									<p>
+										<?php 
+											if( $idPais !=NULL )
+											{
+												echo $fila2['NomPais'];
+											}
+										?>	
+									</p>
+								</div>
+							</figcaption>
+						</figure>
+					</a>
+				</article>
+			</section>
+
+
+
+	<?php
+			}
+			$fotos ->free();
+
 		}else if (isset($_GET['brapida'])) {
 			$cadena = $_GET['brapida'];
 			echo "<p>Mostrando resultados para</p>
 				  <p><b>$cadena</b></p>";
-		}
-		
 	
 	?>
 	<section class="preview"> <!-- 5 Ultimas Imagenes -->
@@ -141,6 +199,7 @@
 	</section>
 
 	<?php
+		}
 		require_once("includes/pie.inc");  # Pie de la pagina con el copyright
 	?>
 	

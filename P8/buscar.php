@@ -55,7 +55,7 @@
 				?>
 				<p><label><b>Pais</b></label>
 					<select class="direccion" name="pais" required>
-						<option disabled selected value> - mis álbumes - </option>
+						<option disabled selected value> - Selección pais - </option>
 						<?php 
 							while($fila1 = $pais->fetch_assoc())  # Obtenemos el resultado fila a fila en forma de array asociativo
 							{

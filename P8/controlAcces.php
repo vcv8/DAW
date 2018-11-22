@@ -15,15 +15,26 @@
 	}
 
 	# Control de Usuario accediendo a la Base de datos
-	$tpass = $mysqli->query("SELECT Clave FROM usuarios WHERE NomUsuario='$usuario'");
+	$tpass = $mysqli->query("SELECT * FROM usuarios WHERE NomUsuario='$usuario'");
 	$outpass = $tpass->fetch_assoc();
 
 	if($pass == $outpass['Clave']){
 		$redir = '1';
 
 		# Controlamos el estilo que tenia el usuario guardado
+		$IdEstilo = $outpass['Estilo'];
+		$sentencia1 = "SELECT Nombre FROM estilos WHERE IdEstilo=$IdEstilo";
+		$estilo = $mysqli->query($sentencia1);
+
+		if(!$estilo || $mysqli->errno) # errno devuelve el codigo de error de la ultima funcion ejecutada
+		{
+			die("Error: no se pudo realizar la consulta: " . $mysqli->error);
+		}
+
+		$fila = $estilo->fetch_assoc();
+
 		$cookie_name = "estilo";
-		$cookie_value = $clave[1];
+		$cookie_value = $fila['Nombre']; # Almacenamos el nombre del estilo que tiene almacenado el usuario
 		setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
 	}
 

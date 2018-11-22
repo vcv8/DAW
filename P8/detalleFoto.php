@@ -103,13 +103,15 @@
 				<figcaption>
 					<h2><?php echo $fila['Titulo'];?></h2>
 					<p class="info">Tomada el <?php echo $fila['Fecha'];?></p>
-					<p class="info">en 
-						<?php
+					<?php
 							if( $idPais !=NULL )
 							{
+					?>
+					<p class="info">en 
+					<?php
 								echo $fila2['NomPais'];
 							}
-						 ?>
+					?>
 					</p>
 					<div>
 						<p class="albuminfo">Pertenece al álbum <a href="" title="Acceso al album de Fotos">

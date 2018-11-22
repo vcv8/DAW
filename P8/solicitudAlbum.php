@@ -131,27 +131,27 @@
 					</p>
 					<p><label><b>Álbum (*)</b></label>
 						<?php
-								#Comprobamos que usuario es 
-								$usuario = $_SESSION["usuario"];
-								$sentencia1 = "SELECT IdUsuario FROM usuarios WHERE NomUsuario='$usuario'";
-								$usuario = $mysqli->query($sentencia1);  
-								if(!$usuario || $mysqli->errno) # errno devuelve el codigo de error de la ultima funcion ejecutada
-								{
-									die("Error: no se pudo realizar la consulta: " . $mysqli->error);
-								}
+							#Comprobamos que usuario es 
+							$usuario = $_SESSION["usuario"];
+							$sentencia1 = "SELECT IdUsuario FROM usuarios WHERE NomUsuario='$usuario'";
+							$usuario = $mysqli->query($sentencia1);  
+							if(!$usuario || $mysqli->errno) # errno devuelve el codigo de error de la ultima funcion ejecutada
+							{
+								die("Error: no se pudo realizar la consulta: " . $mysqli->error);
+							}
 
-								$fila = $usuario->fetch_assoc();
+							$fila = $usuario->fetch_assoc();
 
-								# Obtenemos los albumes del usuario
-								$idUsu = $fila['IdUsuario'];
-								$sentencia2 = "SELECT Titulo FROM albumes WHERE Usuario=$idUsu";
-								$album = $mysqli->query($sentencia2);  
-								if(!$album || $mysqli->errno) # errno devuelve el codigo de error de la ultima funcion ejecutada
-								{
-									die("Error: no se pudo realizar la consulta: " . $mysqli->error);
-								}
+							# Obtenemos los albumes del usuario
+							$idUsu = $fila['IdUsuario'];
+							$sentencia2 = "SELECT Titulo FROM albumes WHERE Usuario=$idUsu";
+							$album = $mysqli->query($sentencia2);  
+							if(!$album || $mysqli->errno) # errno devuelve el codigo de error de la ultima funcion ejecutada
+							{
+								die("Error: no se pudo realizar la consulta: " . $mysqli->error);
+							}
 
-							?>
+						?>
 						<select class="direccion" name="album" required>
 							<option disabled selected value> - mis álbumes - </option>
 							<?php 

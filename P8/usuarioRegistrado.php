@@ -82,11 +82,51 @@
 			<fieldset class="marcoUsuario">
 				<h2>Detalles de Usuario</h2>
 				<ul id="InfoUsuario"> <!-- Lista de datos del Usuario -->
-					<li><p class="listaInfo"><b>Correo </b> pepitodelospalotes@hotmail.com</p></li>
-					<li><p><b>Sexo </b> Hombre</p></li>
-					<li><p><b>Fecha de Nacimiento </b> 12/09/1968</p></li>
-					<li><p><b>Ciudad </b> Valencia</p></li>
-					<li><p><b>País </b> España</p></li>
+					<?php 
+						#Comprobamos que usuario es 
+						$usuario = $_SESSION["usuario"];
+						$sentencia1 = "SELECT * FROM usuarios WHERE NomUsuario='$usuario'";
+						$usuario = $mysqli->query($sentencia1);  
+						if(!$usuario || $mysqli->errno) # errno devuelve el codigo de error de la ultima funcion ejecutada
+						{
+							die("Error: no se pudo realizar la consulta: " . $mysqli->error);
+						}
+
+						$fila = $usuario->fetch_assoc();
+
+						# Obtenemos el nombre del pais por su ID
+						$idPais = $fila['Pais'];
+
+						if( $idPais !=NULL ) # Comprobamos que tenga un pais asociado primero
+						{
+							$sentencia2 = "SELECT * FROM paises WHERE IdPais=$idPais";
+							$pais = $mysqli->query($sentencia2);  # Devuelve un objeto con el pais que tiene ese ID
+							if(!$pais || $mysqli->errno) # errno devuelve el codigo de error de la ultima funcion ejecutada
+							{
+								die("Error: no se pudo realizar la consulta: " . $mysqli->error);
+							}
+							$fila2 =  $pais->fetch_assoc();
+						}
+
+					?>
+					<li><p class="listaInfo"><b>Correo </b> <?php echo $fila['Email']; ?></p></li>
+					<li><p><b>Sexo </b> 
+					<?php
+						if($fila['Sexo'] == 1)
+						{
+							echo "Mujer";
+						}
+						else
+						{
+							echo "Hombre";
+						}
+					 ?>
+					</p></li>
+					<li><p><b>Fecha de Nacimiento </b> <?php echo str_replace('-', '/', date('d-m-Y', strtotime($fila['FNacimiento']))); ?></p></li>
+					<li><p><b>Ciudad </b> <?php echo $fila['Ciudad']; ?></p></li>
+					<li><p><b>País </b> <?php echo $fila2['NomPais']; ?></p></li>
+					<li><p><b>Estilo de Página </b></p> <p class="menu display-great display-medium"><a class="enlacesUsuario" href="configurarEstilo.php" title="Accede a tu lista de Álbumes">Cambiar Estilo</a> </p> 
+					</li>
 					<li><p><b>Álbumes </b></p>
 						<p class="menu display-great display-medium"><a class="enlacesUsuario" href="usuarioRegistrado.php" title="Accede a tu lista de Álbumes">Mis Álbumes</a> <a class="enlacesUsuario" href="crearAlbum.php" title="Crea un nuevo Álbum">Crear Álbum</a> <a class="enlacesUsuario" href="solicitudAlbum.php" title="Solicita la impresion de un Álbum">Solicitar Álbum</a> </p>
 
@@ -108,6 +148,11 @@
 	</section>
 
 	<?php
+
+		# Cerramos la sesion con la BD y liberamos la memoria
+		$usuario ->free();
+		$mysqli->close();
+
 		require_once("includes/pie.inc");  # Pie de la pagina con el copyright
 	?>
 

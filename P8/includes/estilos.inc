@@ -1,7 +1,7 @@
 
 <?php
 	
-	if(isset($_SESSION["usuario"]) && isset($_COOKIE["estilo"]) && ($_COOKIE["estilo"]=="noche")) # Aplicar el estilo seleccionado por el usuario
+	if(isset($_SESSION["usuario"]) && isset($_COOKIE["estilo"]) && ($_COOKIE["estilo"]=="Modo Noche")) # Aplicar el estilo seleccionado por el usuario
 	{
 		echo '<link rel="stylesheet" type="text/css" href="estilos/estilo1.css">';
 		echo '<link rel="stylesheet" type="text/css" href="estilos/base.css" />';
@@ -10,7 +10,7 @@
 	}
 	else
 	{
-		if(isset($_SESSION["usuario"]) && isset($_COOKIE["estilo"]) && ($_COOKIE["estilo"]=="accesibilidad"))
+		if(isset($_SESSION["usuario"]) && isset($_COOKIE["estilo"]) && ($_COOKIE["estilo"]=="Modo Accesibilidad"))
 		{
 			echo '<link rel="stylesheet" type="text/css" href="estilos/estilo1.css">';
 			echo '<link rel="stylesheet" type="text/css" href="estilos/base.css" />';

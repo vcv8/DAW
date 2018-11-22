@@ -56,9 +56,12 @@
 			$fechaFinal = $_GET['fechaFinal']; 
 			$pais = $_GET['pais']; 
 
+			$fechaFinalESP = str_replace('-', '/', date('d-m-Y', strtotime($fechaFinal)));
+			$fechaInicialESP = str_replace('-', '/', date('d-m-Y', strtotime($fechaFinal)));
+
 			echo "<p>Mostrando resultados para</p>
 				  <p>Título <b>$titulo</b></p>
-				  <p>Fecha entre <b>$fechaInicial</b> y <b>$fechaFinal</b></p>
+				  <p>Fecha entre <b>$fechaInicialESP</b> y <b>$fechaFinalESP </b></p>
 				  <p>País <b>$pais</b></p>";
 
 			# Obtenemos el pais
@@ -70,13 +73,16 @@
 				die("Error: no se pudo realizar la consulta: " . $mysqli->error);
 			}
 
+
 			$fila2 =  $pais->fetch_assoc();
 
 			$idPais = $fila2['IdPais'];
 
+			echo $idPais;
+
 
 			# Obtenemos las fotos con los datos del formulario de busqueda
-			$sentencia1 = "SELECT * FROM fotos WHERE Titulo='$titulo' AND FRegistro BETWEEN '$fechaInicial' AND '$fechaFinal'";
+			$sentencia1 = "SELECT * FROM fotos WHERE (FRegistro BETWEEN '$fechaInicial' AND '$fechaFinal') AND Titulo='$titulo'"; # AND Pais=$idPais  Titulo='$titulo'
 			$fotos = $mysqli->query($sentencia1);  # Devuelve un objeto con todas las fotos
 
 			if(!$fotos || $mysqli->errno) # errno devuelve el codigo de error de la ultima funcion ejecutada

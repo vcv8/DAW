@@ -102,14 +102,16 @@
 				</div>
 				<figcaption>
 					<h2><?php echo $fila['Titulo'];?></h2>
-					<p class="info">Tomada el <?php echo $fila['Fecha'];?></p>
-					<p class="info">en 
-						<?php
+					<p class="info">Tomada el <?php echo str_replace('-', '/', date('d-m-Y', strtotime($fila['Fecha']))); ?></p>
+					<?php
 							if( $idPais !=NULL )
 							{
+					?>
+					<p class="info">en 
+					<?php
 								echo $fila2['NomPais'];
 							}
-						 ?>
+					?>
 					</p>
 					<div>
 						<p class="albuminfo">Pertenece al álbum <a href="" title="Acceso al album de Fotos">

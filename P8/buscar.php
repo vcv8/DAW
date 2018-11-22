@@ -61,13 +61,9 @@
 							{
 
 						?>
-						<option value="<?php echo $fila1['NomPais'] ?>"><?php echo $fila1['NomPais'] ?></option>
+						<option value="<?php echo $fila1['NomPais']; ?>"><?php echo $fila1['NomPais']; ?></option>
 						<?php 
 							}
-
-							# Cerramos la sesion con la BD y liberamos la memoria
-							$pais ->free();
-							$mysqli->close();
 						?>
 					</select>
 				</p>
@@ -78,6 +74,9 @@
 	</section>
 
 	<?php
+		# Cerramos la sesion con la BD y liberamos la memoria
+		$pais ->free();
+		$mysqli->close();
 		require("includes/pie.inc");  # Pie de la pagina con el copyright
 	?>
 	

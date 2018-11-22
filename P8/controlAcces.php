@@ -57,7 +57,11 @@
 		}
 
 		$_SESSION["usuario"] = $usuario; # Almacenamos el nombre de usuario en una variable global
-		
+			
+		# Cerramos la sesion con la BD y liberamos la memoria
+		$estilo ->free();
+		$tpass ->free();
+		$mysqli->close();
 		
 
 		# Redireccionamos

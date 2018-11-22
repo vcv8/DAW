@@ -213,7 +213,7 @@
 
 }
 
-body>#busquedaAvanzada>.marcoBusqueda>h2,  body>section>#SolicitudAlbum>#marcoSolicitudAlbum>h3, body>#crearAlbum>#marcoCrearAlbum>h2 {
+body>#busquedaAvanzada>.marcoBusqueda>h2,  body>section>#SolicitudAlbum>#marcoSolicitudAlbum>h3 {
 
  	text-align: center;
  }

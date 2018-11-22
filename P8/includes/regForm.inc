@@ -56,8 +56,31 @@
 				if($site == 'mod'){
 					echo "<p>País actual: <b>$pam[5]</b></p>";	
 				}
+
+				#Obtenemos los paises disponibles
+				$sentencia1 = "SELECT NomPais FROM paises";
+				$pais = $mysqli->query($sentencia1);  
+				if(!$pais || $mysqli->errno) # errno devuelve el codigo de error de la ultima funcion ejecutada
+				{
+					die("Error: no se pudo realizar la consulta: " . $mysqli->error);
+				}
 			?>
-			<p><input class="boxesForm" type="text" name="País" placeholder="País" required=""></p>
+			<select class="boxesForm" name="pais" required>
+				<option disabled selected value> - Selección del Pais - </option>
+					<?php 
+						while($fila1 = $pais->fetch_assoc())  # Obtenemos el resultado fila a fila en forma de array asociativo
+						{
+
+					?>
+				<option value="<?php echo $fila1['NomPais'] ?>"><?php echo $fila1['NomPais'] ?></option>
+					<?php 
+						}
+
+						# Cerramos la sesion con la BD y liberamos la memoria
+						$pais ->free();
+						$mysqli->close();
+					?>
+			</select>
 			<p><Strong>Foto Perfil</Strong></p>
 			<p><input type="file" name="pic" accept="image/*"></p>
 			<p><input class="enlaceBoton" type="submit" 

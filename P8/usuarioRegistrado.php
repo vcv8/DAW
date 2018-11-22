@@ -122,7 +122,7 @@
 						}
 					 ?>
 					</p></li>
-					<li><p><b>Fecha de Nacimiento </b> <?php echo $fila['FNacimiento']; ?></p></li>
+					<li><p><b>Fecha de Nacimiento </b> <?php echo str_replace('-', '/', date('d-m-Y', strtotime($fila['FNacimiento']))); ?></p></li>
 					<li><p><b>Ciudad </b> <?php echo $fila['Ciudad']; ?></p></li>
 					<li><p><b>País </b> <?php echo $fila2['NomPais']; ?></p></li>
 					<li><p><b>Estilo de Página </b></p> <p class="menu display-great display-medium"><a class="enlacesUsuario" href="configurarEstilo.php" title="Accede a tu lista de Álbumes">Cambiar Estilo</a> </p> 

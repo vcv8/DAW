@@ -56,9 +56,12 @@
 			$fechaFinal = $_GET['fechaFinal']; 
 			$pais = $_GET['pais']; 
 
+			$fechaFinalESP = str_replace('-', '/', date('d-m-Y', strtotime($fechaFinal)));
+			$fechaInicialESP = str_replace('-', '/', date('d-m-Y', strtotime($fechaFinal)));
+
 			echo "<p>Mostrando resultados para</p>
 				  <p>Título <b>$titulo</b></p>
-				  <p>Fecha entre <b>$fechaInicial</b> y <b>$fechaFinal</b></p>
+				  <p>Fecha entre <b>$fechaInicialESP</b> y <b>$fechaFinalESP </b></p>
 				  <p>País <b>$pais</b></p>";
 
 			# Obtenemos el pais
@@ -74,6 +77,8 @@
 			$fila2 =  $pais->fetch_assoc();
 
 			$idPais = $fila2['IdPais'];
+
+			echo $idPais;
 
 
 			# Obtenemos las fotos con los datos del formulario de busqueda

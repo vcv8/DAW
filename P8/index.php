@@ -80,7 +80,7 @@
 					<figcaption class="top-right">
 						<div class="imgResume">
 							<p><b><?php echo $fila['Titulo']; ?></b></p>
-							<p><?php echo $fila['Fecha']; ?></p>
+							<p><?php echo str_replace('-', '/', date('d-m-Y', strtotime($fila['Fecha']))); ?></p>
 							<p>
 								<?php 
 									if( $idPais !=NULL )

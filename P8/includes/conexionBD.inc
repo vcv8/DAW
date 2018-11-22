@@ -7,4 +7,5 @@
 	{
 		die("Error: No se pudo conectar " . $mysqli->connect_error);
 	}
+	$esChars = $mysqli->query("SET CHARACTER SET 'utf8'");
 ?>

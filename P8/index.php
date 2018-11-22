@@ -51,8 +51,10 @@
 	<section class="preview"> <!-- 5 Ultimas Imagenes -->
 
 		<?php
+			/*$esChars = $mysqli->query("SET NAMES 'utf8'");*/
 			$sentencia1 = "SELECT * FROM fotos ORDER BY FRegistro DESC LIMIT 5";
 			$fotos = $mysqli->query($sentencia1);  # Devuelve un objeto con todas las fotos
+			/*$esChars = $mysqli->query("SET NAMES 'utf8'"); */
 			
 			if(!$fotos || $mysqli->errno) # errno devuelve el codigo de error de la ultima funcion ejecutada
 			{
@@ -66,6 +68,7 @@
 				{
 					$sentencia2 = "SELECT * FROM paises WHERE IdPais=$idPais";
 					$nomPaises = $mysqli->query($sentencia2);  # Devuelve un objeto con el pais que tenga el mismo ID
+
 					if(!$nomPaises || $mysqli->errno) # errno devuelve el codigo de error de la ultima funcion ejecutada
 					{
 						die("Error: no se pudo realizar la consulta: " . $mysqli->error);
@@ -80,8 +83,9 @@
 					<figcaption class="top-right">
 						<div class="imgResume">
 							<p><b><?php echo $fila['Titulo']; ?></b></p>
-							<p><?php echo str_replace('-', '/', date('d-m-Y', strtotime($fila['Fecha']))); ?></p>
-							<p>
+							<p><?php echo str_replace('-', '/', date('d F Y', strtotime($fila['FRegistro']))); ?></p>
+							<p><?php echo str_replace('-', '/', date('h:i:s', strtotime($fila['FRegistro']))); ?></p>
+							<p id="irPais">
 								<?php 
 									if( $idPais !=NULL )
 									{

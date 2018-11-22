@@ -84,10 +84,10 @@ nav>ul>li>a:hover {
   background-color: var(--8);
 }
 .preview>article{
-  border: solid 1px var(--6);
+  border: solid 2px var(--6);
 }
 .preview>article:hover{
-  border: solid 1px var(--5);
+  border: solid 2px var(--5);
 }
 
 /* FOTOS EN PREVIEW */

@@ -51,7 +51,7 @@
 	<section class="preview"> <!-- 5 Ultimas Imagenes -->
 
 		<?php
-			$sentencia1 = "SELECT * FROM fotos";
+			$sentencia1 = "SELECT * FROM fotos ORDER BY FRegistro DESC LIMIT 5";
 			$fotos = $mysqli->query($sentencia1);  # Devuelve un objeto con todas las fotos
 			
 			if(!$fotos || $mysqli->errno) # errno devuelve el codigo de error de la ultima funcion ejecutada

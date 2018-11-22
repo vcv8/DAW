@@ -35,7 +35,7 @@
 <body>
 
 	<?php
-		require_once("includes/cabecera2.inc");  # Cabecera de la pagina con solo logo
+		require_once("includes/cabecera1.inc");  # Cabecera de la pagina con solo logo
 
 		$site = 'mod'; # Variable que nos permite identificar la version del formulario de registro que debemos mostrar
 		

@@ -156,6 +156,7 @@ option {
 #detalle>article>figure>div{
   max-width: 600px;
 }
-#detalle>article>figure>img{
-  max-width: 600px;
+#detalle>article>figure>div>img{
+  max-width: 500px;
+  max-height: 500px;
 }

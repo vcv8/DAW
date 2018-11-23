@@ -47,15 +47,7 @@
 				<p><label>Descripción:</label></p>
 				<p><input class="boxesForm" type="text" name="Descripcion" placeholder="Descripción" required></p>
 				<p><label>¿Cuándo se tomó la foto?</label></p>
-				<p>
-					<select required class="mes" name="Mes">
-							<option disabled selected value selected="selected" >  Mes  </option>
-						  	<option value="1">Enero</option>
-						  	<option value="2">Febrero</option>
-						  	<option value="3">Marzo</option>
-					</select>
-					<input class="diaMes" type="number" name="Dia" placeholder="Día" max="31" min="1"> <input class="diaMes"  type="number" name="Año" placeholder="Año" max="2000" min="1918">
-			    </p>
+				<p><input class="boxesForm" type="date" name="Fecha"></p>
 			    <p><label>¿En qué país?</label></p>
 			    <?php
 					#Obtenemos los paises disponibles

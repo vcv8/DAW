@@ -30,7 +30,7 @@
 			?>
 			<select class="boxesForm" name="País" required>
 					<?php 
-						if($site == 'reg'){ echo '<option value disabled selected>Lista de Países</option>'; }
+						if($site == 'reg'){ echo '<option value disabled selected>- Selección de País -</option>'; }
 						while($fila1 = $pais->fetch_assoc())  # Obtenemos el resultado fila a fila en forma de array asociativo
 						{
 

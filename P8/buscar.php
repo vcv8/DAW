@@ -43,7 +43,7 @@
 		<fieldset class="marcoBusqueda">
 			<h2>Búsqueda Avanzada</h2>
 			<form action="resBuscar.php" method="GET">
-				<p><label><b>Título </b></label><input class="boxesAlbum" type="text" name="titulo" placeholder=" Amanecer..." required></p>
+				<p><label><b>Título </b></label><input class="boxesAlbum" type="text" name="titulo" placeholder=" Amanecer..."></p>
 				<?php
 						#Obtenemos los paises disponibles
 						$sentencia1 = "SELECT NomPais FROM paises";
@@ -54,7 +54,7 @@
 						}
 				?>
 				<p><label><b>Pais</b></label>
-					<select class="direccion" name="pais" required>
+					<select class="direccion" name="pais">
 						<option disabled selected value> - Selección pais - </option>
 						<?php 
 							while($fila1 = $pais->fetch_assoc())  # Obtenemos el resultado fila a fila en forma de array asociativo
@@ -67,7 +67,7 @@
 						?>
 					</select>
 				</p>
-				<p><label><b>Fecha entre </b></label> <input class="boxesAlbum" type="date" name="fechaInicial" required> <b> y </b> <input class="boxesAlbum" type="date" name="fechaFinal" required></p>
+				<p><label><b>Fecha entre </b></label> <input class="boxesAlbum" type="date" name="fechaInicial"> <b> y </b> <input class="boxesAlbum" type="date" name="fechaFinal"></p>
 				<p><input id="buscarFotos" type="submit" value="Buscar Fotos"></p>
 			</form>
 		</fieldset>

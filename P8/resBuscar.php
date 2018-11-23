@@ -56,8 +56,25 @@
 			$fechaFinal = $_GET['fechaFinal']; 
 			$pais = $_GET['pais']; 
 
-			$fechaFinalESP = str_replace('-', '/', date('d-m-Y', strtotime($fechaFinal)));
-			$fechaInicialESP = str_replace('-', '/', date('d-m-Y', strtotime($fechaFinal)));
+			if($fechaFinal!=NULL)
+			{
+				$fechaFinalESP = str_replace('-', '/', date('d-m-Y', strtotime($fechaFinal)));
+			}
+			else
+			{
+				$fechaFinalESP = "30/11/2018";
+				$fechaFinal = "2018-11-30";
+			}
+
+			if($fechaInicial!=NULL)
+			{
+				$fechaInicialESP = str_replace('-', '/', date('d-m-Y', strtotime($fechaInicial)));
+			}
+			else
+			{
+				$fechaInicialESP = "1/11/2018";
+				$fechaInicial = "2018-11-1";
+			}
 
 			echo "<p>Mostrando resultados para</p>
 				  <p>Título <b>$titulo</b></p>
@@ -65,6 +82,7 @@
 				  <p>País <b>$pais</b></p>";
 
 			# Obtenemos el pais
+
 			$sentencia2 = "SELECT IdPais FROM paises WHERE NomPais='$pais'";
 			$pais = $mysqli->query($sentencia2);  # Devuelve un objeto con el pais con ese nombre
 
@@ -78,13 +96,22 @@
 
 			$idPais = $fila2['IdPais'];
 
-			echo $idPais;
-
 
 			# Obtenemos las fotos con los datos del formulario de busqueda
-			$sentencia1 = "SELECT * FROM fotos WHERE (FRegistro BETWEEN '$fechaInicial' AND '$fechaFinal') AND Titulo='$titulo'"; # AND Pais=$idPais  Titulo='$titulo'
-			$fotos = $mysqli->query($sentencia1);  # Devuelve un objeto con todas las fotos
+			#$sentencia1 = "SELECT * FROM fotos WHERE (FRegistro BETWEEN '$fechaInicial' AND '$fechaFinal') AND Titulo='$titulo'"; # AND Pais=$idPais  Titulo='$titulo'
+			#$fotos = $mysqli->query($sentencia1);  # Devuelve un objeto con todas las fotos
 
+			#if(!$fotos || $mysqli->errno) # errno devuelve el codigo de error de la ultima funcion ejecutada
+			#{
+			#	die("Error: no se pudo realizar la consulta: " . $mysqli->error);
+			#}
+
+			$titulo2 = '%'.$titulo.'%';
+			# Obtenemos todas las fotos en funcion de los parametros de la busqueda
+			$sentencia1 = "SELECT * FROM fotos WHERE (FRegistro BETWEEN '$fechaInicial' AND '$fechaFinal') AND Titulo LIKE '$titulo2'";
+
+			
+			$fotos = $mysqli->query($sentencia1);  # Devuelve un objeto con todas las fotos encontradas
 			if(!$fotos || $mysqli->errno) # errno devuelve el codigo de error de la ultima funcion ejecutada
 			{
 				die("Error: no se pudo realizar la consulta: " . $mysqli->error);

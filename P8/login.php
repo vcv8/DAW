@@ -41,8 +41,8 @@
 		<fieldset class="marcoInicioRegistro">
 			<form action="controlAcces.php?log=true" method="POST">
 				<h2>Inicio de Sesión</h2>
-				<p><input class="boxesForm" type="text" name="usuario" placeholder="Introduce tu nombre de usuario" autocomplete="on" required></p>
-				<p><input class="boxesForm" type="password" name="contraseña" placeholder="Introduce tu contraseña" required></p>
+				<p><input class="boxesForm" type="text" name="usuario" placeholder="Nombre de usuario" autocomplete="on" required></p>
+				<p><input class="boxesForm" type="password" name="contraseña" placeholder="Contraseña" required></p>
 				<p><input type="checkbox" name="recuerdame" id="recbox"><label id="reclabel">Recuérdame</label></p>
 				<input class="enlaceBoton" type="submit" value="Iniciar Sesión">
 			</form>

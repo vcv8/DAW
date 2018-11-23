@@ -99,7 +99,7 @@
 						<figcaption class="top-right">
 							<div class="imgResume">
 								<p><b><?php echo $ffoto2['Titulo']; ?></b></p>
-								<p><?php echo str_replace('-', '/', date('d/m/Y', strtotime($ffoto2['Fecha']))); ?></p>
+								<p><?php if($ffoto2['Fecha']!=NULL){ echo str_replace('-', '/', date('d/m/Y', strtotime($ffoto2['Fecha']))); } ?></p>
 								<p id="irPais">
 									<?php 
 										if( $idPais != NULL )

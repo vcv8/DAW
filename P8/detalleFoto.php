@@ -52,7 +52,7 @@
 					$id = $_GET['id_foto'];
 
 					# Obtenemos la foto por su ID
-					$sentencia = "SELECT * FROM fotos WHERE IdFoto=$id";
+					$sentencia = "SELECT Titulo, Fecha, Pais, Album, Fichero FROM fotos WHERE IdFoto=$id";
 					$foto = $mysqli->query($sentencia);  # Devuelve un objeto con la foto que tenga esa id
 
 					if(!$foto || $mysqli->errno) # errno devuelve el codigo de error de la ultima funcion ejecutada
@@ -67,7 +67,7 @@
 
 					if( $idPais !=NULL ) # Comprobamos que tenga un pais asociado primero
 					{
-						$sentencia2 = "SELECT * FROM paises WHERE IdPais=$idPais";
+						$sentencia2 = "SELECT NomPais FROM paises WHERE IdPais=$idPais";
 						$pais = $mysqli->query($sentencia2);  # Devuelve un objeto con el pais que tiene ese ID
 						if(!$pais || $mysqli->errno) # errno devuelve el codigo de error de la ultima funcion ejecutada
 						{
@@ -78,7 +78,7 @@
 
 					#Obtenemos el nombre del Album por su ID
 					$idAlbum = $fila['Album'];
-					$sentencia3 = "SELECT * FROM albumes WHERE IdAlbumes=$idAlbum";
+					$sentencia3 = "SELECT Titulo, Usuario FROM albumes WHERE IdAlbumes=$idAlbum";
 					$album = $mysqli->query($sentencia3);  # Devuelve un objeto con el album que tiene ese ID
 					if(!$album || $mysqli->errno) # errno devuelve el codigo de error de la ultima funcion ejecutada
 					{
@@ -88,7 +88,7 @@
 
 					# Obtenemos el nombre de usuario al que pertenece el album por su ID
 					$idUsuario = $fila3['Usuario'];
-					$sentencia4 = "SELECT * FROM usuarios WHERE IdUsuario=$idUsuario";
+					$sentencia4 = "SELECT NomUsuario FROM usuarios WHERE IdUsuario=$idUsuario";
 					$usuario = $mysqli->query($sentencia4);  
 					if(!$usuario || $mysqli->errno) # errno devuelve el codigo de error de la ultima funcion ejecutada
 					{
@@ -108,8 +108,6 @@
 						{
 						 	echo str_replace('-', '/', date('d-m-Y', strtotime($fila['Fecha'])));
 						}
-
-
 					  ?>
 					 </p>
 					<?php

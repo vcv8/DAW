@@ -141,7 +141,7 @@ option {
       font-size: 18px;
       display: inline-block; 
       text-align: center;
-      padding: 1% 1% 5% 1%;  /* arriba, derecha, abajo, izqd */
+      padding: 2% 1%;  /* arriba, derecha, abajo, izqd */
 
     }
 

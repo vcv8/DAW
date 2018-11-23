@@ -7,8 +7,9 @@
 		if(isset($_COOKIE["recordar"])){
 			$host = $_SERVER['HTTP_HOST']; 
 			$uri  = rtrim(dirname($_SERVER[’PHP_SELF’]), '/\\');
-			$extra = 'P8/controlAcces.php?msg=modDatos.php'; 
-			header("Location: http://$host$uri/$extra");
+			$extra = "P8/controlAcces.php?msg=misAlbumes.php"; 
+			$plus = '?user=' . $_GET['user'];
+			header("Location: http://$host$uri/$extra$plus");
 			exit;
 		}
 
@@ -26,7 +27,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1.0" /> <!-- Para que se pueda aplicar un diseño adaptable y la correcta visualizacion en dispo móviles -->
-	<title>PRETI/registro</title>
+	<title>PRETI/misAlbumes</title>
 
 	<?php
 		require_once("includes/estilos.inc");  # Contiene todos los enlaces con el css necesario para las paginas
@@ -37,47 +38,54 @@
 	<?php
 		require_once("includes/cabecera1.inc");  # Cabecera de la pagina con solo logo
 
-		if(!is_null($_GET['user']))
-		{ 
-			$usuario = $_GET['user'];
-			/*echo $usuario;*/
-			$fusu = $mysqli->query("SELECT * FROM usuarios WHERE NomUsuario='$usuario'");
-
-			if($fusu){
+		if($_GET)
+		{
+			if(isset($_GET['user']))
+			{ 
+				$usuario = $_GET['user'];
+				/*echo $usuario;*/
+				$fusu = $mysqli->query("SELECT IdUsuario FROM usuarios WHERE NomUsuario='$usuario'");
 				$fusu2 = $fusu->fetch_assoc();
 
-				$usuario = $fusu2['IdUsuario'];
-				$falbum = $mysqli->query("SELECT * FROM albumes WHERE Usuario=$usuario");
+				if($fusu2){
 
-				if($falbum){
-	?>
-	<section>
-		<article id="tablaTarifas">
-			<table>
-				<caption><b>Mis Álbumes</b></caption>
-				<tr>
-					<th>Título</th>
-					<th>Descripción</th>
-				</tr>
-				<tr>
-					<?php 
-						while ($falbum2 = $falbum->fetch_assoc()) {
-							echo '<td><a href="album.php?alb='. $falbum2['Titulo'] .'">'. $falbum2['Titulo'] .'</a></td><td>'. $falbum2['Descripción'] .'</td>';
-						}
-					?>
-				</tr>
-			</table>
-		</article>
-	</section>
-	<?php				
+					$usuario = $fusu2['IdUsuario'];
+					$falbum = $mysqli->query("SELECT Titulo, Descripción FROM albumes WHERE Usuario=$usuario");
+					$falbum2 = $falbum->fetch_assoc();
+
+					if($falbum2){
+		?>
+		<section>
+			<article id="tablaTarifas">
+				<table>
+					<caption><b>Álbumes de <?php echo $_GET['user']; ?></b></caption>
+					<tr>
+						<th>Título</th>
+						<th>Descripción</th>
+					</tr>
+					<tr>
+						<?php
+							echo '<td><a class="abasico" href="album.php?alb='. $falbum2['Titulo'] .'">'. $falbum2['Titulo'] .'</a></td><td>'. $falbum2['Descripción'] .'</td>';
+							while ($falbum2 = $falbum->fetch_assoc()) {
+								echo '<td><a class="abasico" href="album.php?alb='. $falbum2['Titulo'] .'">'. $falbum2['Titulo'] .'</a></td><td>'. $falbum2['Descripción'] .'</td>';
+							}
+						?>
+					</tr>
+				</table>
+			</article>
+		</section>
+		<?php				
+					}else{
+						#Error No Albumes tuyos
+						echo '<p id="errorMSG"> No tienes ningún álbum a tu nombre. <a href="usuarioRegistrado.php">Volver a perfil</a>.</p>';
+					}
 				}else{
-					#Error No Albumes tuyos
-					echo '<p id="errorMSG"> No tienes ningún álbum a tu nombre. <a href="usuarioRegistrado.php">Volver a perfil</a>.</p>';
-					echo "no tienes albumes";
+					#Error no hay ese usuario
+					echo '<p id="errorMSG">¡<span>ERROR</span>! No conozco al usuario '. $_GET['user'] .'. <a href="usuarioRegistrado.php">Volver a perfil</a>.</p>';
 				}
 			}else{
-				#Error no hay ese usuario
-				echo '<p id="errorMSG">¡<span>ERROR</span>! No conozco tal usuario. <a href="usuarioRegistrado.php">Volver a perfil</a>.</p>';
+				#Error no se aespecificado usuario
+				echo '<p id="errorMSG">¡<span>ERROR</span>! No se ha especificado usuario. <a href="usuarioRegistrado.php">Volver a perfil</a>.</p>';
 			}
 		}else{
 			#Error no se aespecificado usuario

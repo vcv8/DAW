@@ -7,9 +7,9 @@
 		if(isset($_COOKIE["recordar"])){
 			$host = $_SERVER['HTTP_HOST']; 
 			$uri  = rtrim(dirname($_SERVER[’PHP_SELF’]), '/\\'); 
-			$f_id = $_GET['id_foto'];
-			$extra = "P8/controlAcces.php?msg=detalleFoto.php?id_foto=$f_id"; 
-			header("Location: http://$host$uri/$extra");
+			$extra = "P8/controlAcces.php?msg=detalleFoto.php"; 
+			$plus = '?id_foto=' . $_GET['id_foto'];
+			header("Location: http://$host$uri/$extra$plus");
 			exit;
 		}
 
@@ -114,13 +114,13 @@
 					?>
 					</p>
 					<div>
-						<p class="albuminfo">Pertenece al álbum <a href="" title="Acceso al album de Fotos">
+						<p class="albuminfo">Pertenece al álbum <a href="album.php?alb=<?php echo $fila3['Titulo']; ?>" title="Acceso al album de Fotos">
 						<?php 
 							echo $fila3['Titulo'];
 						?>
 						</a>.
 						</p>
-						<p>Por <a href="usuarioRegistrado.php" title="Acceso perfil de usuario"><?php echo $fila4['NomUsuario']; ?></a></p>
+						<p>Por <a href="misAlbumes.php?user=<?php echo $fila4['NomUsuario']; ?>" title="Acceso a albumes del usuario"><?php echo $fila4['NomUsuario']; ?></a></p>
 					</div>
 				</figcaption>
 			</figure>

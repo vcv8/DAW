@@ -172,3 +172,8 @@ td{
 #detalle>article>figure>figcaption>div>p>a{
   color: var(--5);
 }
+
+/* ENLACES BASICOS */
+.abasico{
+  color: var(--5);
+}

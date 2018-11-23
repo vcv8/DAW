@@ -53,12 +53,27 @@
 							  <p>". $falbum2['Descripción'] ."</p>";
 
 					$album = $falbum2['IdAlbumes'];
-					$ffoto = $mysqli->query("SELECT IdFoto , Titulo , Pais , Fichero , FRegistro , Alternativo FROM fotos WHERE Album=$album");
-					$ffotoalt = $mysqli->query("SELECT MIN(FRegistro) minimo , MAX(FRegistro) maximo FROM fotos WHERE Album=$album");
+					$ffoto = $mysqli->query("SELECT IdFoto , Titulo , Pais , Fichero , Fecha , Alternativo FROM fotos WHERE Album=$album");
+					
+					if ($ffoto->num_rows > 0) {
+						$ffotoalt = $mysqli->query("SELECT DISTINCT MIN(Fecha) minimo, MAX(Fecha) maximo FROM fotos WHERE Album=$album");
+						$ffotops = $mysqli->query("SELECT DISTINCT IdPais , Pais , NomPais FROM fotos f , paises p WHERE f.Pais=p.IdPais and f.Album=$album");
 
-					if ($ffoto && $ffotoalt) {
 						$ffotoalt2 = $ffotoalt->fetch_assoc();
-						echo "<p>Fecha entre <b>". $ffotoalt2['minimo'] ."</b> y <b>". $ffotoalt2['maximo'] ."</b></p>";
+						if($ffotoalt2['minimo'] != NULL || $ffotoalt2['minimo'] != NULL){
+							echo "<p>Fecha entre <b>". str_replace('-', '/', date('d/m/Y', strtotime($ffotoalt2['minimo']))) ."</b> y <b>". str_replace('-', '/', date('d/m/Y', strtotime($ffotoalt2['maximo']))) ."</b></p>";
+						}else{
+							echo "<p>No hay fechas registradas.</p>";
+						}
+						if($ffotops->num_rows > 0){
+							echo "<p>Países: <b>";
+							while ($ffotops2 = $ffotops->fetch_assoc()) {
+							 	echo $ffotops2['NomPais'] . ' ';
+							 } 
+							echo "</b></p>";
+						}else{
+							echo "<p>No hay países registrados.</p>";
+						}
 		?>
 		<section class="preview">
 
@@ -84,8 +99,7 @@
 						<figcaption class="top-right">
 							<div class="imgResume">
 								<p><b><?php echo $ffoto2['Titulo']; ?></b></p>
-								<p><?php echo str_replace('-', '/', date('d F Y', strtotime($ffoto2['FRegistro']))); ?></p>
-								<p><?php echo str_replace('-', '/', date('h:i:s A', strtotime($ffoto2['FRegistro']))); ?></p>
+								<p><?php echo str_replace('-', '/', date('d F Y', strtotime($ffoto2['Fecha']))); ?></p>
 								<p id="irPais">
 									<?php 
 										if( $idPais != NULL )

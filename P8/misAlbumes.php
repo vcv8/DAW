@@ -63,14 +63,12 @@
 						<th>Título</th>
 						<th>Descripción</th>
 					</tr>
-					<tr>
-						<?php
-							echo '<td><a class="abasico" href="album.php?alb='. $falbum2['Titulo'] .'">'. $falbum2['Titulo'] .'</a></td><td>'. $falbum2['Descripción'] .'</td>';
-							while ($falbum2 = $falbum->fetch_assoc()) {
-								echo '<td><a class="abasico" href="album.php?alb='. $falbum2['Titulo'] .'">'. $falbum2['Titulo'] .'</a></td><td>'. $falbum2['Descripción'] .'</td>';
-							}
-						?>
-					</tr>
+					<?php
+						echo '<tr><td><a class="abasico" href="album.php?alb='. $falbum2['Titulo'] .'">'. $falbum2['Titulo'] .'</a></td><td>'. $falbum2['Descripción'] .'</td></tr>';
+						while ($falbum2 = $falbum->fetch_assoc()) {
+							echo '<tr><td><a class="abasico" href="album.php?alb='. $falbum2['Titulo'] .'">'. $falbum2['Titulo'] .'</a></td><td>'. $falbum2['Descripción'] .'</td></tr>';
+						}
+					?>
 				</table>
 			</article>
 		</section>

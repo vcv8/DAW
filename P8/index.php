@@ -83,8 +83,14 @@
 					<figcaption class="top-right">
 						<div class="imgResume">
 							<p><b><?php echo $fila['Titulo']; ?></b></p>
-							<p><?php echo str_replace('-', '/', date('d F Y', strtotime($fila['FRegistro']))); ?></p>
-							<p><?php echo str_replace('-', '/', date('h:i:s A', strtotime($fila['FRegistro']))); ?></p>
+							<p>
+							<?php 
+								if($fila['Fecha']!=null)
+								{
+									echo str_replace('-', '/', date('d/m/Y', strtotime($fila['Fecha']))); 
+								}
+							?>
+							</p>
 							<p id="irPais">
 								<?php 
 									if( $idPais !=NULL )

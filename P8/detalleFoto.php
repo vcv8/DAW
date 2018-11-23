@@ -102,7 +102,16 @@
 				</div>
 				<figcaption>
 					<h2><?php echo $fila['Titulo'];?></h2>
-					<p class="info">Tomada el <?php echo str_replace('-', '/', date('d-m-Y', strtotime($fila['Fecha']))); ?></p>
+					<p class="info">Tomada el 
+					<?php
+						if($fila['Fecha']!=null)
+						{
+						 	echo str_replace('-', '/', date('d-m-Y', strtotime($fila['Fecha'])));
+						}
+
+
+					  ?>
+					 </p>
 					<?php
 							if( $idPais !=NULL )
 							{

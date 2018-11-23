@@ -105,8 +105,8 @@
 					}
 
 				?>
-				<select class="direccion" name="album" required>
-					<option disabled selected value> - mis álbumes - </option>
+				<select class="boxesForm" name="album" required>
+					<option disabled selected value> - Mis álbumes - </option>
 					<?php 
 						while($fila2 = $album->fetch_assoc())  # Obtenemos el resultado fila a fila en forma de array asociativo
 						{

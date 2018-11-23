@@ -76,9 +76,9 @@
 						$fila2 =  $pais->fetch_assoc();
 					}
 
-					#Obtenemos el nombre del Album por su ID
+					#Obtenemos el nombre del Album y el usuario al que pertenece 
 					$idAlbum = $fila['Album'];
-					$sentencia3 = "SELECT Titulo, Usuario FROM albumes WHERE IdAlbumes=$idAlbum";
+					$sentencia3 = "SELECT Titulo, NomUsuario FROM albumes a, usuarios u WHERE IdAlbumes=$idAlbum AND IdUsuario=Usuario";
 					$album = $mysqli->query($sentencia3);  # Devuelve un objeto con el album que tiene ese ID
 					if(!$album || $mysqli->errno) # errno devuelve el codigo de error de la ultima funcion ejecutada
 					{
@@ -86,15 +86,7 @@
 					}
 					$fila3 =  $album->fetch_assoc();
 
-					# Obtenemos el nombre de usuario al que pertenece el album por su ID
-					$idUsuario = $fila3['Usuario'];
-					$sentencia4 = "SELECT NomUsuario FROM usuarios WHERE IdUsuario=$idUsuario";
-					$usuario = $mysqli->query($sentencia4);  
-					if(!$usuario || $mysqli->errno) # errno devuelve el codigo de error de la ultima funcion ejecutada
-					{
-						die("Error: no se pudo realizar la consulta: " . $mysqli->error);
-					}
-					$fila4 =  $usuario->fetch_assoc();
+					
 		?>
 			<figure>
 				<div>
@@ -127,7 +119,7 @@
 						?>
 						</a>.
 						</p>
-						<p>Por <a href="misAlbumes.php?user=<?php echo $fila4['NomUsuario']; ?>" title="Acceso a albumes del usuario"><?php echo $fila4['NomUsuario']; ?></a></p>
+						<p>Por <a href="misAlbumes.php?user=<?php echo $fila4['NomUsuario']; ?>" title="Acceso a albumes del usuario"><?php echo $fila3['NomUsuario']; ?></a></p>
 					</div>
 				</figcaption>
 			</figure>
@@ -140,7 +132,6 @@
 			# Cerramos la sesion con la BD y liberamos la memoria
 			$foto ->free();
 			$album ->free();
-			$usuario ->free();
 			$mysqli->close();
 		?>
 		</article>

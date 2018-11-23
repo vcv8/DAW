@@ -28,9 +28,7 @@
 		$sexo = $_POST['Sexo'];
 		$ciudad = $_POST['Ciudad'];
 		$pais = $_POST['País'];
-		$dia = $_POST['Dia'];
-		$mes = $_POST['Mes'];
-		$anyo = $_POST['Año'];
+		$dia = $_POST['fNacimiento'];
 
 		if($pass!=$pass2){ # Comprueba que las dos contraseñas coinciden
 			echo '<p id="errorMSG"><span>ERROR</span>! Las contraseñas introducidas no coinciden. El usuario no ha sido registrado. <a href="registro.php">Registrarse</a>.</p>';
@@ -46,7 +44,7 @@
 	<p>Contraseña repetida: <b><?php echo $pass2?></b></p>
 	<p>Correo electrónico: <b><?php echo $correo?></b></p>
 	<p>Sexo: <b><?php echo $sexo?></b></p>
-	<p>Fecha de Nacimiento: <b><?php echo $dia?>/<?php echo $mes?>/<?php echo $anyo?></b></p>
+	<p>Fecha de Nacimiento: <b><?php echo str_replace('-', '/', date('d/m/Y', strtotime($dia))); ?></b></p>
 	<p>Ciudad: <b><?php echo $ciudad?></b></p>
 	<p>País: <b><?php echo $pais?></b></p>
 

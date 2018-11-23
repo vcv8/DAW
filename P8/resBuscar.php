@@ -54,88 +54,72 @@
 			$titulo = $_GET['titulo']; 
 			$fechaInicial = $_GET['fechaInicial']; 
 			$fechaFinal = $_GET['fechaFinal']; 
-			$pais = $_GET['pais']; 
+			$pais = "";
+			if(isset($_GET['pais'])){
+				$pais = $_GET['pais'];
+			}
 
-			if($fechaFinal!=NULL)
-			{
+			echo "<p>Mostrando resultados para:</p>";
+
+			$ppais = "";
+			if($pais!=""){
+				$ppais = "INNER JOIN paises ON Pais=IdPais WHERE NomPais='$pais'";
+				echo "<p>País <b>$pais</b></p>";
+			}
+			$pfecha = "";
+			if($fechaInicial!=NULL && $fechaFinal!=NULL){
+				if($ppais != ""){
+					$pfecha = "AND (FRegistro BETWEEN '$fechaInicial' AND '$fechaFinal')";
+				}else{
+					$pfecha = "LEFT JOIN paises ON Pais=IdPais WHERE (FRegistro BETWEEN '$fechaInicial' AND '$fechaFinal')";
+				}
 				$fechaFinalESP = str_replace('-', '/', date('d-m-Y', strtotime($fechaFinal)));
-			}
-			else
-			{
-				$fechaFinalESP = "30/11/2018";
-				$fechaFinal = "2018-11-30";
-			}
-
-			if($fechaInicial!=NULL)
-			{
 				$fechaInicialESP = str_replace('-', '/', date('d-m-Y', strtotime($fechaInicial)));
+				echo "<p>Fecha entre <b>$fechaInicialESP</b> y <b>$fechaFinalESP </b></p>";
 			}
-			else
-			{
-				$fechaInicialESP = "1/11/2018";
-				$fechaInicial = "2018-11-1";
+			$ptitulo = "";
+			if($titulo!=NULL){
+				if($pfecha != "" || $ppais != ""){
+					$ptitulo = "AND Titulo='$titulo'";
+				}else{
+					$ptitulo = "LEFT JOIN paises ON Pais=IdPais WHERE Titulo='$titulo'";
+				}
+				echo "<p>Título <b>$titulo</b></p>";
+			}else if($pais=="" && $pfecha==""){
+				$ptitulo = "LEFT JOIN paises ON Pais=IdPais";
 			}
-
-			echo "<p>Mostrando resultados para</p>
-				  <p>Título <b>$titulo</b></p>
-				  <p>Fecha entre <b>$fechaInicialESP</b> y <b>$fechaFinalESP </b></p>
-				  <p>País <b>$pais</b></p>";
-
-			# Obtenemos el pais
-
-			$sentencia2 = "SELECT IdPais FROM paises WHERE NomPais='$pais'";
-			$pais = $mysqli->query($sentencia2);  # Devuelve un objeto con el pais con ese nombre
-
-			if(!$pais || $mysqli->errno) # errno devuelve el codigo de error de la ultima funcion ejecutada
-			{
-				die("Error: no se pudo realizar la consulta: " . $mysqli->error);
-			}
-
-
-			$fila2 =  $pais->fetch_assoc();
-
-			$idPais = $fila2['IdPais'];
-
-
 			# Obtenemos las fotos con los datos del formulario de busqueda
-			#$sentencia1 = "SELECT * FROM fotos WHERE (FRegistro BETWEEN '$fechaInicial' AND '$fechaFinal') AND Titulo='$titulo'"; # AND Pais=$idPais  Titulo='$titulo'
-			#$fotos = $mysqli->query($sentencia1);  # Devuelve un objeto con todas las fotos
-
-			#if(!$fotos || $mysqli->errno) # errno devuelve el codigo de error de la ultima funcion ejecutada
-			#{
-			#	die("Error: no se pudo realizar la consulta: " . $mysqli->error);
-			#}
-
-			$titulo2 = '%'.$titulo.'%';
-			# Obtenemos todas las fotos en funcion de los parametros de la busqueda
-			$sentencia1 = "SELECT * FROM fotos WHERE (FRegistro BETWEEN '$fechaInicial' AND '$fechaFinal') AND Titulo LIKE '$titulo2'";
-
+			$sentencia1 = "SELECT fotos.* , paises.NomPais FROM fotos $ppais $pfecha $ptitulo"; # AND Pais=$idPais  Titulo='$titulo'
 			
-			$fotos = $mysqli->query($sentencia1);  # Devuelve un objeto con todas las fotos encontradas
+			$fotos = $mysqli->query($sentencia1);  # Devuelve un objeto con todas las fotos
+
 			if(!$fotos || $mysqli->errno) # errno devuelve el codigo de error de la ultima funcion ejecutada
 			{
 				die("Error: no se pudo realizar la consulta: " . $mysqli->error);
 			}
-
+			if ($fotos->num_rows<=0) {
+				echo "<p><b>No hay coincidencias con los parámetros de búsqueda introducidos</b></p>";
+			}
+	?>
+			<section class="preview"> 
+	<?php
 			while($fila = $fotos->fetch_assoc())  # Obtenemos el resultado fila a fila en forma de array asociativo
 			{
 
 			 ?>
-
-			<section class="preview"> 
 				<article>
 					<a href=<?php echo "'detalleFoto.php?id_foto=" . $fila['IdFoto'] . "' >"; ?> 
 						<figure>
-							<img <?php echo "src='" . $fila['Fichero'] . "'" ?> class="prov">
+							<img <?php echo "src='" . $fila['Fichero'] . "'" ?> class="prov" alt="<?php echo $fila['Alternativo'] ?>">
 							<figcaption class="top-right">
 								<div class="imgResume">
 									<p><b><?php echo $fila['Titulo']; ?></b></p>
-									<p><?php echo $fila['Fecha']; ?></p>
-									<p>
+									<p><?php echo str_replace('-', '/', date('d F Y', strtotime($fila['Fecha']))); ?></p>
+									<p id="irPais">
 										<?php 
-											if( $idPais !=NULL )
+											if( $fila['NomPais'] !=NULL )
 											{
-												echo $fila2['NomPais'];
+												echo $fila['NomPais'];
 											}
 										?>	
 									</p>
@@ -144,13 +128,12 @@
 						</figure>
 					</a>
 				</article>
-			</section>
-
-
-
 	<?php
 			}
 			$fotos ->free();
+	?>
+			</section>
+	<?php
 
 		}else if (isset($_GET['brapida'])) {
 			$cadena = $_GET['brapida'];
@@ -232,6 +215,9 @@
 	</section>
 
 	<?php
+		}else{
+			#Error mala url
+			echo '<p id="errorMSG">¡<span>ERROR</span>! La dirección introducida no es válida.</p>';
 		}
 		require_once("includes/pie.inc");  # Pie de la pagina con el copyright
 	?>

@@ -1,62 +1,25 @@
 <section class="Inicio-Registro"> <!--Formulario de Registro -->
 	<fieldset class="marcoInicioRegistro">
-		<h2><?php if($site == 'reg'){ echo 'Registro'; } 
+		<h2><?php if($site == 'reg'){ echo 'Registro de usuario'; } 
 				else{ echo 'Modificar datos personales'; } ?>			
 		</h2>
 		<form action="resRegistro.php" method="POST">
+			<p>Usuario: </p>
+			<p><input class="boxesForm" type="text" name="Usuario" placeholder="Usuario" autocomplete="on" <?php if($site == 'mod'){echo 'value="'. $pam[0] .'"';} ?> required></p>
+			<p>Contraseña: </p>
+			<p><input class="boxesForm" type="password" name="Contraseña" placeholder="Contraseña" <?php if($site == 'mod'){echo 'value="'. $pam[1] .'"';} ?> required></p>
+			<p><input class="boxesForm" type="password" name="Contraseña2" placeholder="Repetir Contraseña" <?php if($site == 'mod'){echo 'value="'. $pam[1] .'"';} ?> required></p>
+			<p>Correo actual: </p>
+			<p><input class="boxesForm" type="email" name="Correo" placeholder="Correo" <?php if($site == 'mod'){echo 'value="'. $pam[2] .'"';} ?> required></p>
+			<p>Sexo: </p>
+			<p><input type="radio" id="s1" name="Sexo" value="Hombre" <?php if($site == 'mod'){ if(!$userData['Sexo']){ echo "checked"; } } ?> required>Hombre</p>
+		    <p><input type="radio" id="s2" name="Sexo" value="Mujer" <?php if($site == 'mod'){ if($userData['Sexo']){ echo "checked"; } } ?> required>Mujer</p>
+			<p>F.Nacimiento: </p>
+			<p><input class="boxesForm" type="date" name="fNacimiento" <?php if($site == 'mod'){echo 'value="'. $pam[3] .'"';} ?> required></p>
+		    <p>Ciudad: </p>
+			<p><input class="boxesForm" type="text" name="Ciudad" placeholder="Ciudad" <?php if($site == 'mod'){echo 'value="'. $pam[4] .'"';} ?> required></p>
+			<p>País: </p>
 			<?php
-				if($site == 'mod'){
-					echo "<p>Usuario actual: <b>$pam[0]</b></p>";
-				}
-			?>
-			<p><input class="boxesForm" type="text" name="Usuario" placeholder="Usuario" autocomplete="on" required></p>
-			<?php
-				if($site == 'mod'){
-					echo "<p>Contraseña actual: <b>$pam[1]</b></p>";	
-				}
-			?>
-			<p><input class="boxesForm" type="password" name="Contraseña" placeholder="Contraseña" required></p>
-			<p><input class="boxesForm" type="password" name="Contraseña2" placeholder="Repetir Contraseña" required></p>
-			<?php
-				if($site == 'mod'){
-					echo "<p>Correo actual: <b>$pam[2]</b></p>";	
-				}
-			?>
-			<p><input class="boxesForm" type="email" name="Correo" placeholder="Correo" required></p>
-			<?php
-				if($site == 'mod'){
-					if($userData['Sexo']==1)
-						echo "<p>Sexo actual: <b>Mujer</b></p>";
-					else
-						echo "<p>Sexo actual: <b>Hombre</b></p>";
-				}
-			?>
-			<p><input class="boxesForm" type="text" name="Sexo" placeholder="Sexo"></p>
-			<?php
-				if($site == 'mod'){
-					echo "<p>F.Nacimiento actual: <b>$pam[3]</b></p>";	
-				}
-			?>
-			<p>
-				<select required class="mes" name="Mes">
-						<option disabled selected value selected="selected" >  Mes de Nacimiento  </option>
-					  	<option value="1">Enero</option>
-					  	<option value="2">Febrero</option>
-					  	<option value="3">Marzo</option>
-				</select>
-				<input class="diaMes" type="number" name="Dia" placeholder="Día" max="31" min="1"> <input class="diaMes"  type="number" name="Año" placeholder="Año" max="2000" min="1918">
-		    </p>
-		    <?php
-				if($site == 'mod'){
-					echo "<p>Ciudad actual: <b>$pam[4]</b></p>";	
-				}
-			?>
-			<p><input class="boxesForm" type="text" name="Ciudad" placeholder="Ciudad" required=""></p>
-			<?php
-				if($site == 'mod'){
-					echo "<p>País actual: <b>$pam[5]</b></p>";	
-				}
-
 				#Obtenemos los paises disponibles
 				$sentencia1 = "SELECT NomPais FROM paises";
 				$pais = $mysqli->query($sentencia1);  
@@ -65,14 +28,14 @@
 					die("Error: no se pudo realizar la consulta: " . $mysqli->error);
 				}
 			?>
-			<select class="boxesForm" name="pais" required>
-				<option disabled selected value> - Selección del Pais - </option>
+			<select class="boxesForm" name="País" required>
 					<?php 
+						if($site == 'reg'){ echo '<option value disabled selected>Lista de Países</option>'; }
 						while($fila1 = $pais->fetch_assoc())  # Obtenemos el resultado fila a fila en forma de array asociativo
 						{
 
 					?>
-				<option value="<?php echo $fila1['NomPais'] ?>"><?php echo $fila1['NomPais'] ?></option>
+				<option value="<?php echo $fila1['NomPais'] .'"'; if($site=='mod' and $fila1['NomPais']==$pam[5]){ echo "selected"; } ?> "><?php echo $fila1['NomPais'] ?></option>
 					<?php 
 						}
 

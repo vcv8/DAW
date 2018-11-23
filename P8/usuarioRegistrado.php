@@ -112,7 +112,9 @@
 					<li><p><b>Fecha de Nacimiento </b> <?php echo str_replace('-', '/', date('d-m-Y', strtotime($fila['FNacimiento']))); ?></p></li>
 					<li><p><b>Ciudad </b> <?php echo $fila['Ciudad']; ?></p></li>
 					<li><p><b>País </b> <?php echo $fila['NomPais']; ?></p></li>
-					<li><p><b>Estilo de Página </b></p> <p class="menu display-great display-medium"><a class="enlacesUsuario" href="configurarEstilo.php" title="Accede a tu lista de Álbumes">Cambiar Estilo</a> </p> 
+					<li><p><b>Estilo de Página </b></p> <p class="menu display-great display-medium"><a class="enlacesUsuario" href="configurarEstilo.php" title="Accede a la configuración de estilos">Cambiar Estilo</a> </p> 
+					</li>
+					<li><p><b>Fotos </b></p> <p class="menu display-great display-medium"><a class="enlacesUsuario" href="subirFoto.php" title="Accede a la página de subida de fotos">Subir Foto</a> </p> 
 					</li>
 					<li><p><b>Álbumes </b></p>
 						<p class="menu display-great display-medium"><a class="enlacesUsuario" href="misAlbumes.php?user=<?php echo $_SESSION['usuario'] ?>" title="Accede a tu lista de Álbumes">Mis Álbumes</a> <a class="enlacesUsuario" href="crearAlbum.php" title="Crea un nuevo Álbum">Crear Álbum</a> <a class="enlacesUsuario" href="solicitudAlbum.php" title="Solicita la impresion de un Álbum">Solicitar Álbum</a> </p>

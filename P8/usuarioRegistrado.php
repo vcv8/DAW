@@ -83,9 +83,9 @@
 				<h2>Detalles de Usuario</h2>
 				<ul id="InfoUsuario"> <!-- Lista de datos del Usuario -->
 					<?php 
-						#Comprobamos que usuario es 
+						#Obtenemos los datos del usuario y el pais
 						$usuario = $_SESSION["usuario"];
-						$sentencia1 = "SELECT * FROM usuarios WHERE NomUsuario='$usuario'";
+						$sentencia1 = "SELECT Email, Sexo, FNacimiento, Ciudad, Pais, NomPais FROM usuarios u, paises p WHERE NomUsuario='$usuario' AND u.Pais=p.IdPais";
 						$usuario = $mysqli->query($sentencia1);  
 						if(!$usuario || $mysqli->errno) # errno devuelve el codigo de error de la ultima funcion ejecutada
 						{
@@ -93,20 +93,7 @@
 						}
 
 						$fila = $usuario->fetch_assoc();
-
-						# Obtenemos el nombre del pais por su ID
-						$idPais = $fila['Pais'];
-
-						if( $idPais !=NULL ) # Comprobamos que tenga un pais asociado primero
-						{
-							$sentencia2 = "SELECT * FROM paises WHERE IdPais=$idPais";
-							$pais = $mysqli->query($sentencia2);  # Devuelve un objeto con el pais que tiene ese ID
-							if(!$pais || $mysqli->errno) # errno devuelve el codigo de error de la ultima funcion ejecutada
-							{
-								die("Error: no se pudo realizar la consulta: " . $mysqli->error);
-							}
-							$fila2 =  $pais->fetch_assoc();
-						}
+						
 
 					?>
 					<li><p class="listaInfo"><b>Correo </b> <?php echo $fila['Email']; ?></p></li>
@@ -124,7 +111,7 @@
 					</p></li>
 					<li><p><b>Fecha de Nacimiento </b> <?php echo str_replace('-', '/', date('d-m-Y', strtotime($fila['FNacimiento']))); ?></p></li>
 					<li><p><b>Ciudad </b> <?php echo $fila['Ciudad']; ?></p></li>
-					<li><p><b>País </b> <?php echo $fila2['NomPais']; ?></p></li>
+					<li><p><b>País </b> <?php echo $fila['NomPais']; ?></p></li>
 					<li><p><b>Estilo de Página </b></p> <p class="menu display-great display-medium"><a class="enlacesUsuario" href="configurarEstilo.php" title="Accede a tu lista de Álbumes">Cambiar Estilo</a> </p> 
 					</li>
 					<li><p><b>Álbumes </b></p>

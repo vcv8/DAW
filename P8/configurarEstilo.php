@@ -66,7 +66,7 @@
 						?>
 				</select>
 				</p>
-				<p><input id="solicitarAlbum" type="submit" value="Seleccionar Estilo" title="Seleccion del nuevo estilo de pagina"></p>
+				<p><input id="solicitarAlbum" type="submit" value="Seleccionar" title="Seleccion del nuevo estilo de pagina"></p>
 			</form>
 		</fieldset>
 	</div>

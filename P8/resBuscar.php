@@ -80,9 +80,9 @@
 			$ptitulo = "";
 			if($titulo!=NULL){
 				if($pfecha != "" || $ppais != ""){
-					$ptitulo = "AND Titulo='$titulo'";
+					$ptitulo = "AND Titulo LIKE '%$titulo%'";
 				}else{
-					$ptitulo = "LEFT JOIN paises ON Pais=IdPais WHERE Titulo='$titulo'";
+					$ptitulo = "LEFT JOIN paises ON Pais=IdPais WHERE Titulo LIKE '%$titulo%'";
 				}
 				echo "<p>Título <b>$titulo</b></p>";
 			}else if($pais=="" && $pfecha==""){

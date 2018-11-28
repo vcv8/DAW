@@ -1,0 +1,241 @@
+/*
+Simple
+Jose Valdés
+*/
+
+
+
+/**
+    GENERAL
+ */
+html {
+    height: 100%;
+    box-sizing: border-box;
+    color: #434343;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    position: relative;
+    margin: 0;
+    min-height: 100%;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+#contenedor {
+    margin: auto;
+    position: relative;
+    width: 75%;
+}
+
+
+
+
+/**
+    FOOTER
+ */
+#enlacesintra, #enlaces, #enlacesversiones, #extraDiv1 {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1em;
+    background-color: #434343;
+    color: white;
+    text-align: left;
+    width: 680px;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 10;
+}
+
+
+#enlaces ul, #enlacesversiones ul {
+    list-style-type: none;
+}
+
+#enlacesintra a, #enlaces a, #enlacesversiones a {
+    color: white;
+    font-weight: bold;
+}
+
+#enlacesintra a:hover, #enlaces a:hover, #enlacesversiones a:hover {
+    color: gainsboro;
+}
+
+#extraDiv1 {
+    width: 100%;
+    background-color: #434343;
+    height: 490px;
+    z-index: 0;
+}
+
+
+
+
+/**
+    APARTADOS
+ */
+
+#apartados {
+    padding-bottom: 500px;
+}
+
+#intro a, #apartados a {
+    color: #434343;
+    font-weight: bold;
+}
+
+#intro a:hover, #apartados a:hover {
+    color: #767676;
+    font-weight: bold;
+}
+
+#apartados {
+    overflow: hidden;
+}
+
+
+
+/**
+    HEADER
+ */
+h1 {
+    font-size: 2.5em;
+    background: #434343;
+    color: white;
+    z-index: 10;
+    padding: 30px 30px 50px;
+}
+
+
+#extraDiv2 {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background: #434343;
+    height: 160px;
+    z-index: -1;
+}
+
+
+#intro h3, #apartados h3 {
+    font-size: 2em;
+}
+
+
+
+
+/**
+    PROFESORES
+ */
+#profesores {
+    background: url("professor.png") no-repeat;
+    background-position-x: 80%;
+    background-position-y: 50%;
+    padding-bottom: 50px;
+}
+
+#profesores dl, #profesores p {
+    width: 40%;
+}
+
+
+
+
+/**
+    RESUMEN Y COMENTARIO
+ */
+#intro {
+    background: url("logo_ua.png") no-repeat;
+    background-position-x: 10%;
+    background-position-y: 70%;
+    overflow: hidden;
+}
+
+
+#resumen, #comentario {
+    float: right;
+    text-align: left;
+    width: 51%;
+}
+
+#comentario {
+    padding-bottom: 30px;
+}
+
+
+
+
+
+/**
+    OBJETIVOS
+ */
+#objetivos {
+    background: url("target.png") no-repeat;
+    background-position-x: 80%;
+    background-position-y: 50%;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+
+#objetivos p {
+    width: 40%;
+}
+
+
+
+
+
+
+/**
+    CONTENIDOS
+ */
+#contenidos {
+    background: url("browser.png") no-repeat;
+    background-position-x: 10%;
+    background-position-y: 70%;
+    overflow: hidden;
+}
+
+
+#contenidos p, #contenidos ul {
+    float: right;
+    text-align: left;
+    width: 51%;
+}
+
+#contenidos ul li ul {
+    width: 100%;
+}
+
+
+
+
+
+/**
+    BIBLIOGRAFÃA
+ */
+#bibliografia {
+    background: url("books.png") no-repeat;
+    background-position-x: 10%;
+    background-position-y: 60%;
+    overflow: hidden;
+    padding-bottom: 50px;
+}
+
+#bibliografia p, #bibliografia dl {
+    float: right;
+    text-align: left;
+    width: 51%;
+}
+
+#bibliografia .autores {
+    font-weight: bold;
+}

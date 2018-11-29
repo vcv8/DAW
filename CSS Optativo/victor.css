@@ -81,9 +81,12 @@ h1, h2{
     text-align: center;
 }
 h1{
+	padding-right: 24px;
     margin-left: 12px;
+    /*border-right: solid 1px var(--1);*/
 }
 h2{
+	padding-left: 24px;
     font-size: 18px;
     font-weight: 500;
     margin-right: 12px;
@@ -93,24 +96,44 @@ h2{
 /* RESUMEN PAGINA */
 #resumen{
     margin-top: 80px;
+    display: flex;
+    flex-direction: column;
 }
 
 .ul1{
     padding: 0;
-    margin: auto;
-    display: flex;
-    width: 70%;
-    margin: auto;
+    margin: 8px auto 14px auto;
+    display: inline-block;
     flex-direction: column;
+    list-style-type: none;
+    list-style-image: url('https://i.imgur.com/KlBKeKn.png');
+    list-style-position: inside;
 }
 .ul1>li{
+	font-weight: 500;
+	margin-bottom: 4px;
 }
 
 #comentario{
     font-weight: 300;
 }
 
-/* ENLACES INTRA */
+/* ENLACES AL CONTENIDO */
 #enlacesintra{
 
+}
+
+a{
+	padding: 0 2px;
+	color: black;
+	border-bottom: solid 1px black;
+	text-decoration: none;
+}
+a:hover{
+	background-color: black;
+	color: white;
+}
+
+#objetivos, #contenidos, #profesores, #bibliografia{
+	padding-top: 60px;
 }

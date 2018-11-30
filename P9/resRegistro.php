@@ -1,3 +1,26 @@
+<?php
+	session_start(); # Inicializamos la gestion de sesiones
+
+	require_once("includes/conexionBD.inc"); # Comprobamos la conexion a la base de datos
+	
+	if(!isset($_SESSION["usuario"])){  # Si el usuario no ha iniciado sesion no puede acceder al detalle de foto
+		if(isset($_COOKIE["recordar"])){
+			$host = $_SERVER['HTTP_HOST']; 
+			$uri  = rtrim(dirname($_SERVER[’PHP_SELF’]), '/\\'); 
+			$extra = "P9/controlAcces.php?msg=resRegistro.php"; 
+			header("Location: http://$host$uri/$extra");
+			exit;
+		}
+
+		$host = $_SERVER['HTTP_HOST']; 
+		$uri  = rtrim(dirname($_SERVER[’PHP_SELF’]), '/\\'); 
+		$extra = 'P9/login.php?Error1=accesoUsuarioNoRegistrado'; 
+		header("Location: http://$host$uri/$extra");
+		exit;	
+	}
+	else{
+		require_once("includes/mBienvenida.inc");
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -14,7 +37,7 @@
 <body>
 	
 	<?php
-		require_once("includes/cabecera.inc");  # Cabecera de la pagina con el logo, login y registro
+		require_once("includes/cabecera1.inc");  # Cabecera de la pagina con el logo, login y registro
 	?>
 
 	<?php
@@ -54,3 +77,6 @@
 
 </body>
 </html>
+<?php
+	}
+?>

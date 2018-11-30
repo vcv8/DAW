@@ -70,7 +70,7 @@
 		}else{
 			$destino = $_GET['msg']; # Controlamos la variable de URL que nos marca la pagina a la que redireccionar
 
-			$extra = "P7/$destino";
+			$extra = "P9/$destino";
 		}
 
 		$host = $_SERVER['HTTP_HOST']; 

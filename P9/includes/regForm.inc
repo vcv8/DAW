@@ -3,7 +3,7 @@
 		<h2><?php if($site == 'reg'){ echo 'Registro de usuario'; } 
 				else{ echo 'Modificar datos personales'; } ?>			
 		</h2>
-		<form action="resRegistro.php" method="POST">
+		<form action="<?php if($site == 'reg'){ echo 'resRegistro.php'; } else{ echo 'resRegistro.php';} ?>" method="POST">
 			<p>Usuario: </p>
 			<p><input class="boxesForm" type="text" name="Usuario" placeholder="Usuario" autocomplete="on" <?php if($site == 'mod'){echo 'value="'. $pam[0] .'"';} ?> required></p>
 			<p>Contraseña: </p>

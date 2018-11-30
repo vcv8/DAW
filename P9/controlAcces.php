@@ -42,7 +42,7 @@
 		/* Redirecciona a una página diferente que se encuentra en el directorio actual */ 
 		$host = $_SERVER['HTTP_HOST']; 
 		$uri  = rtrim(dirname($_SERVER[’PHP_SELF’]), '/\\'); 
-		$extra = 'P8/login.php?Error1=loginError'; 
+		$extra = 'P9/login.php?Error1=loginError'; 
 		header("Location: http://$host$uri/$extra");
 		exit; 
 	}else{ # Usuario registrado
@@ -66,7 +66,7 @@
 
 		# Redireccionamos
 		if($_GET["log"]){
-			$extra = 'P8/usuarioRegistrado.php';
+			$extra = 'P9/usuarioRegistrado.php';
 		}else{
 			$destino = $_GET['msg']; # Controlamos la variable de URL que nos marca la pagina a la que redireccionar
 

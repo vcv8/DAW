@@ -29,7 +29,7 @@
 		
 		$host = $_SERVER['HTTP_HOST']; 
 		$uri  = rtrim(dirname($_SERVER[’PHP_SELF’]), '/\\'); 
-		$extra = 'P8/index.php'; 
+		$extra = 'P9/index.php'; 
 		header("Location: http://$host$uri/$extra");
 		exit; 
 	?>

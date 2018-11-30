@@ -7,7 +7,7 @@
 		if(isset($_COOKIE["recordar"])){
 			$host = $_SERVER['HTTP_HOST']; 
 			$uri  = rtrim(dirname($_SERVER[’PHP_SELF’]), '/\\'); 
-			$extra = 'P8/controlAcces.php?msg=index.php'; 
+			$extra = 'P9/controlAcces.php?msg=index.php'; 
 			header("Location: http://$host$uri/$extra");
 			exit;
 		}	 

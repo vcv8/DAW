@@ -3,6 +3,9 @@
 
 	require_once("includes/conexionBD.inc"); # Comprobamos la conexion a la base de datos
 
+	if(!mysqli_select_db ($mysqli, "pibd"))
+		die("Error: No existe la base de datos");
+
 	// Borra todas las variables de sesión 
 	$_SESSION = array(); 
 	 

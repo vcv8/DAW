@@ -39,6 +39,16 @@
 
 		$pam = '<p>¿Ya tienes cuenta? <a href="login.php" class="swaplink">Iniciar Sesión</a> </p>'; # Cadena unica para el formulario de Registro
 
+		$error = Null;
+
+		if($_GET && isset($_GET['Error1']))
+		{
+				if($_GET && $_GET['Error1']=="registroEmailErr") # Error cuando el usuario o la contraseña es incorrecta
+				{ 
+					$error='registroEmailErr';
+				}
+		}
+
 		require_once("includes/regForm.inc");
 
 		require_once("includes/pie.inc");  # Pie de la pagina con el copyright

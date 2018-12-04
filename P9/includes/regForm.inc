@@ -1,9 +1,20 @@
 <section class="Inicio-Registro"> <!--Formulario de Registro -->
+	<?php
+		if($error!=null)
+		{
+			switch($error)  #Comprobamos que error de registro se ha producido
+			{
+				case "registroEmailErr":
+					  echo '<p id="errorMSG">¡<span>ERROR</span>! El correo introducido es incorrecto.</p>';
+					  break;
+			}
+		}
+	?>
 	<fieldset class="marcoInicioRegistro">
 		<h2><?php if($site == 'reg'){ echo 'Registro de usuario'; } 
 				else{ echo 'Modificar datos personales'; } ?>			
 		</h2>
-		<form action="<?php if($site == 'reg'){ echo 'resRegistro.php'; } else{ echo 'resRegistro.php';} ?>" method="POST">
+		<form action="<?php if($site == 'reg'){ echo 'insertRegistro.php'; } else{ echo 'resRegistro.php';} ?>" method="POST">
 			<p>Usuario: </p>
 			<p><input class="boxesForm" type="text" name="Usuario" placeholder="Usuario" autocomplete="on" <?php if($site == 'mod'){echo 'value="'. $pam[0] .'"';} ?> required></p>
 			<p>Contraseña: </p>

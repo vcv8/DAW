@@ -42,51 +42,48 @@
 	<section id="detalle">
 		<article>
 		<?php
-			if(!isset($_GET['id_foto'])){
-				echo '<p id="errorMSG">¡<span>ERROR</span>! La ID de la foto introducida es errónea.</p>';
-			}else{
-				if (!is_numeric($_GET['id_foto'])) {
-					echo '<p id="errorMSG">¡<span>ERROR</span>! La ID de la foto introducida es errónea.</p>';
-				}else
-				{
-					$id = $_GET['id_foto'];
+			if($_GET){
+				if(isset($_GET['id_foto'])){
+					if(is_numeric($_GET['id_foto'])){
 
-					# Obtenemos la foto por su ID
-					$sentencia = "SELECT Titulo, Fecha, Pais, Album, Fichero FROM fotos WHERE IdFoto=$id";
-					$foto = $mysqli->query($sentencia);  # Devuelve un objeto con la foto que tenga esa id
+						$id = $_GET['id_foto'];
 
-					if(!$foto || $mysqli->errno) # errno devuelve el codigo de error de la ultima funcion ejecutada
-					{
-						die("Error: no se pudo realizar la consulta: " . $mysqli->error);
-					}
+						# Obtenemos la foto por su ID
+						$sentencia = "SELECT Titulo, Fecha, Pais, Album, Fichero FROM fotos WHERE IdFoto=$id";
+						$foto = $mysqli->query($sentencia);  # Devuelve un objeto con la foto que tenga esa id
 
-					$fila = $foto->fetch_assoc();
-
-					# Obtenemos el nombre del pais por su ID
-					$idPais = $fila['Pais'];
-
-					if( $idPais !=NULL ) # Comprobamos que tenga un pais asociado primero
-					{
-						$sentencia2 = "SELECT NomPais FROM paises WHERE IdPais=$idPais";
-						$pais = $mysqli->query($sentencia2);  # Devuelve un objeto con el pais que tiene ese ID
-						if(!$pais || $mysqli->errno) # errno devuelve el codigo de error de la ultima funcion ejecutada
+						/*if(!$foto || $mysqli->errno) # errno devuelve el codigo de error de la ultima funcion ejecutada
 						{
 							die("Error: no se pudo realizar la consulta: " . $mysqli->error);
-						}
-						$fila2 =  $pais->fetch_assoc();
-					}
+						}*/
 
-					#Obtenemos el nombre del Album y el usuario al que pertenece 
-					$idAlbum = $fila['Album'];
-					$sentencia3 = "SELECT Titulo, NomUsuario FROM albumes a, usuarios u WHERE IdAlbumes=$idAlbum AND IdUsuario=Usuario";
-					$album = $mysqli->query($sentencia3);  # Devuelve un objeto con el album que tiene ese ID
-					if(!$album || $mysqli->errno) # errno devuelve el codigo de error de la ultima funcion ejecutada
-					{
-						die("Error: no se pudo realizar la consulta: " . $mysqli->error);
-					}
-					$fila3 =  $album->fetch_assoc();
+						$fila = $foto->fetch_assoc();
 
-					
+						if($fila){
+
+							# Obtenemos el nombre del pais por su ID
+							$idPais = $fila['Pais'];
+
+							if( $idPais !=NULL ) # Comprobamos que tenga un pais asociado primero
+							{
+								$sentencia2 = "SELECT NomPais FROM paises WHERE IdPais=$idPais";
+								$pais = $mysqli->query($sentencia2);  # Devuelve un objeto con el pais que tiene ese ID
+								if(!$pais || $mysqli->errno) # errno devuelve el codigo de error de la ultima funcion ejecutada
+								{
+									die("Error: no se pudo realizar la consulta: " . $mysqli->error);
+								}
+								$fila2 =  $pais->fetch_assoc();
+							}
+
+							#Obtenemos el nombre del Album y el usuario al que pertenece 
+							$idAlbum = $fila['Album'];
+							$sentencia3 = "SELECT Titulo, NomUsuario FROM albumes a, usuarios u WHERE IdAlbumes=$idAlbum AND IdUsuario=Usuario";
+							$album = $mysqli->query($sentencia3);  # Devuelve un objeto con el album que tiene ese ID
+							if(!$album || $mysqli->errno) # errno devuelve el codigo de error de la ultima funcion ejecutada
+							{
+								die("Error: no se pudo realizar la consulta: " . $mysqli->error);
+							}
+							$fila3 =  $album->fetch_assoc();				
 		?>
 			<figure>
 				<div>
@@ -94,10 +91,12 @@
 				</div>
 				<figcaption>
 					<h2><?php echo $fila['Titulo'];?></h2>
-					<p class="info">Tomada el 
 					<?php
 						if($fila['Fecha']!=null)
 						{
+					?>
+					<p class="info">Tomada el 
+					<?php
 						 	echo str_replace('-', '/', date('d-m-Y', strtotime($fila['Fecha'])));
 						}
 					  ?>
@@ -126,12 +125,25 @@
 
 
 		<?php
+					# Cerramos la sesion con la BD y liberamos la memoria
+							$album ->free();
+						}else{
+							#Error ID incorrecto
+							echo '<p id="errorMSG">¡<span>ERROR</span>! El ID introducido no corresponde con ninguna foto.</p>';
+						}
+						$foto ->free();
+					}else{
+						#Error ID incorrecto
+						echo '<p id="errorMSG">¡<span>ERROR</span>! La ID de la foto introducida es errónea, debe tratarse de un ID numérico.</p>';
+					}
+				}else{
+					#Error no se ha especificado id de foto
+					echo '<p id="errorMSG">¡<span>ERROR</span>! No se ha especificado ID de foto.</p>';
 				}
+			}else{
+				#Error no se ha especificado id de foto
+				echo '<p id="errorMSG">¡<span>ERROR</span>! No se ha especificado ID de foto.</p>';
 			}
-
-			# Cerramos la sesion con la BD y liberamos la memoria
-			$foto ->free();
-			$album ->free();
 			$mysqli->close();
 		?>
 		</article>

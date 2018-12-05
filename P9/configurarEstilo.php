@@ -8,14 +8,14 @@
 			$host = $_SERVER['HTTP_HOST']; 
 			$uri  = rtrim(dirname($_SERVER[’PHP_SELF’]), '/\\'); 
 			$f_id = $_GET['id_foto'];
-			$extra = "P8/controlAcces.php?msg=detalleFoto.php?id_foto=$f_id"; 
+			$extra = "P9/controlAcces.php?msg=detalleFoto.php?id_foto=$f_id"; 
 			header("Location: http://$host$uri/$extra");
 			exit;
 		}
 
 		$host = $_SERVER['HTTP_HOST']; 
 		$uri  = rtrim(dirname($_SERVER[’PHP_SELF’]), '/\\'); 
-		$extra = 'P8/login.php?Error1=accesoUsuarioNoRegistrado'; 
+		$extra = 'P9/login.php?Error1=accesoUsuarioNoRegistrado'; 
 		header("Location: http://$host$uri/$extra");
 		exit;	
 	}
@@ -26,7 +26,7 @@
 <html lang="es">
 <head>
 	<meta charset="UTF-8">
-	<title>PRETI/detalleFoto</title>
+	<title>PRETI/Configuración</title>
 
 	<?php
 		require_once("includes/estilos.inc");  # Contiene todos los enlaces con el css necesario para las paginas
@@ -36,40 +36,54 @@
 <body>
 
 	<?php
-		require_once("includes/cabecera3.inc");  # Cabecera de la pagina con el logo, login y registro
+		require_once("includes/cabecera1.inc");  # Cabecera de la pagina con el logo, login y registro
 	?>
 
-	<div id="crearAlbum">
-		<fieldset id="marcoCrearAlbum">
+	<section class="Inicio-Registro">
+		<?php
+			#Comprobamos el estilo que tiene actualmente el usuario
+			$usuario = $_SESSION["usuario"];
+			$eActual = $mysqli->query("SELECT IdEstilo, e.Nombre FROM usuarios INNER JOIN estilos e ON Estilo=IdEstilo WHERE NomUsuario='$usuario'");  
+			if(!$eActual || $mysqli->errno) # errno devuelve el codigo de error de la ultima funcion ejecutada
+			{
+				die("Error: no se pudo realizar la consulta: " . $mysqli->error);
+			}
+
+			$fila = $eActual->fetch_assoc();
+
+			#Obtenemos todods los estilos disponibles
+			$sentencia1 = "SELECT IdEstilo, Nombre FROM estilos";
+			$estilo = $mysqli->query($sentencia1);  
+			if(!$estilo || $mysqli->errno) # errno devuelve el codigo de error de la ultima funcion ejecutada
+			{
+				die("Error: no se pudo realizar la consulta: " . $mysqli->error);
+			}
+
+			if($_GET){
+				if(isset($_GET["enuevo"])){
+					#Lanzamos mensaje si se ha cambiado el estilo correctamente
+					echo '<p id="errorMSG">El estilo ha cambiado a: <span>'. $fila["Nombre"] .'</span>.</p>';
+				}
+			}
+		?>
+		<fieldset class="marcoInicioRegistro">
 			<h2>Configurar Estilo de Página</h2>
-			<?php
-					#Obtenemos los estilos disponibles
-					$sentencia1 = "SELECT Nombre FROM estilos";
-					$estilo = $mysqli->query($sentencia1);  
-					if(!$estilo || $mysqli->errno) # errno devuelve el codigo de error de la ultima funcion ejecutada
-					{
-						die("Error: no se pudo realizar la consulta: " . $mysqli->error);
-					}
-			?>
-			<form action="usuarioRegistrado.php" method="GET">
-				<p>
-				<select class="direccion" name="estilo" required>
-						<option disabled selected value> - Selección del estilo - </option>
+			<form action="updateEstilo.php" method="GET">
+				<p><select class="boxesForm" name="estilo" required>
+						<option disabled value> - Selección del estilo - </option>
 						<?php 
 							while($fila1 = $estilo->fetch_assoc())  # Obtenemos el resultado fila a fila en forma de array asociativo
 							{
-
 						?>
-						<option value="<?php echo $fila1['Nombre']; ?>"><?php echo $fila1['Nombre']; ?></option>
+						<option value="<?php echo $fila1['IdEstilo']; ?>" <?php if($fila['IdEstilo']==$fila1['IdEstilo']){echo 'selected';} ?> ><?php echo $fila1['Nombre']; ?></option>
 						<?php 
 							}
 						?>
-				</select>
-				</p>
-				<p><input id="solicitarAlbum" type="submit" value="Seleccionar" title="Seleccion del nuevo estilo de pagina"></p>
+				</select></p>
+				<p><input class="enlaceBoton" type="submit" value="Seleccionar" title="Seleccion del nuevo estilo de pagina"></p>
 			</form>
 		</fieldset>
-	</div>
+	</section>
 
 	<?php
 		# Cerramos la sesion con la BD y liberamos la memoria

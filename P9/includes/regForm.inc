@@ -7,6 +7,18 @@
 				case "registroEmailErr":
 					  echo '<p id="errorMSG">¡<span>ERROR</span>! El correo introducido es incorrecto.</p>';
 					  break;
+
+				case "registroUsuarioErr":
+					  echo '<p id="errorMSG">¡<span>ERROR</span>! El usuario introducido es incorrecto.</p>';
+					  break;
+
+				case "registroContraErr":
+					  echo '<p id="errorMSG">¡<span>ERROR</span>! La contraseña es incorrecta.</p>';
+					  break;
+
+				case "registroContra2Err":
+					  echo '<p id="errorMSG">¡<span>ERROR</span>! Las contraseñas no coinciden.</p>';
+					  break;
 			}
 		}
 	?>

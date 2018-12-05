@@ -26,16 +26,36 @@
 			$ciudad = $_POST['Ciudad'];
 			$pais = $_POST['País'];
 			$dia = $_POST['fNacimiento'];
+ 
+			#Validaciones de datos introducidos  (^->Empieza la cadena, $->Termina la cadena, +->Minimo un valor, {}->Repeticiones)
+			#Usuario
+			if(empty($usuario) || (!preg_match('/^[a-zA-Z0-9]*$/', $usuario)) || (strlen($usuario)<3) || (strlen($usuario)>15)) #Usuario incorrecto
+			{
+				$extra ='P9/registro.php?Error1=registroUsuarioErr'; 
+				require_once("includes/redireccion.inc"); #Contiene los datos para redireccionar a otra pagina con el valor en redirecc
+				
+			}
 
-			#Validaciones de datos introducidos
-			if(!filter_var($correo, FILTER_VALIDATE_EMAIL)) #Correo incorrecto
+			#Contraseña
+			if(empty($pass) || (!preg_match('/^[a-zA-Z0-9\_]*$/', $pass)) || (strlen($pass)<6) || (strlen($pass)>15)) #Falta checkear minimo 1 may, min y numero
+			{
+				$extra ='P9/registro.php?Error1=registroContraErr'; 
+				require_once("includes/redireccion.inc");
+			}
+
+			#RepetirContraseña
+			if($pass != $pass2)
+			{
+				$extra ='P9/registro.php?Error1=registroContra2Err'; 
+				require_once("includes/redireccion.inc");
+			}
+			
+			#Correo
+			if(!filter_var($correo, FILTER_VALIDATE_EMAIL)) 
 			{
 				/* Redirecciona a una página diferente que se encuentra en el directorio actual */ 
-				$host = $_SERVER['HTTP_HOST']; 
-				$uri  = rtrim(dirname($_SERVER[’PHP_SELF’]), '/\\'); 
 				$extra = 'P9/registro.php?Error1=registroEmailErr'; 
-				header("Location: http://$host$uri/$extra");
-				exit;
+				require_once("includes/redireccion.inc");
 			}
 
 

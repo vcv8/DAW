@@ -13,7 +13,8 @@
 					  break;
 
 				case "registroContraErr":
-					  echo '<p id="errorMSG">¡<span>ERROR</span>! La contraseña es incorrecta.</p>';
+					  echo '<p id="errorMSG">¡<span>ERROR</span>! La contraseña es incorrecta.</p>
+					  <p id="errorMSG">Debe contener al menos una letra mayúscula, una minúscula, un número y estar entre 6 - 15 caracteres.</p>';
 					  break;
 
 				case "registroContra2Err":

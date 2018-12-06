@@ -29,15 +29,15 @@
  
 			#Validaciones de datos introducidos  (^->Empieza la cadena, $->Termina la cadena, +->Minimo un valor, {}->Repeticiones)
 			#Usuario
-			if(empty($usuario) || (!preg_match('/^[a-zA-Z0-9]*$/', $usuario)) || (strlen($usuario)<3) || (strlen($usuario)>15)) #Usuario incorrecto
+			if(empty($usuario) || (!preg_match('/^[a-zA-Z0-9]{3,15}$/', $usuario)) ) #Usuario incorrecto
 			{
 				$extra ='P9/registro.php?Error1=registroUsuarioErr'; 
 				require_once("includes/redireccion.inc"); #Contiene los datos para redireccionar a otra pagina con el valor en redirecc
 				
 			}
 
-			#Contraseña
-			if(empty($pass) || (!preg_match('/^[a-zA-Z0-9\_]*$/', $pass)) || (strlen($pass)<6) || (strlen($pass)>15)) #Falta checkear minimo 1 may, min y numero
+			#Contraseña. #Entre 6 y 15, minimo una mayus, una minusc y un numero. Se permite _
+			if(empty($pass) || (!preg_match('/^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])[a-zA-Z0-9\_]{6,15}$/', $pass)) ) 
 			{
 				$extra ='P9/registro.php?Error1=registroContraErr'; 
 				require_once("includes/redireccion.inc");

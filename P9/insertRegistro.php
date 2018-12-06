@@ -51,23 +51,63 @@
 			}
 			
 			#Correo
-			if(!filter_var($correo, FILTER_VALIDATE_EMAIL)) 
+			if(empty($correo) || !filter_var($correo, FILTER_VALIDATE_EMAIL)) 
 			{
 				/* Redirecciona a una página diferente que se encuentra en el directorio actual */ 
 				$extra = 'P9/registro.php?Error1=registroEmailErr'; 
 				require_once("includes/redireccion.inc");
 			}
 
+			#Sexo
+			if($sexo=="Hombre")
+			{
+				$sexo=0;
+			}
+			else
+			{
+				if($sexo=="Mujer")
+				{
+					$sexo=1;
+				}
+				else
+				{
+					$extra = 'P9/registro.php?Error1=registroSexoErr'; 
+					require_once("includes/redireccion.inc");
+				}
+			}
+
+			#Pais
+			if($pais!=null)
+			{
+				$sentencia = "SELECT idPais FROM paises WHERE Nompais='$pais'";
+				$idPais = $mysqli->query($sentencia);  
+
+				if(!$idPais || $mysqli->errno) # errno devuelve el codigo de error de la ultima funcion ejecutada
+				{
+					die("Error: no se pudo realizar la consulta: " . $mysqli->error);
+				}
+
+				$fila = $idPais->fetch_assoc();
+
+				$pais = $fila['idPais'];
+			}
+
+			#$diaIngles = date_format($dia, "m/d/Y");
+			#if(checkdate(month, day, year))
+
+			$date = date('Y-m-d H:i:s'); #Almacenamos la fecha actual para el registro
 
 			#Insertamos un nuevo usuario
-			$sentencia="INSERT INTO usuarios (NomUsuario, Clave, Email, Sexo, FNacimiento, Ciudad, Pais, Foto, FRegistro, Estilo) VALUES ('$usuario', '$pass', '$correo', '1', '$dia', '$ciudad', '1', 'fotoPerfil.png', '2018-11-20 17:23:00', '1')";
+			$sentencia="INSERT INTO usuarios (NomUsuario, Clave, Email, Sexo, FNacimiento, Ciudad, Pais, Foto, FRegistro, Estilo) VALUES ('$usuario', '$pass', '$correo', $sexo, '$dia', '$ciudad', '$pais', 'fotoPerfil.png', '$date', '1')";
 
 			if(!mysqli_query($mysqli, $sentencia))
 			{
 				die("Error: no se pudo realizar la inserccion: " . $mysqli->error);
 			}
 
-			echo 'Se ha realizado la inserccion de un nuevo usuario';
+			#Una vez creado el usuario lo direccionamos al login para que inicie sesion
+			$extra = 'P9/login.php?Nuevo=nuevoUsuario'; 
+			require_once("includes/redireccion.inc");
 
 			#Cerramos conexion con el SGBD
 			$mysqli->close();

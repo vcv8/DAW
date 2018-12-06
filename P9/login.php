@@ -55,7 +55,8 @@
 		<br><br>
 		<?php
 		#print_r($_GET);
-			if($_GET && isset($_GET['Error1'])){
+			if($_GET && isset($_GET['Error1']))
+			{
 				if($_GET && $_GET['Error1']=="loginError") # Error cuando el usuario o la contraseña es incorrecta
 				{ 
 					echo '<p id="errorMSG">¡<span>ERROR</span>! La cuenta con la que se ha iniciado sesión no está registrada. <a href="registro.php">Registrarse</a>.</p>';
@@ -67,6 +68,17 @@
 						echo '<p id="errorMSG">¡<span>ERROR</span>! Necesita iniciar sesion para poder acceder a esta parte. <a href="registro.php">Registrarse</a>.</p>';
 					}
 				}
+			}
+			else
+			{
+				if($_GET && isset($_GET['Nuevo'])) #Nuevo usuario registrado
+				{
+					if($_GET && $_GET['Nuevo']=="nuevoUsuario")
+					{
+						echo '<p id="errorMSG"><b>¡Registro realizado!</b> Por favor, Inicie Sesión con su nueva cuenta confirmar el registro.</p>';
+					}
+				}
+				
 			}
 		?>
 	</section>

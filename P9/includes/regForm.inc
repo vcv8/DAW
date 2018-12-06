@@ -20,6 +20,10 @@
 				case "registroContra2Err":
 					  echo '<p id="errorMSG">¡<span>ERROR</span>! Las contraseñas no coinciden.</p>';
 					  break;
+
+				case "registroSexoErr":
+					  echo '<p id="errorMSG">¡<span>ERROR</span>! El sexo introducido es incorrecto.</p>';
+					  break;
 			}
 		}
 	?>
@@ -39,9 +43,9 @@
 			<p><input type="radio" id="s1" name="Sexo" value="Hombre" <?php if($site == 'mod'){ if(!$userData['Sexo']){ echo "checked"; } } ?> required>Hombre</p>
 		    <p><input type="radio" id="s2" name="Sexo" value="Mujer" <?php if($site == 'mod'){ if($userData['Sexo']){ echo "checked"; } } ?> required>Mujer</p>
 			<p>F.Nacimiento: </p>
-			<p><input class="boxesForm" type="date" name="fNacimiento" <?php if($site == 'mod'){echo 'value="'. $pam[3] .'"';} ?> required></p>
+			<p><input class="boxesForm" type="date" name="fNacimiento" <?php if($site == 'mod'){echo 'value="'. $pam[3] .'"';} ?>></p>
 		    <p>Ciudad: </p>
-			<p><input class="boxesForm" type="text" name="Ciudad" placeholder="Ciudad" <?php if($site == 'mod'){echo 'value="'. $pam[4] .'"';} ?> required></p>
+			<p><input class="boxesForm" type="text" name="Ciudad" placeholder="Ciudad" <?php if($site == 'mod'){echo 'value="'. $pam[4] .'"';} ?>></p>
 			<p>País: </p>
 			<?php
 				#Obtenemos los paises disponibles

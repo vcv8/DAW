@@ -102,7 +102,7 @@
 				<h3>Formulario de solicitud</h3>
 				<p>Los parámetros marcados con (*) son obligatorios.</p>
 
-				<form action="resSolicitud.php" method="GET">
+				<form action="insertSolicitud.php" method="GET">
 					<p><label><b>Nombre (*)</b></label><input class="boxesAlbum" type="text" name="nombre" placeholder="Nombre y Apellidos..." maxlength="200" required></p>
 					<p><label><b>Título (*)</b></label> <input class="boxesAlbum" type="text" name="titulo" placeholder="Título para el álbum..." maxlength="200" required></p>
 					<p><label><b>Texto adicional</b> </label><input class="bigBoxes" type="text" name="descripcion" placeholder="Descripción, dedicatoria..." maxlength="4000"></p>

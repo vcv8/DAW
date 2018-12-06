@@ -110,17 +110,17 @@
 					<p><label><b>Dirección (*)</b> </label><input class="boxesAlbum" type="text" name="calle" placeholder="Calle..." required>
 						<input class="direccion" type="number" name="numero" placeholder="Número" min="1">
 						<input class="direccion" type="number" name="cp" placeholder="Código Postal" required></p>
-						<p><select class="direccion" required>
+						<p><select class="direccion" name="localidad" required>
 							<option disabled selected value> - Localidad - </option>
 							<option value="SanVicentdelRaspeig">San Vicent del Raspeig</option>
 						</select>
-						<select class="direccion" required>
+						<select class="direccion"  name="provincia" required>
 							<option disabled selected value> - Provincia - </option>
-							<option value="3">Alicante</option>
+							<option value="Alicante">Alicante</option>
 						</select>
-						<select class="direccion" required>
+						<select class="direccion" name="pais" required>
 							<option disabled selected value> - País - </option>
-							<option value="Spain">España</option>
+							<option value="España">España</option>
 						</select>
 					 </p>
 					 <p><label><b>Teléfono de contacto (*)</b></label><input class="boxesAlbum" type="tel" name="telefono" placeholder="### ### ###" required></p>

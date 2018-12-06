@@ -28,8 +28,11 @@
 			}
 
 			#Una vez creado el usuario lo direccionamos al login para que inicie sesion
+			$host = $_SERVER['HTTP_HOST']; 
+			$uri  = rtrim(dirname($_SERVER[’PHP_SELF’]), '/\\'); 
 			$extra = 'P9/login.php?Nuevo=nuevoUsuario'; 
-			require_once("includes/redireccion.inc");
+			header("Location: http://$host$uri/$extra");
+			exit;
 
 			#Cerramos conexion con el SGBD
 			$mysqli->close();

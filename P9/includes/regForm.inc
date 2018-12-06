@@ -31,7 +31,8 @@
 		<h2><?php if($site == 'reg'){ echo 'Registro de usuario'; } 
 				else{ echo 'Modificar datos personales'; } ?>			
 		</h2>
-		<form action="<?php if($site == 'reg'){ echo 'insertRegistro.php'; } else{ echo 'resRegistro.php';} ?>" method="POST">
+		<!-- Si venimos del registro sera una inserccion, si no sera un update -->
+		<form action="<?php if($site == 'reg'){ echo 'insertRegistro.php'; } else{ echo 'updateDatos.php';} ?>" method="POST">
 			<p>Usuario: </p>
 			<p><input class="boxesForm" type="text" name="Usuario" placeholder="Usuario" autocomplete="on" <?php if($site == 'mod'){echo 'value="'. $pam[0] .'"';} ?> required></p>
 			<p>Contraseña: </p>

@@ -66,6 +66,14 @@
 					"<p>País actual: $outpais['NomPais']</p>"
 				);*/
 
+		#Control de error de campos de modificar datos
+		$error = Null;
+
+		if($_GET && isset($_GET['Error1'])) 
+		{
+			$error = $_GET['Error1']; #Se ha producido un error, lo almacenamos para comprobar cual es
+		}
+
 		require_once("includes/regForm.inc");
 
 		require_once("includes/pie.inc");  # Pie de la pagina con el copyright

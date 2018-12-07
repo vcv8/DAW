@@ -20,8 +20,25 @@
 	if(empty($usuario) || (!preg_match('/^[a-zA-Z0-9]{3,15}$/', $usuario)) ) #Usuario incorrecto
 	{
 		$extra2 ="registroUsuarioErr"; 
-		require_once("redireccion.inc"); #Contiene los datos para redireccionar a otra pagina con el valor en redirecc
-				
+		require_once("redireccion.inc"); #Contiene los datos para redireccionar a otra pagina con el valor en redirecc	
+	}
+	else #Nombre de usuario duplicado
+	{
+		$sentencia1 = "SELECT nomUsuario FROM usuarios WHERE NomUsuario='$usuario'";
+		$usuarioSent = $mysqli->query($sentencia1);  
+		if(!$usuarioSent || $mysqli->errno) # errno devuelve el codigo de error de la ultima funcion ejecutada
+		{
+			die("Error: no se pudo realizar la consulta: " . $mysqli->error);
+		}
+
+		$fila = $usuarioSent->fetch_assoc();
+		echo $fila['nomUsuario'];
+
+		if($fila['nomUsuario']==$usuario)
+		{
+			$extra2 ="nombreDuplicError"; 
+			require_once("redireccion.inc"); #Contiene los datos para redireccionar a otra pagina con el valor en redirecc
+		}
 	}
 
 	#Contraseña. #Entre 6 y 15, minimo una mayus, una minusc y un numero. Se permite _

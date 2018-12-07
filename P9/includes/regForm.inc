@@ -24,6 +24,10 @@
 				case "registroSexoErr":
 					  echo '<p id="errorMSG">¡<span>ERROR</span>! El sexo introducido es incorrecto.</p>';
 					  break;
+
+				case "nombreDuplicError":
+					  echo '<p id="errorMSG">¡<span>ERROR</span>! El nombre de usuario ya existe.</p>';
+					  break;
 			}
 		}
 	?>

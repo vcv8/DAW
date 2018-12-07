@@ -75,7 +75,7 @@
 				{
 					if($_GET && $_GET['Nuevo']=="nuevoUsuario")
 					{
-						echo '<p id="errorMSG"><b>¡Registro realizado!</b> Por favor, Inicie Sesión con su nueva cuenta confirmar el registro.</p>';
+						echo '<p id="errorMSG"><b>¡Registro realizado!</b> Por favor, Inicie Sesión con su nueva cuenta para confirmar el registro.</p>';
 					}
 				}
 				

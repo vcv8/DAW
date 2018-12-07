@@ -125,10 +125,10 @@
 				<hr class="display-mini">
 				<div id="Modificar-Borrar">
 					<p class="menu display-great display-medium"><a class="enlacesUsuario" href="modDatos.php" title="Modifica tus datos personales">Modificar datos</a>
-					<a class="enlacesUsuario" href="usuarioRegistrado.php" title="Darte de baja en Preti">Darme de Baja</a></p>
+					<a class="enlacesUsuario" href="baja.php" title="Darte de baja en Preti">Darme de Baja</a></p>
 
 					<p class="display-mini"><a class="enlacesUsuario" href="usuarioRegistrado.php" title="Modifica tus datos personales">Modificar datos</a></p>
-					<p class="display-mini"> <a class="enlacesUsuario" href="usuarioRegistrado.php" title="Darte de baja en Preti">Darme de Baja</a></p>
+					<p class="display-mini"> <a class="enlacesUsuario" href="baja.php" title="Darte de baja en Preti">Darme de Baja</a></p>
 				</div>
 			</fieldset>
 			<div class="menu display-mini display-medium" >

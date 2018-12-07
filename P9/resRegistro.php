@@ -41,25 +41,28 @@
 	?>
 
 	<?php
-		$usuario = $_POST['Usuario'];
-		$usuario = rtrim($usuario); # Elimina los espacios en blanco
-		$pass = $_POST['Contraseña'];
-		$pass = rtrim($pass);
-		$pass2 = $_POST['Contraseña2'];
-		$pass2 = rtrim($pass2);
-		$correo = $_POST['Correo'];
-		$sexo = $_POST['Sexo'];
-		$ciudad = $_POST['Ciudad'];
-		$pais = $_POST['País'];
-		$dia = $_POST['fNacimiento'];
+		if($_POST){
+			if(!isset($_POST['Usuario'])||!isset($_POST['Contraseña'])||!isset($_POST['Contraseña2'])||!isset($_POST['Correo'])||!isset($_POST['Sexo'])||!isset($_POST['Ciudad'])||!isset($_POST['País'])||!isset($_POST['fNacimiento'])){
+				
+				$usuario = $_POST['Usuario'];
+				$usuario = rtrim($usuario); # Elimina los espacios en blanco
+				$pass = $_POST['Contraseña'];
+				$pass = rtrim($pass);
+				$pass2 = $_POST['Contraseña2'];
+				$pass2 = rtrim($pass2);
+				$correo = $_POST['Correo'];
+				$sexo = $_POST['Sexo'];
+				$ciudad = $_POST['Ciudad'];
+				$pais = $_POST['País'];
+				$dia = $_POST['fNacimiento'];
 
-		if($pass!=$pass2){ # Comprueba que las dos contraseñas coinciden
-			echo '<p id="errorMSG"><span>ERROR</span>! Las contraseñas introducidas no coinciden. El usuario no ha sido registrado. <a href="registro.php">Registrarse</a>.</p>';
-		}else if(empty($usuario) or empty($pass) or empty($pass2)){ # Comprueba si alguno de esos parametros son vacios o no
-			echo '<p id="errorMSG"><span>ERROR</span>! Alguno de los parámetros no ha sido introducido. <a href="registro.php">Registrarse</a>.</p>';
-		}else{
-			echo '<p id="errorMSG">Tus datos de registro son los siguientes:</p>';
-		}
+				if($pass!=$pass2){ # Comprueba que las dos contraseñas coinciden
+					echo '<p id="errorMSG"><span>ERROR</span>! Las contraseñas introducidas no coinciden. El usuario no ha sido registrado. <a href="registro.php">Registrarse</a>.</p>';
+				}else if(empty($usuario) or empty($pass) or empty($pass2)){ # Comprueba si alguno de esos parametros son vacios o no
+					echo '<p id="errorMSG"><span>ERROR</span>! Alguno de los parámetros no ha sido introducido. <a href="registro.php">Registrarse</a>.</p>';
+				}else{
+					echo '<p id="errorMSG">Tus datos de registro son los siguientes:</p>';
+				}
 	?>
 	
 	<p>Nombre de Usuario: <b><?php echo $usuario?></b></p>
@@ -78,5 +81,11 @@
 </body>
 </html>
 <?php
+			}else{
+				echo '<p id="errorMSG"><span>ERROR</span>! Alguno de los parámetros no ha sido introducido. <a href="registro.php">Registrarse</a>.</p>';
+			}
+		}else{
+			echo '<p id="errorMSG"><span>ERROR</span>! Alguno de los parámetros no ha sido introducido. <a href="registro.php">Registrarse</a>.</p>';
+		}
 	}
 ?>

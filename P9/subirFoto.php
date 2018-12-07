@@ -41,17 +41,18 @@
 	<section class="Inicio-Registro"> <!--Formulario de Registro -->
 		<fieldset class="marcoInicioRegistro">
 			<h2>Añadir nueva foto</h2>
-			<form action="usuarioRegistrado.php" method="GET">
-				<p><label>Título de la foto:</label></p>
+			<p>Los parámetros marcados con (*) son obligatorios.</p>
+			<form action="insertFoto.php" method="GET">
+				<p><label>Título de la foto: (*)</label></p>
 				<p><input class="boxesForm" type="text" name="Titulo" placeholder="Título" required></p>
-				<p><label>Descripción:</label></p>
+				<p><label>Descripción: (*)</label></p>
 				<p><input class="boxesForm" type="text" name="Descripcion" placeholder="Descripción" required></p>
 				<p><label>¿Cuándo se tomó la foto?</label></p>
 				<p><input class="boxesForm" type="date" name="Fecha"></p>
 			    <p><label>¿En qué país?</label></p>
 			    <?php
 					#Obtenemos los paises disponibles
-					$pais = $mysqli->query("SELECT NomPais FROM paises");  
+					$pais = $mysqli->query("SELECT IdPais , NomPais FROM paises");  
 					if(!$pais || $mysqli->errno) # errno devuelve el codigo de error de la ultima funcion ejecutada
 					{
 						die("Error: no se pudo realizar la consulta: " . $mysqli->error);
@@ -64,7 +65,7 @@
 							{
 
 						?>
-					<option value="<?php echo $fila1['NomPais'] ?>"><?php echo $fila1['NomPais'] ?></option>
+					<option value="<?php echo $fila1['IdPais'] ?>"><?php echo $fila1['NomPais'] ?></option>
 						<?php 
 							}
 
@@ -72,11 +73,11 @@
 							$pais ->free();
 						?>
 				</select>
-				<p><label>Foto:</label></p>
+				<p><label>Foto: (*)</label></p>
 				<p><input type="file" name="pic" accept="image/*"></p>
-				<p><label>Texto alternativo para la foto:</label></p>
+				<p><label>Texto alternativo para la foto: (*)</label></p>
 				<p><input class="boxesForm" type="text" name="tAlternativo" placeholder="Texto alternativo" required></p>
-				<p><label>Álbum al que pertenece:</label></p>
+				<p><label>Álbum al que pertenece: (*)</label></p>
 				<?php
 					#Comprobamos que usuario es 
 					$usuario = $_SESSION["usuario"];
@@ -90,7 +91,7 @@
 
 					# Obtenemos los albumes del usuario
 					$idUsu = $fila['IdUsuario'];
-					$album = $mysqli->query("SELECT Titulo FROM albumes WHERE Usuario=$idUsu");  
+					$album = $mysqli->query("SELECT IdAlbumes , Titulo FROM albumes WHERE Usuario=$idUsu");  
 					if(!$album || $mysqli->errno) # errno devuelve el codigo de error de la ultima funcion ejecutada
 					{
 						die("Error: no se pudo realizar la consulta: " . $mysqli->error);
@@ -104,7 +105,7 @@
 						{
 
 					?>
-					<option value="<?php echo $fila2['Titulo'] ?>"><?php echo $fila2['Titulo'] ?></option>
+					<option value="<?php echo $fila2['IdAlbumes'] ?>"><?php echo $fila2['Titulo'] ?></option>
 					<?php 
 						}
 

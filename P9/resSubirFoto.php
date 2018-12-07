@@ -26,7 +26,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1.0" /> <!-- Para que se pueda aplicar un diseño adaptable y la correcta visualizacion en dispo móviles -->
-	<title>PRETI/solicitud</title>
+	<title>PRETI/Foto Subida</title>
 
 	<?php
 		require("includes/estilos.inc");  # Contiene todos los enlaces con el css necesario para las paginas
@@ -41,13 +41,14 @@
 
 	<section class="Inicio-Registro">
 		<fieldset class="marcoInicioRegistro">
-			<h2>Confirmación de solicitud</h2>
+			<h2>Confirmación de subida</h2>
 
 			<?php
 				if($_GET && isset($_GET['sid']) && is_numeric($_GET['sid'])){
 					$usuario = $_SESSION['usuario'];
 					$id = $_GET['sid'];
-					$sentencia1 = "SELECT Album, Coste, albumes.Titulo FROM solicitudes JOIN albumes ON Album=IdAlbumes JOIN usuarios ON Usuario=IdUsuario WHERE IdSolicitud=$id AND NomUsuario='$usuario' ORDER BY idSolicitud DESC LIMIT 1"; #Obtenemos el ultimo album insertado
+					$sentencia1 = "SELECT IdFoto , fotos.Titulo FROM fotos JOIN albumes ON Album=IdAlbumes JOIN usuarios ON Usuario=IdUsuario WHERE IdFoto=$id AND NomUsuario='$usuario' ";
+
 					$ultSolicitud = $mysqli->query($sentencia1);  
 
 					if(!$ultSolicitud || $mysqli->errno) # errno devuelve el codigo de error de la ultima funcion ejecutada
@@ -58,12 +59,11 @@
 					$fila = $ultSolicitud->fetch_assoc();
 
 					if($fila){
-						$album= $fila['Album'];
-						$total = $fila['Coste'];
-						$nomAlbum= $fila['Titulo'];
+						$fid = $fila['IdFoto'];
+						$tit = $fila['Titulo'];
 
-						echo "<p>Se ha registrado su solicitud de impresión para el album <b>$nomAlbum</b> <p>";
-						echo "<p>El coste total de la operación son <b>$total €</b>.</p>";
+						echo "<p>Se ha subido correctamente la foto con título <b>$tit</b>.<p>";
+						echo '<p>Puedes verla publicada <a href="detalleFoto.php?id_foto='. $fid .'" class="swaplink">aquí</a>.</p>';
 
 					}else{
 						echo '<p id="errorMSG">¡<span>ERROR</span>! ID de solicitud incorrecto.</p>';

@@ -39,18 +39,19 @@
 			require_once("includes/validacionDatosUsuario.inc"); #Se realiza la validacion de los campos introducidos por el usuario
 
 			#Comrpobamos que usuario es el que esta modificando
-			$usuario = $_SESSION["usuario"];
+			$usuarioSesion = $_SESSION["usuario"];
 
-			$sentencia1 = "SELECT idUsuario FROM usuarios WHERE NomUsuario='$usuario'";
-			$usuario = $mysqli->query($sentencia1);  
+			$sentencia1 = "SELECT idUsuario FROM usuarios WHERE NomUsuario='$usuarioSesion'";
+			$usuario2 = $mysqli->query($sentencia1);  
 
-			if(!$usuario || $mysqli->errno) # errno devuelve el codigo de error de la ultima funcion ejecutada
+			if(!$usuario2 || $mysqli->errno) # errno devuelve el codigo de error de la ultima funcion ejecutada
 			{
 				die("Error: no se pudo realizar la consulta: " . $mysqli->error);
 			}
 
-			$fila = $usuario->fetch_assoc();
+			$fila = $usuario2->fetch_assoc();
 			$idUsu = $fila['idUsuario']; 
+		
 
 			#Modificamos los datos del usuario
 			$update = $mysqli->query("UPDATE usuarios SET NomUsuario='$usuario', Clave='$pass', Email='$correo', Sexo='$sexo', FNacimiento='$dia', Ciudad='$ciudad', 
@@ -61,12 +62,14 @@
 			{
 				die("Error: no se pudo realizar la consulta: " . $mysqli->error);
 			}
+
+			$_SESSION["usuario"] = $usuario;
 			
-			#$host = $_SERVER['HTTP_HOST']; 
-			#$uri  = rtrim(dirname($_SERVER[’PHP_SELF’]), '/\\'); 
-			#$extra = 'P9/usuarioRegistrado.php?Update=cambioDatos'; 
-			#header("Location: http://$host$uri/$extra");
-			#exit;
+			$host = $_SERVER['HTTP_HOST']; 
+			$uri  = rtrim(dirname($_SERVER[’PHP_SELF’]), '/\\'); 
+			$extra = 'P9/usuarioRegistrado.php?Update=cambioDatos'; 
+			header("Location: http://$host$uri/$extra");
+			exit;
 
 			#Cerramos conexion con el SGBD
 			$mysqli->close();

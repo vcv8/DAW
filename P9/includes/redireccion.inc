@@ -10,7 +10,7 @@
 	}
 	else
 	{
-		$extra ="P9/updateDatos.php?Error1=" .$extra2; 
+		$extra ="P9/modDatos.php?Error1=" .$extra2; 
 	}
 
 	header("Location: http://$host$uri/$extra");

@@ -42,9 +42,33 @@
 				$tipoImpresion = $_GET['cimpresion']; 	# Tipo de impresion del album 
 
 
+				#Consulta idAlbum de los albumes
+				$sentencia1 = "SELECT idAlbumes FROM albumes WHERE Titulo='$album'";
+				$idAlbum = $mysqli->query($sentencia1);  
 
-				$paginas = 5; 				# Nº de paginas del album
-				$fotos = 8; 				# Nº de fotos del album
+				if(!$idAlbum || $mysqli->errno) # errno devuelve el codigo de error de la ultima funcion ejecutada
+				{
+					die("Error: no se pudo realizar la consulta: " . $mysqli->error);
+				}
+
+				$fila = $idAlbum->fetch_assoc();
+
+				$idAlbum = $fila['idAlbumes'];
+
+				#Contamos el numero de fotos del album
+				$sentencia2 = "SELECT COUNT(*) AS numfotos FROM fotos WHERE Album='$idAlbum'";
+				$fotos = $mysqli->query($sentencia2);  
+				
+
+				if(!$fotos || $mysqli->errno) # errno devuelve el codigo de error de la ultima funcion ejecutada
+				{
+					die("Error: no se pudo realizar la consulta: " . $mysqli->error);
+				}
+
+				$numero_fotos = $fotos->fetch_assoc();
+
+				$paginas = $numero_fotos['numfotos']+1; 	# Nº de paginas del album
+				$fotos = $numero_fotos['numfotos']; 		# Nº de fotos del album
 				$total = 0;
 				$costePag = 0;
 				$costeImpresion = 0;
@@ -80,18 +104,6 @@
 
 				$total = ($costeFinalPag + $costeFinalFotos) * $copias;
 
-				#Consulta idAlbum de los albumes
-				$sentencia1 = "SELECT idAlbumes FROM albumes WHERE Titulo='$album'";
-				$idAlbum = $mysqli->query($sentencia1);  
-
-				if(!$idAlbum || $mysqli->errno) # errno devuelve el codigo de error de la ultima funcion ejecutada
-				{
-					die("Error: no se pudo realizar la consulta: " . $mysqli->error);
-				}
-
-				$fila = $idAlbum->fetch_assoc();
-
-				$idAlbum = $fila['idAlbumes'];
 
 				$fregistro = date('Y-m-d H:i:s'); #Almacenamos la fecha actual para el registro
 

@@ -56,6 +56,15 @@
 
 	<!-- Seccion que contiene la foto de perfil del usuario, sus datos, enlaces .... -->
 	<section>
+		<?php
+			if($_GET && isset($_GET['Update'])) #Nuevo usuario registrado
+			{
+				if($_GET && $_GET['Update']=="cambioDatos")
+				{
+							echo '<p id="errorMSG"><b>¡Cambios guardados!</b>.</p>';
+				}
+			}
+		?>
 		<div id="FotoPerfil">
 			<img src="recursos/EjemploPerfil.png" alt="Foto Perfil" id="fotoPerfil">
 			<p id="NombreUsuario">
@@ -79,15 +88,6 @@
 		?>
 
 		<div>
-			<?php
-				if($_GET && isset($_GET['Update'])) #Nuevo usuario registrado
-				{
-					if($_GET && $_GET['Update']=="cambioDatos")
-					{
-								echo '<p id="errorMSG"><b>¡Cambios guardados!</b>.</p>';
-					}
-				}
-			?>
 			<fieldset class="marcoUsuario">
 				<h2>Detalles de Usuario</h2>
 				<ul id="InfoUsuario"> <!-- Lista de datos del Usuario -->

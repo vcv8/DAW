@@ -36,7 +36,7 @@
 <body>
 	
 	<?php
-		require("includes/cabecera.inc");  # Cabecera de la pagina con el logo, login y registro
+		require("includes/cabecera1.inc");  # Cabecera de la pagina con el logo, login y registro
 
 		$sentencia1 = "SELECT Titulo, Descripción FROM albumes ORDER BY idAlbumes DESC LIMIT 1"; #Obtenemos el ultimo album insertado
 		$ultAlbum = $mysqli->query($sentencia1);  

@@ -24,7 +24,7 @@
 	}
 	else #Nombre de usuario duplicado
 	{
-		$sentencia1 = "SELECT nomUsuario FROM usuarios WHERE NomUsuario='$usuario'";
+		/*$sentencia1 = "SELECT nomUsuario FROM usuarios WHERE NomUsuario='$usuario'";
 		$usuarioSent = $mysqli->query($sentencia1);  
 		if(!$usuarioSent || $mysqli->errno) # errno devuelve el codigo de error de la ultima funcion ejecutada
 		{
@@ -38,7 +38,7 @@
 		{
 			$extra2 ="nombreDuplicError"; 
 			require_once("redireccion.inc"); #Contiene los datos para redireccionar a otra pagina con el valor en redirecc
-		}
+		}*/
 	}
 
 	#Contraseña. #Entre 6 y 15, minimo una mayus, una minusc y un numero. Se permite _

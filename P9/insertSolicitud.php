@@ -111,12 +111,18 @@
 				if(!$solicit || $mysqli->errno) # errno devuelve el codigo de error de la ultima funcion ejecutada
 				{
 					die("Error: no se pudo realizar la consulta: " . $mysqli->error);
+				}else{
+					$usuario = $_SESSION['usuario'];
+					$idlast = $mysqli->query("SELECT IdSolicitud FROM solicitudes JOIN albumes ON Album=IdAlbumes JOIN usuarios ON Usuario=IdUsuario WHERE NomUsuario='$usuario' ORDER BY idSolicitud DESC LIMIT 1");
+					$fidlast = $idlast->fetch_assoc();
+					$pluspam = $fidlast['IdSolicitud'];
 				}
 
 				$host = $_SERVER['HTTP_HOST']; 
 				$uri  = rtrim(dirname($_SERVER[’PHP_SELF’]), '/\\'); 
 				$extra = 'P9/resSolicitud.php'; 
-				header("Location: http://$host$uri/$extra");
+				$plus = '?sid='. $pluspam;
+				header("Location: http://$host$uri/$extra$plus");
 				exit;
 			}
 ?>

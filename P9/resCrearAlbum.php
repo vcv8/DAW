@@ -52,16 +52,17 @@
 		$titulo = $fila['Titulo'];
 		$descripcion = $fila['Descripción'];
 	?>
-	<article id="resAlbum">
-		<fieldset id="marcoResAlbum">
+	<section class="Inicio-Registro">
+		<fieldset class="marcoInicioRegistro">
+			
 			<h2>Confirmación de creación del album :</h2>
-
 			<p><b>Titulo: </b><?php echo $titulo; ?></p>
 			<p><b>Descripcion: </b><?php echo $descripcion; ?></p>
-			<p>¿Quiere subir su primera fotografía en este album? <a href="subirFoto.php" class="swaplink">Subir foto.</a></p>
-			<a href="usuarioRegistrado.php" class="swaplink">Volver a mi perfil.</a>
+			<p>¿Quiere subir su primera fotografía en este album? <a href="subirFoto.php" class="swaplink">Subir foto</a>.</p>
+			<a href="usuarioRegistrado.php" class="swaplink">Volver a mi perfil</a>
+			
 		</fieldset>
-	</article>
+	</section>
 
 	<?php
 		require("includes/pie.inc");  # Pie de la pagina con el copyright

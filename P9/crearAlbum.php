@@ -42,7 +42,7 @@
 		<fieldset class="marcoInicioRegistro">
 			<h2>Crear Album</h2>
 			<p>Los parámetros marcados con (*) son obligatorios.</p>
-			<form action="usuarioRegistrado.php" method="GET">
+			<form action="insertAlbum.php" method="GET">
 				<p><label><b>Titulo (*)</b></label><input class="boxesForm" type="text" name="tituloAlbum" placeholder="Título del Album" maxlength="200" required></p>
 				<p><label><b>Descripción (*)</b> </label><input class="boxesForm" type="text" name="descripcionAlbum" placeholder="Descripción del Álbum" maxlength="4000" required=""></p>
 

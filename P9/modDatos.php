@@ -56,16 +56,6 @@
 					$outpais['NomPais']
 				);
 
-		/*$pam = array(
-					"<p>Usuario actual: $userData['NomUsuario']</p>",
-					"<p>Contraseña actual: $userData['Clave']</p>",
-					"<p>Sexo actual: Mujer</p>",
-					"<p>Sexo actual: Hombre</p>",
-					"<p>F.Nacimiento actual: $userData['FNacimiento']</p>",
-					"<p>Ciudad actual: $userData['Ciudad']</p>",
-					"<p>País actual: $outpais['NomPais']</p>"
-				);*/
-
 		#Control de error de campos de modificar datos
 		$error = Null;
 
@@ -73,6 +63,7 @@
 		{
 			$error = $_GET['Error1']; #Se ha producido un error, lo almacenamos para comprobar cual es
 		}
+		
 
 		require_once("includes/regForm.inc");
 

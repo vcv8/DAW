@@ -79,6 +79,15 @@
 		?>
 
 		<div>
+			<?php
+				if($_GET && isset($_GET['Update'])) #Nuevo usuario registrado
+				{
+					if($_GET && $_GET['Update']=="cambioDatos")
+					{
+								echo '<p id="errorMSG"><b>¡Cambios guardados!</b>.</p>';
+					}
+				}
+			?>
 			<fieldset class="marcoUsuario">
 				<h2>Detalles de Usuario</h2>
 				<ul id="InfoUsuario"> <!-- Lista de datos del Usuario -->

@@ -53,7 +53,7 @@
 	if($redir=='0'){  # No es ninguno de los usuarios registrados
 		if(isset($_GET['baja'])){
 			if($_GET['baja']==1){
-				/* Redirecciona a borrar usuario confirmado */ 
+				/* Redirecciona a NO borrar usuario */ 
 				$host = $_SERVER['HTTP_HOST']; 
 				$uri  = rtrim(dirname($_SERVER[’PHP_SELF’]), '/\\'); 
 				$extra = 'P9/baja.php?err=1'; 

@@ -38,20 +38,18 @@
 	<?php
 		require("includes/cabecera1.inc");  # Cabecera de la pagina con el logo, login y registro
 	?>
-
-	<div id="crearAlbum">
-		<fieldset id="marcoCrearAlbum">
+	<section class="Inicio-Registro"> 
+		<fieldset class="marcoInicioRegistro">
 			<h2>Crear Album</h2>
 			<p>Los parámetros marcados con (*) son obligatorios.</p>
-			<form action="insertAlbum.php" method="GET">
-				<p><label><b>Titulo (*)</b></label><input class="boxesAlbum" type="text" name="tituloAlbum" placeholder="Título del Album" maxlength="200" required></p>
-				<p><label><b>Descripción (*)</b> </label><input class="bigBoxes" type="text" name="descripcionAlbum" placeholder="Descripción del Álbum" maxlength="4000" required=""></p>
+			<form action="usuarioRegistrado.php" method="GET">
+				<p><label><b>Titulo (*)</b></label><input class="boxesForm" type="text" name="tituloAlbum" placeholder="Título del Album" maxlength="200" required></p>
+				<p><label><b>Descripción (*)</b> </label><input class="boxesForm" type="text" name="descripcionAlbum" placeholder="Descripción del Álbum" maxlength="4000" required=""></p>
 
-				<p><input id="solicitarAlbum" type="submit" value="Crear Album" title="Creación de un nuevo Album"></p>
+				<p><input class="enlaceBoton" type="submit" value="Crear Album" title="Creación de un nuevo Album"></p>
 			</form>
 		</fieldset>
-
-	</div>
+	</section>
 
 	<?php
 		require("includes/pie.inc");  # Pie de la pagina con el copyright

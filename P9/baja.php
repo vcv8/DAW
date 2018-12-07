@@ -53,7 +53,7 @@
 				$fotosen = $mysqli->query("SELECT COUNT(*) AS fotosEn FROM fotos f JOIN albumes a ON a.IdAlbumes=f.Album WHERE IdAlbumes=$album");
 				$ffotosen = $fotosen->fetch_assoc();
 
-				echo '<p id="errorMSG"><span>'. $falbumesen['Titulo'] .'</span> con '. $ffotosen['fotosEn'] .' fotos.</p>';
+				echo '<p id="errorMSG"><b>'. $falbumesen['Titulo'] .'</b> con '. $ffotosen['fotosEn'] .' fotos.</p>';
 
 				$fotosen ->free();
 
@@ -76,6 +76,10 @@
 		$albumesen ->free();
 
 		$mysqli->close();
+
+		if($_GET && $_GET['err'] && $_GET['err']==1){
+			echo '<p id="errorMSG">¡<span>ERROR</span>! La contraseña introducida es incorrecta.</p>';
+		}
 	?>
 		<section class="Inicio-Registro"> <!--Formulario de Registro -->
 			<fieldset class="marcoInicioRegistro">
@@ -83,7 +87,7 @@
 					<p>Introduce tu contraseña para confirmar: </p>
 					<p><input class="boxesForm" type="password" name="Contraseña" placeholder="Contraseña" required></p>
 					<p><input class="enlaceBoton" type="submit" value="Confirmar Baja"></p>
-					<p id="errorMSG"><span><a href="usuarioRegistrado.php">Cancelar</a></span></p>
+					<p id="errorMSG"><a href="usuarioRegistrado.php">Cancelar</a></p>
 				</form>
 			</fieldset>
 		</section>

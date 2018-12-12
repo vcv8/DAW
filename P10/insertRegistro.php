@@ -20,7 +20,7 @@
 			$date = date('Y-m-d H:i:s'); #Almacenamos la fecha actual para el registro
 
 			#Insertamos un nuevo usuario
-			$sentencia="INSERT INTO usuarios (NomUsuario, Clave, Email, Sexo, FNacimiento, Ciudad, Pais, Foto, FRegistro, Estilo) VALUES ('$usuario', '$pass', '$correo', $sexo, '$dia', '$ciudad', '$pais', 'fotoPerfil.png', '$date', '1')";
+			$sentencia="INSERT INTO usuarios (NomUsuario, Clave, Email, Sexo, FNacimiento, Ciudad, Pais, Foto, FRegistro, Estilo) VALUES ('$usuario', '$pass', '$correo', $sexo, '$dia', '$ciudad', '$pais', '$newName', '$date', '1')";
 
 			if(!mysqli_query($mysqli, $sentencia))
 			{

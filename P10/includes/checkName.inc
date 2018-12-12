@@ -1,28 +1,27 @@
 <?php 
-	$newFile =  "hola.jpg";
-	list($name, $format) = explode(".", $newFile);
+    $newName =  $_FILES['foto']['name'];
 
-	$sitio = "perfil";
+    $sitio = "perfil";
 
-	if($sitio == "perfil"){
-		$directorio = "recursos/";
-	}else if($sitio == "foto"){
-		$directorio = "recursos/perfiles/";
-	}
+    if($sitio == "perfil"){
+        $directorio = "recursos/perfiles/";
+    }else if($sitio == "foto"){
+        $directorio = "recursos/";
+    }
 
-	if($handle = opendir($directorio)){
-		
-		$num = 1;
+    echo $directorio;
+    if($handle = opendir($directorio)){
+        $num = 1;
 
-		while (false !== ($fichero = readdir($handle))) {
-			if(is_file($fichero) && $fichero==$name){
-				$name = $name. "$num";
-				$num++;
-			}
-		}
+        while (false !== ($fichero = readdir($handle))) {
+            if(is_file($fichero) && $fichero==$newName){
+                list($name, $format) = explode(".", $newName);
+                $name = $name. "$num";
+                $newName = $name . "." . $format;
+                $num++;
+            }
+        }
 
-		closedir($handle);
-	}
-
-	$newName = $name . $format;
+        closedir($handle);
+    }
 ?>

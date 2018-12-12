@@ -28,6 +28,14 @@
 				case "nombreDuplicError":
 					  echo '<p id="errorMSG">¡<span>ERROR</span>! El nombre de usuario ya existe.</p>';
 					  break;
+
+				case "registroFotoTamErr":
+					  echo '<p id="errorMSG">¡<span>ERROR</span>! El tamaño de la foto es demasiado grande (Max 20Mb).</p>';
+					  break;
+
+				case "registroFotoTipoErr":
+					  echo '<p id="errorMSG">¡<span>ERROR</span>! El tipo de archivo seleccionado no es valido (Solo JPEG/PNG/JPG).</p>';
+					  break;
 			}
 		}
 	?>
@@ -36,7 +44,7 @@
 				else{ echo 'Modificar datos personales'; } ?>			
 		</h2>
 		<!-- Si venimos del registro sera una inserccion, si no sera un update -->
-		<form action="<?php if($site == 'reg'){ echo 'insertRegistro.php'; } else{ echo 'updateDatos.php';} ?>" method="POST">
+		<form action="<?php if($site == 'reg'){ echo 'insertRegistro.php'; } else{ echo 'updateDatos.php';} ?>" method="post" enctype="multipart/form-data">
 			<p>Usuario: </p>
 			<p><input class="boxesForm" type="text" name="Usuario" placeholder="Usuario" autocomplete="on" <?php if($site == 'mod'){echo 'value="'. $pam[0] .'"';} ?> required></p>
 			<p>Contraseña: </p>
@@ -78,7 +86,7 @@
 					?>
 			</select>
 			<p><Strong>Foto Perfil</Strong></p>
-			<p><input type="file" name="pic" accept="image/*"></p>
+			<p><input type="file" name="foto"></p>
 			<p><input class="enlaceBoton" type="submit" 
 				<?php if($site == 'reg'){ echo 'value="Registrarse"'; } 
 				else{ echo 'value="Modificar"'; } ?>

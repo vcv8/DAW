@@ -61,12 +61,25 @@
 			{
 				if($_GET && $_GET['Update']=="cambioDatos")
 				{
-							echo '<p id="errorMSG"><b>¡Cambios guardados!</b>.</p>';
+					echo '<p id="errorMSG"><b>¡Cambios guardados!</b>.</p>';
 				}
 			}
+
+			#Obtenemos los datos del usuario y el pais
+			$usuario = $_SESSION["usuario"];
+			$sentencia1 = "SELECT Email, Sexo, FNacimiento, Ciudad, Pais, NomPais, Foto FROM usuarios u, paises p WHERE NomUsuario='$usuario' AND u.Pais=p.IdPais";
+			$usuario = $mysqli->query($sentencia1);  
+			if(!$usuario || $mysqli->errno) # errno devuelve el codigo de error de la ultima funcion ejecutada
+			{
+				die("Error: no se pudo realizar la consulta: " . $mysqli->error);
+			}
+
+			$fila = $usuario->fetch_assoc();
+						
+
 		?>
 		<div id="FotoPerfil">
-			<img src="recursos/EjemploPerfil.png" alt="Foto Perfil" id="fotoPerfil">
+			<img src="recursos/<?php echo $fila['Foto'] ?>" alt="Foto Perfil" id="fotoPerfil">
 			<p id="NombreUsuario">
 				<?php 
 					if(isset($_SESSION["usuario"]))
@@ -91,20 +104,6 @@
 			<fieldset class="marcoUsuario">
 				<h2>Detalles de Usuario</h2>
 				<ul id="InfoUsuario"> <!-- Lista de datos del Usuario -->
-					<?php 
-						#Obtenemos los datos del usuario y el pais
-						$usuario = $_SESSION["usuario"];
-						$sentencia1 = "SELECT Email, Sexo, FNacimiento, Ciudad, Pais, NomPais FROM usuarios u, paises p WHERE NomUsuario='$usuario' AND u.Pais=p.IdPais";
-						$usuario = $mysqli->query($sentencia1);  
-						if(!$usuario || $mysqli->errno) # errno devuelve el codigo de error de la ultima funcion ejecutada
-						{
-							die("Error: no se pudo realizar la consulta: " . $mysqli->error);
-						}
-
-						$fila = $usuario->fetch_assoc();
-						
-
-					?>
 					<li><p class="listaInfo"><b>Correo </b> <?php echo $fila['Email']; ?></p></li>
 					<li><p><b>Sexo </b> 
 					<?php

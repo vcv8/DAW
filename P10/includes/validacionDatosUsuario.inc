@@ -110,7 +110,7 @@
 		#Comprobamos el tipo del archivo 
 		if(($_FILES["foto"]["type"]=="image/png") || ($_FILES["foto"]["type"]=="image/jpeg") || ($_FILES["foto"]["type"]=="image/jpg"))
 		{
-			move_uploaded_file($_FILES["foto"]["tmp_name"], "D:\\xampp\\htdocs\\P10\\recursos\\perfiles\\" . $newName);
+			move_uploaded_file($_FILES["foto"]["tmp_name"], "./recursos/perfiles/" . $newName);
 		}
 		else
 		{

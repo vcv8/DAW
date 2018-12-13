@@ -80,7 +80,7 @@
 		?>
 		<div id="FotoPerfil">
 			<div id="FotoPerfilCon">
-				<img src="./recursos/perfiles<?php echo $fila['Foto'] ?>" alt="Foto Perfil" id="fotoPerfil">
+				<img src="./recursos/perfiles/<?php echo $fila['Foto'] ?>" alt="Foto Perfil" id="fotoPerfil">
 			</div>
 			<p id="NombreUsuario">
 				<?php 

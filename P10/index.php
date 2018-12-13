@@ -120,6 +120,9 @@
 			</a>
 		</article>
 
+		<!--<p><Strong>Foto destacada por el crítico de fotografia </Strong><?php echo $autor; ?></p>
+		<p><?php echo $comentario; ?></p> -->
+
 		<?php 
 
 			}

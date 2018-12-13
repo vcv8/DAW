@@ -110,6 +110,10 @@
 		#Comprobamos el tipo del archivo 
 		if(($_FILES["foto"]["type"]=="image/png") || ($_FILES["foto"]["type"]=="image/jpeg") || ($_FILES["foto"]["type"]=="image/jpg"))
 		{
+			if($fotoPerfil!="EjemploPerfil.png")
+			{
+				unlink( "./recursos/perfiles/" .$fotoPerfil);
+			}
 			move_uploaded_file($_FILES["foto"]["tmp_name"], "./recursos/perfiles/" . $newName);
 			$fotoPerfil = $newName; #Nombre de la nueva foto de perfil
 		}

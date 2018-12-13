@@ -85,8 +85,22 @@
 						$mysqli->close();
 					?>
 			</select>
-			<p><Strong>Foto Perfil</Strong></p>
-			<p><input type="file" name="foto"></p>
+			<p><Strong>Foto de Perfil <?php if($site == 'mod'){echo "Actual";} ?> </Strong></p>
+			<?php 
+					 if($site == 'mod')
+					 {	
+					 	echo "<p>" . $pam[6];
+
+					 	if($pam[6]!="EjemploPerfil.png") #Solo si no es la foto por defecto se puede eliminar
+					 	{
+					 		echo "<strong> ¿Eliminar? </strong><input type='checkbox' name='eliminarFoto' value='Si'>Si</p>";
+					 	}
+
+					 	echo "<p><Strong>Nueva Foto de Perfil</Strong></p>";
+					 	
+					 }
+			?>
+			<p><input type="file" name="foto" ></p>
 			<p><input class="enlaceBoton" type="submit" 
 				<?php if($site == 'reg'){ echo 'value="Registrarse"'; } 
 				else{ echo 'value="Modificar"'; } ?>

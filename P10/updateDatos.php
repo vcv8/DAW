@@ -36,12 +36,11 @@
 <body>
 
 	<?php
-			require_once("includes/validacionDatosUsuario.inc"); #Se realiza la validacion de los campos introducidos por el usuario
 
 			#Comrpobamos que usuario es el que esta modificando
 			$usuarioSesion = $_SESSION["usuario"];
 
-			$sentencia1 = "SELECT idUsuario FROM usuarios WHERE NomUsuario='$usuarioSesion'";
+			$sentencia1 = "SELECT idUsuario, Foto FROM usuarios WHERE NomUsuario='$usuarioSesion'";
 			$usuario2 = $mysqli->query($sentencia1);  
 
 			if(!$usuario2 || $mysqli->errno) # errno devuelve el codigo de error de la ultima funcion ejecutada
@@ -51,11 +50,22 @@
 
 			$fila = $usuario2->fetch_assoc();
 			$idUsu = $fila['idUsuario']; 
-		
 
+			$eliminar = $_POST['eliminarFoto']; #Eliminar foto si o no
+			$fotoPerfil = $fila['Foto']; #Obtenemos su foto actual
+
+			if($eliminar=="Si") #El usuario desea eliminar la foto
+			{
+				unlink( "./recursos/perfiles/" .$fotoPerfil);
+
+				$fotoPerfil = "EjemploPerfil.png"; #Foto por defecto
+			}
+
+			require_once("includes/validacionDatosUsuario.inc"); #Se realiza la validacion de los campos introducidos por el usuario
+		
 			#Modificamos los datos del usuario
 			$update = $mysqli->query("UPDATE usuarios SET NomUsuario='$usuario', Clave='$pass', Email='$correo', Sexo='$sexo', FNacimiento='$dia', Ciudad='$ciudad', 
-			Pais='$pais' WHERE idUsuario='$idUsu'");
+			Pais='$pais', Foto='$fotoPerfil' WHERE idUsuario='$idUsu'");
 
 
 			if(!$update || $mysqli->errno) # errno devuelve el codigo de error de la ultima funcion ejecutada

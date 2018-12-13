@@ -79,7 +79,9 @@
 
 		?>
 		<div id="FotoPerfil">
-			<img src="recursos/<?php echo $fila['Foto'] ?>" alt="Foto Perfil" id="fotoPerfil">
+			<div id="FotoPerfilCon">
+				<img src="recursos/<?php echo $fila['Foto'] ?>" alt="Foto Perfil" id="fotoPerfil">
+			</div>
 			<p id="NombreUsuario">
 				<?php 
 					if(isset($_SESSION["usuario"]))

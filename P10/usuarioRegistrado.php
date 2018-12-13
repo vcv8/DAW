@@ -79,7 +79,7 @@
 
 		?>
 		<div id="FotoPerfil">
-			<img src="recursos/<?php echo $fila['Foto'] ?>" alt="Foto Perfil" id="fotoPerfil">
+			<img src="./recursos/perfiles/<?php echo $fila['Foto'] ?>" alt="Foto Perfil" id="fotoPerfil">
 			<p id="NombreUsuario">
 				<?php 
 					if(isset($_SESSION["usuario"]))

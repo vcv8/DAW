@@ -53,7 +53,8 @@
 					$userData['Email'],
 					$userData['FNacimiento'],
 					$userData['Ciudad'],
-					$outpais['NomPais']
+					$outpais['NomPais'],
+					$userData['Foto']
 				);
 
 		#Control de error de campos de modificar datos

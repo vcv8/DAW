@@ -42,7 +42,7 @@
 		<fieldset class="marcoInicioRegistro">
 			<h2>Añadir nueva foto</h2>
 			<p>Los parámetros marcados con (*) son obligatorios.</p>
-			<form action="insertFoto.php" method="GET">
+			<form action="insertFoto.php" method="POST" enctype="multipart/form-data">
 				<p><label>Título de la foto: (*)</label></p>
 				<p><input class="boxesForm" type="text" name="Titulo" placeholder="Título" required></p>
 				<p><label>Descripción: (*)</label></p>
@@ -74,7 +74,7 @@
 						?>
 				</select>
 				<p><label>Foto: (*)</label></p>
-				<p><input type="file" name="pic" accept="image/*"></p>
+				<p><input type="file" name="foto" required></p>
 				<p><label>Texto alternativo para la foto: (*)</label></p>
 				<p><input class="boxesForm" type="text" name="tAlternativo" placeholder="Texto alternativo" required></p>
 				<p><label>Álbum al que pertenece: (*)</label></p>

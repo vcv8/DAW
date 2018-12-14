@@ -118,7 +118,7 @@
 						?>
 						</a>.
 						</p>
-						<p>Por <a href="misAlbumes.php?user=<?php echo $fila4['NomUsuario']; ?>" title="Acceso a albumes del usuario"><?php echo $fila3['NomUsuario']; ?></a></p>
+						<p>Por <a href="misAlbumes.php?user=<?php echo $fila3['NomUsuario']; ?>" title="Acceso a albumes del usuario"><?php echo $fila3['NomUsuario']; ?></a></p>
 					</div>
 				</figcaption>
 			</figure>

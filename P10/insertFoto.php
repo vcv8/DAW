@@ -22,66 +22,101 @@
 	else{
 		require_once("includes/mBienvenida.inc");
 
-		if($_GET && isset($_GET['Titulo']) && isset($_GET['Descripcion']) && isset($_GET['tAlternativo']) && isset($_GET['album'])){
+		if($_POST && isset($_POST['Titulo']) && isset($_POST['Descripcion']) && isset($_POST['tAlternativo']) && isset($_POST['album'])){
+			if($_FILES['foto']['error'] == 0){
 
-			#Recogida de datos
-			$titulo = $_GET['Titulo'];
-			$descripcion = $_GET['Descripcion'];
-			if(!isset($_GET['Fecha']) || empty($_GET['Fecha'])){
-				$fecha = 'NULL';
-			}else{
-				$fecha = "'". $_GET['Fecha'] ."'";
-			}
-			if(!isset($_GET['pais']) || empty($_GET['pais'])){
-				$pais = 'NULL';
-			}else{
-				$pais = $_GET['pais'];
-			}
-			$alt = $_GET['tAlternativo'];
-			$album = $_GET['album'];  	# Album Seleccionado
-
-			$usuario = $_SESSION['usuario'];
-
-			#Consulta idAlbum de los albumes
-			$sentencia1 = "SELECT idAlbumes FROM albumes JOIN usuarios ON IdUsuario=Usuario WHERE NomUsuario='$usuario'";
-			$idAlbum = $mysqli->query($sentencia1);  
-
-			if(!$idAlbum || $mysqli->errno) # errno devuelve el codigo de error de la ultima funcion ejecutada
-			{
-				die("Error: no se pudo realizar la consulta: " . $mysqli->error);
-			}
-
-			$fila = $idAlbum->fetch_assoc();
-			$aBien = 0;
-			do{
-				if($fila['idAlbumes']==$album){
-					$aBien=1;
+				#Recogida de datos
+				$titulo = $_POST['Titulo'];
+				$descripcion = $_POST['Descripcion'];
+				if(!isset($_POST['Fecha']) || empty($_POST['Fecha'])){
+					$fecha = 'NULL';
+				}else{
+					$fecha = "'". $_POST['Fecha'] ."'";
 				}
-			}while($fila = $idAlbum->fetch_assoc());
+				if(!isset($_POST['pais']) || empty($_POST['pais'])){
+					$pais = 'NULL';
+				}else{
+					$pais = $_POST['pais'];
+				}
+				$alt = $_POST['tAlternativo'];
+				$album = $_POST['album'];  	# Album Seleccionado
 
-			if($aBien==1){
-				$fregistro = date('Y-m-d H:i:s'); #Almacenamos la fecha actual para el registro
-				$path = "recursos/paisaje.png";;
+				echo $_FILES['foto']['name'];
 
-				$solicit = $mysqli->query("INSERT INTO fotos (Titulo, Descripcion, Fecha, Pais, Album, Fichero, FRegistro, Alternativo) VALUES ('$titulo', '$descripcion', $fecha , $pais, $album, '". $path ."', '$fregistro', '$alt')");  
+				$sitio = "foto";
+				require_once("includes/fotoForm.inc");
 
-				if(!$solicit || $mysqli->errno) # errno devuelve el codigo de error de la ultima funcion ejecutada
+				$path = "./recursos/" . $newName;
+
+				$usuario = $_SESSION['usuario'];
+
+				#Consulta idAlbum de los albumes
+				$sentencia1 = "SELECT idAlbumes FROM albumes JOIN usuarios ON IdUsuario=Usuario WHERE NomUsuario='$usuario'";
+				$idAlbum = $mysqli->query($sentencia1);  
+
+				if(!$idAlbum || $mysqli->errno) # errno devuelve el codigo de error de la ultima funcion ejecutada
 				{
 					die("Error: no se pudo realizar la consulta: " . $mysqli->error);
-				}else{
-					$usuario = $_SESSION['usuario'];
-					$idlast = $mysqli->query("SELECT IdFoto FROM fotos JOIN albumes ON Album=IdAlbumes JOIN usuarios ON Usuario=IdUsuario WHERE NomUsuario='$usuario' ORDER BY IdFoto DESC LIMIT 1");
-					$fidlast = $idlast->fetch_assoc();
-					$pluspam = $fidlast['IdFoto'];
 				}
 
+				$fila = $idAlbum->fetch_assoc();
+				$aBien = 0;
+				do{
+					if($fila['idAlbumes']==$album){
+						$aBien=1;
+					}
+				}while($fila = $idAlbum->fetch_assoc());
+
+				if($aBien==1){
+					$fregistro = date('Y-m-d H:i:s'); #Almacenamos la fecha actual para el registro
+
+					$solicit = $mysqli->query("INSERT INTO fotos (Titulo, Descripcion, Fecha, Pais, Album, Fichero, FRegistro, Alternativo) VALUES ('$titulo', '$descripcion', $fecha , $pais, $album, '". $path ."', '$fregistro', '$alt')");  
+
+					if(!$solicit || $mysqli->errno) # errno devuelve el codigo de error de la ultima funcion ejecutada
+					{
+						die("Error: no se pudo realizar la consulta: " . $mysqli->error);
+					}else{
+						$usuario = $_SESSION['usuario'];
+						$idlast = $mysqli->query("SELECT IdFoto FROM fotos JOIN albumes ON Album=IdAlbumes JOIN usuarios ON Usuario=IdUsuario WHERE NomUsuario='$usuario' ORDER BY IdFoto DESC LIMIT 1");
+						$fidlast = $idlast->fetch_assoc();
+						$pluspam = $fidlast['IdFoto'];
+					}
+
+					$host = $_SERVER['HTTP_HOST']; 
+					$uri  = rtrim(dirname($_SERVER[’PHP_SELF’]), '/\\'); 
+					$extra = 'P10/resSubirFoto.php'; 
+					$plus = '?sid='. $pluspam;
+					header("Location: http://$host$uri/$extra$plus");
+					exit;
+				}else{
+					//REDIRECCION A SUBIR FOTO CON ERROR No se puede subor foto a un álbum ajeno.
+					$host = $_SERVER['HTTP_HOST']; 
+					$uri  = rtrim(dirname($_SERVER[’PHP_SELF’]), '/\\'); 
+
+					$extra ="P10/subirFoto.php?Error1=albajenoErr";
+
+					header("Location: http://$host$uri/$extra");
+					exit;
+				}
+			}else{
+				//REDIRECCION A SUBIR FOTO CON ERROR No se han itroducido todos los parámetros especificados.
 				$host = $_SERVER['HTTP_HOST']; 
 				$uri  = rtrim(dirname($_SERVER[’PHP_SELF’]), '/\\'); 
-				$extra = 'P10/resSubirFoto.php'; 
-				$plus = '?sid='. $pluspam;
-				header("Location: http://$host$uri/$extra$plus");
+				$fotoerr = $_FILES['foto']['error'];
+				$extra ="P10/subirFoto.php?Error1=fotoErr" . $fotoerr;
+
+				header("Location: http://$host$uri/$extra");
 				exit;
 			}
+		}else{
+			//REDIRECCION A SUBIR FOTO CON ERROR No se han itroducido todos los parámetros especificados.
+			$host = $_SERVER['HTTP_HOST']; 
+			$uri  = rtrim(dirname($_SERVER[’PHP_SELF’]), '/\\'); 
+
+			$extra ="P10/subirFoto.php?Error1=malparmErr";
+
+			header("Location: http://$host$uri/$extra");
+			exit;
 		}
 
 	}

@@ -1,28 +1,26 @@
 <?php 
     $newName =  $_FILES['foto']['name'];
-    $sitio = "perfil";
 
     if($sitio == "perfil"){
         $directorio = "./recursos/perfiles/";
     }else if($sitio == "foto"){
-        $directorio = "recursos/";
+        $directorio = "./recursos/";
     }
 
-    echo $directorio;
-    if($handle = opendir($directorio)){
-        $num = 1;
+    list($name, $format) = explode(".", $newName);
+    $num = 1;
+    $nameTemp = $newName;
 
-        while (false !== ($fichero = readdir($handle))) {
-        	if ($fichero != "." && $fichero != "..") {
-	            if(strcmp($fichero, $newName) == 0){
-	                list($name, $format) = explode(".", $newName);
-	                $name = $name. "$num";
-	                $newName = $name . "." . $format;
-	                $num++;
-	            }
-	        }
+    do{
+        $change = 0;
+
+        if(file_exists($directorio . $nameTemp)){
+            $nameTemp = $name . "$num" . "." . $format;
+            $num++;
+            $change = 1;
         }
 
-        closedir($handle);
-    }
+    }while($change == 1);
+
+    $newName=$nameTemp;
 ?>

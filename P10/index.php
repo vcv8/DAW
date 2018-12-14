@@ -47,50 +47,47 @@
 		}
 	?>
 
+	<?php
 
-	<section class="preview"> <!-- 5 Ultimas Imagenes -->
+		#Seleccion de foto por critico 
+		$ficheroFoto = file("./recursos/seleccionFotos.txt"); #Abrimos fichero
+		$numLineas = count($ficheroFoto); # Numero de lineas que tiene el fichero
 
-		<?php
+		if($ficheroFoto)
+		{
+			$numRandom = rand(0,$numLineas-1);
+			list($idFoto, $autor, $comentario) = explode("|", $ficheroFoto[$numRandom]); 
 
-			#Seleccion de foto por critico 
-			$ficheroFoto = file("./recursos/seleccionFotos.txt"); #Abrimos fichero
-			$numLineas = count($ficheroFoto); # Numero de lineas que tiene el fichero
+			$sentencia3 = "SELECT * FROM fotos WHERE IdFoto='$idFoto'";
+			$fotoFichero = $mysqli->query($sentencia3);
 
-			#echo $numLineas;
-			if($ficheroFoto)
+			if(!$fotoFichero || $mysqli->errno) # errno devuelve el codigo de error de la ultima funcion ejecutada
 			{
-				$numRandom = rand(0,$numLineas-1);
-				list($tituloFoto, $autor, $comentario) = explode("|", $ficheroFoto[$numRandom]); 
+				die("Error: no se pudo realizar la consulta: " . $mysqli->error);
+			}
 
-				$sentencia3 = "SELECT * FROM fotos WHERE Titulo='$tituloFoto'";
-				$fotoFichero = $mysqli->query($sentencia3);
+			$filaFotoFichero = $fotoFichero->fetch_assoc();
 
-				if(!$fotoFichero || $mysqli->errno) # errno devuelve el codigo de error de la ultima funcion ejecutada
+			$idPais2 =  $filaFotoFichero['Pais'];
+
+			if($idPais2!=NULL)
+			{
+				$sentencia4 = "SELECT * FROM paises WHERE IdPais=$idPais2";
+				$nomPaisesSelec = $mysqli->query($sentencia4);  # Devuelve un objeto con el pais que tenga el mismo ID
+
+				if(!$nomPaisesSelec || $mysqli->errno) # errno devuelve el codigo de error de la ultima funcion ejecutada
 				{
 					die("Error: no se pudo realizar la consulta: " . $mysqli->error);
 				}
+					
+				$filaPais =  $nomPaisesSelec->fetch_assoc();
+			}		
+	?>
 
-				$filaFotoFichero = $fotoFichero->fetch_assoc();
+	<p id="errorMSG">Foto destacada por el crítico de fotografia <b><?php echo $autor; ?></b></p>
+	<p id="errorMSG"><?php echo $comentario; ?></p>
 
-				$idPais2 =  $filaFotoFichero['Pais'];
-
-				if($idPais2!=NULL)
-				{
-					$sentencia4 = "SELECT * FROM paises WHERE IdPais=$idPais2";
-					$nomPaisesSelec = $mysqli->query($sentencia4);  # Devuelve un objeto con el pais que tenga el mismo ID
-
-					if(!$nomPaisesSelec || $mysqli->errno) # errno devuelve el codigo de error de la ultima funcion ejecutada
-					{
-						die("Error: no se pudo realizar la consulta: " . $mysqli->error);
-					}
-						
-					$filaPais =  $nomPaisesSelec->fetch_assoc();
-				}
-				
-				
-
-		?>
-
+	<section class="preview"> <!-- 5 Ultimas Imagenes -->
 		<article>
 			<a href=<?php echo "'detalleFoto.php?id_foto=" . $filaFotoFichero['IdFoto'] . "' >"; ?> 
 				<figure>
@@ -120,8 +117,14 @@
 			</a>
 		</article>
 
-		<!--<p><Strong>Foto destacada por el crítico de fotografia </Strong><?php echo $autor; ?></p>
-		<p><?php echo $comentario; ?></p> -->
+	</section>
+
+	<br>
+	<br>
+	<br>
+
+	<p id="errorMSG"><b>Últimas Fotografías</b></p>
+	<section class="preview"> <!-- 5 Ultimas Imagenes -->
 
 		<?php 
 

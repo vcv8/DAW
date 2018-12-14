@@ -61,6 +61,7 @@
 				$fotoPerfil = "EjemploPerfil.png"; #Foto por defecto
 			}
 
+			$origen = "modificar";
 			require_once("includes/validacionDatosUsuario.inc"); #Se realiza la validacion de los campos introducidos por el usuario
 		
 			#Modificamos los datos del usuario

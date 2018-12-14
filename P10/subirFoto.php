@@ -39,6 +39,27 @@
 	?>
 	
 	<section class="Inicio-Registro"> <!--Formulario de Registro -->
+		<?php 
+			if($_GET && $_GET['fotoErr']){
+				$numerror = $_GET['fotoErr'];
+				$errores = array("Mensajes fotos mal.", 
+					"El fichero subido excede el tamaño máximo predefinido.",
+					"El fichero subido excede el tamaño máximo definido",
+					"El fichero fue sólo parcialmente subido.",
+					"No se subió ningún fichero.",
+					"5 no que es.",
+					"Falta la carpeta temporal.",
+					"No se pudo escribir el fichero",
+					"Una extensión detuvo la subida de ficheros.",
+					"9 creo que no es nada",
+					"No se puede subir foto a un álbum ajeno.",
+					"No se han introducido todos los parámetros especificados.",
+					"No se admite ese formato de archivo. Sólo PNG/JPG/JPEG."
+				);
+				echo '<p id="errorMSG">¡<span>ERROR</span>!'. $errores[$numerror] .'</p>';
+			}
+
+		?>
 		<fieldset class="marcoInicioRegistro">
 			<h2>Añadir nueva foto</h2>
 			<p>Los parámetros marcados con (*) son obligatorios.</p>

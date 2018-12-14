@@ -1,5 +1,5 @@
-Amanecer|Adolfo Martinez|Paisaje es una innovacion en el mundo de la fotografia.
-En la Ciudad|Francisco Javier|Este juego pinta brutal.
-Dibujaco|Manolo Velasquez|Nunca habia visto un dibujo tan bien realizado.
-Grupal|Cory Balrog|El futuro de la industria esta aqui.
-Cuadro|Leonardo da Vinci|Siamo di fronte alla nuova generazione.
+1|Adolfo Martinez|Paisaje es una innovacion en el mundo de la fotografia.
+7|Francisco Javier|Este juego pinta brutal.
+3|Manolo Velasquez|Nunca habia visto un dibujo tan bien realizado.
+4|Cory Balrog|El futuro de la industria esta aqui.
+6|Leonardo da Vinci|Siamo di fronte alla nuova generazione.

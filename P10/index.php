@@ -56,13 +56,12 @@
 			$ficheroFoto = file("./recursos/seleccionFotos.txt"); #Abrimos fichero
 			$numLineas = count($ficheroFoto); # Numero de lineas que tiene el fichero
 
-			#echo $numLineas;
 			if($ficheroFoto)
 			{
 				$numRandom = rand(0,$numLineas-1);
-				list($tituloFoto, $autor, $comentario) = explode("|", $ficheroFoto[$numRandom]); 
+				list($idFoto, $autor, $comentario) = explode("|", $ficheroFoto[$numRandom]); 
 
-				$sentencia3 = "SELECT * FROM fotos WHERE Titulo='$tituloFoto'";
+				$sentencia3 = "SELECT * FROM fotos WHERE IdFoto='$idFoto'";
 				$fotoFichero = $mysqli->query($sentencia3);
 
 				if(!$fotoFichero || $mysqli->errno) # errno devuelve el codigo de error de la ultima funcion ejecutada

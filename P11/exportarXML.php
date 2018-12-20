@@ -89,7 +89,7 @@
 		$usu->appendChild($idAtributo);
 		$raiz->appendChild($usu);
 
-			#Datos
+			#Datos Usuario
 			$nombre = $dom->createElement("NomUsuario", $fila['NomUsuario']);
 			$usu->appendChild($nombre);
 
@@ -110,11 +110,17 @@
 			$FNacimiento = $dom->createElement("FechaNac", $fila['FNacimiento']);
 			$usu->appendChild($FNacimiento);
 
-			$Ciudad = $dom->createElement("Ciudad", $fila['Ciudad']);
-			$usu->appendChild($Ciudad);
+			if($fila['Ciudad']!=NULL)
+			{
+				$Ciudad = $dom->createElement("Ciudad", $fila['Ciudad']);
+				$usu->appendChild($Ciudad);
+			}
 
-			$Pais = $dom->createElement("Pais", $fila['NomPais']);
-			$usu->appendChild($Pais);
+			if($fila['Pais']!=NULL)
+			{
+				$Pais = $dom->createElement("Pais", $fila['NomPais']);
+				$usu->appendChild($Pais);
+			}
 
 
 			#Albumes

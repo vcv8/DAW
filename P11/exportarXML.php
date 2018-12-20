@@ -51,23 +51,8 @@
 
 	<?php
 
-		# Creamos una instancia de la clase DOMImplementation
-		#$imp = new DOMImplementation;
-
-		#$dtd = $imp->createDocumentType('graph', '', 'graph.dtd');
-		#$dom = $imp->createDocument("", "", $dtd);
-
-		#$dom->encoding = 'UTF-8'; 
-
-		# Crear un elemento vacío
-		#$element = $dom->createElement('graph');
-
-		# Añadir el elemento
-		#$dom->appendChild($element);
-
 		# Creacion de documento con DOM
 		$dom = new DomDocument("1.0", "UTF-8");
-
 		$dom->formatOutput = true; #Hace el xml legible
 
 		#Obtenemos los datos del usuario 
@@ -91,7 +76,6 @@
 		{
 			die("Error: no se pudo realizar la consulta: " . $mysqli->error);
 		}
-		#$fila2 = $albumUsu->fetch_assoc();
 
 		#Creamos el nodo raiz
 		$raiz = $dom->createElement('PRETI');
@@ -158,7 +142,7 @@
 
 						#Consulta de fotos del album
 						$idAlbum = $fila2['IdAlbumes'];
-						$sentencia2 = "SELECT * FROM fotos WHERE Album='$idAlbum'";
+						$sentencia2 = "SELECT * FROM fotos f, paises p WHERE Album='$idAlbum' AND f.Pais=p.IdPais";
 						$fotosAlbum = $mysqli->query($sentencia2);  
 
 						if(!$fotosAlbum || $mysqli->errno) # errno devuelve el codigo de error de la ultima funcion ejecutada
@@ -190,7 +174,7 @@
 
 								if($fila3['Pais']!=NULL)
 								{
-									$PaisFoto = $dom->createElement("Pais", $fila3['Pais']);
+									$PaisFoto = $dom->createElement("Pais", $fila3['NomPais']);
 									$fotos->appendChild($PaisFoto);
 								}
 
@@ -284,15 +268,19 @@
 			}
 
 
-
-
-
-
 		$dom->save('./recursos/datosUsuario.xml'); #Guardamos el fichero
 
 		# Cerramos la sesion con la BD y liberamos la memoria
 		$usuario ->free();
 		$mysqli->close();
+
+
+		$host = $_SERVER['HTTP_HOST']; 
+		$uri  = rtrim(dirname($_SERVER[’PHP_SELF’]), '/\\'); 
+		$extra = 'P11/usuarioRegistrado.php?Export=datos.php'; 
+		$plus = '?sid='. $pluspam;
+		header("Location: http://$host$uri/$extra$plus");
+		exit;
 
 	?>
 

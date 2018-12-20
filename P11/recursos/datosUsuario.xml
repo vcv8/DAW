@@ -1,98 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PRETI>
-  <Usuario IdUsuario="1">
-    <NomUsuario>knekro100</NomUsuario>
-    <Correo>knekro100@hotmail.com</Correo>
+  <Usuario IdUsuario="2">
+    <NomUsuario>manolo101</NomUsuario>
+    <Correo>manolo100@hotmail.com</Correo>
     <Sexo>Hombre</Sexo>
-    <FechaNac>1985-08-22</FechaNac>
-    <Ciudad>Madrid</Ciudad>
+    <FechaNac>1990-04-14</FechaNac>
+    <Ciudad>Albacete</Ciudad>
     <Pais>España</Pais>
     <Albumes>
-      <Album IdAlbum="1">
-        <Titulo>Paisajes</Titulo>
-        <Descripcion>Fotos con paisajes de todo el mundo</Descripcion>
+      <Album IdAlbum="4">
+        <Titulo>Random</Titulo>
+        <Descripcion>Lo que me apetezca subir</Descripcion>
         <Fotos>
-          <Foto IdFoto="1"/>
-          <Titulo>Amanecer</Titulo>
-          <Descripcion>Amanecer en Alicante</Descripcion>
-          <Fecha>2018-09-29</Fecha>
-          <Pais>1</Pais>
+          <Foto IdFoto="3"/>
+          <Titulo>Dibujaco</Titulo>
+          <Descripcion>Este dibujo que me hice el otro día, que os parece peña?</Descripcion>
+          <Pais>España</Pais>
         </Fotos>
-        <Solicitudes>
-          <Solicitud IdSolicitud="3">
-            <Nombre>Knekro Puto Amo</Nombre>
-            <Titulo>Con los colegas</Titulo>
-            <Descripcion>Ay va la ostia patxi que no lo he enxufao</Descripcion>
-            <Email>roxo85@hotmail.com</Email>
-            <Calle>calle torrejos</Calle>
-            <CodPostal>3124</CodPostal>
-            <Localidad>SanVicentdelRaspeig</Localidad>
-            <Pais>España</Pais>
-            <Provincia>Alicante</Provincia>
-            <Color>#ff8040</Color>
-            <Copias>6</Copias>
-            <Provincia>Alicante</Provincia>
-            <Fecha>2018-12-29</Fecha>
-            <IColor>Si</IColor>
-            <Coste>6.000</Coste>
-          </Solicitud>
-          <Solicitud IdSolicitud="10">
-            <Nombre>knekro puto amo</Nombre>
-            <Titulo>bis</Titulo>
-            <Descripcion>Me encanta este album joder</Descripcion>
-            <Email>roxo85@hotmail.com</Email>
-            <Calle>lacalledeknekro</Calle>
-            <CodPostal>3124</CodPostal>
-            <Localidad>SanVicentdelRaspeig</Localidad>
-            <Pais>España</Pais>
-            <Provincia>Alicante</Provincia>
-            <Color>#000000</Color>
-            <Copias>6</Copias>
-            <Provincia>Alicante</Provincia>
-            <Fecha>2018-12-29</Fecha>
-            <IColor>No</IColor>
-            <Coste>1.000</Coste>
-          </Solicitud>
-          <Solicitud IdSolicitud="11">
-            <Nombre>knekro puto amo</Nombre>
-            <Titulo>bis</Titulo>
-            <Descripcion>dadsa</Descripcion>
-            <Email>roxo85@hotmail.com</Email>
-            <Calle>lacalledeknekro</Calle>
-            <CodPostal>3124</CodPostal>
-            <Localidad>SanVicentdelRaspeig</Localidad>
-            <Pais>España</Pais>
-            <Provincia>Alicante</Provincia>
-            <Color>#000000</Color>
-            <Copias>6</Copias>
-            <Provincia>Alicante</Provincia>
-            <Fecha>2018-12-21</Fecha>
-            <IColor>No</IColor>
-            <Coste>0.600</Coste>
-          </Solicitud>
-          <Solicitud IdSolicitud="12">
-            <Nombre>knekro puto amo</Nombre>
-            <Titulo>bis</Titulo>
-            <Descripcion>dadsa</Descripcion>
-            <Email>roxo85@hotmail.com</Email>
-            <Calle>lacalledeknekro</Calle>
-            <CodPostal>3124</CodPostal>
-            <Localidad>SanVicentdelRaspeig</Localidad>
-            <Pais>España</Pais>
-            <Provincia>Alicante</Provincia>
-            <Color>#000000</Color>
-            <Copias>6</Copias>
-            <Provincia>Alicante</Provincia>
-            <Fecha>2018-12-21</Fecha>
-            <IColor>No</IColor>
-            <Coste>1.320</Coste>
-          </Solicitud>
-        </Solicitudes>
-      </Album>
-      <Album IdAlbum="5">
-        <Titulo>Otro mas</Titulo>
-        <Descripcion>Este album no me gusta</Descripcion>
-        <Fotos/>
         <Solicitudes/>
       </Album>
     </Albumes>

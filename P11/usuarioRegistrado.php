@@ -64,6 +64,13 @@
 					echo '<p id="errorMSG"><b>¡Cambios guardados!</b>.</p>';
 				}
 			}
+			else
+			{
+				if($_GET && isset($_GET['Export']))
+				{
+					echo '<p id="errorMSG"><b>¡Datos Exportados!</b>.</p>';
+				}
+			}
 
 			#Obtenemos los datos del usuario y el pais
 			$usuario = $_SESSION["usuario"];

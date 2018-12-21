@@ -195,6 +195,8 @@
 		?>
 	</section>
 
+	<p id="errorMSG">Disponible canal <a href="./feedChannel.php">RSS</a>.</p>
+
 	<?php
 		require_once("includes/pie.inc");  # Pie de la pagina con el copyright
 	?>

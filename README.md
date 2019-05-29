@@ -1,5 +1,5 @@
 # DAW
-Prácticas de la asignatura Desarrollo de Aplicaciones Web, Ingeniería Multimedia, Universidad de Alicante
+Prácticas de la asignatura Desarrollo de Aplicaciones Web, Ingeniería Multimedia, Universidad de Alicante.
 
 ## Por: 
 
